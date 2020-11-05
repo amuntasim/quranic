@@ -1,0 +1,12 @@
+{
+  "name": "Quranic",
+  "displayName": "Quranic",
+  "expo": {
+    "name": "Quranic",
+    "slug": "Quranic",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
