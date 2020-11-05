@@ -1,10 +1,20 @@
 import * as React from 'react';
 
-import styles from './../components/Styles';
+import Styles from './../components/Styles';
 
 import {Text, View} from '../components/Themed';
 import DefaultPreference from 'react-native-default-preference';
 import Constant from "../constants/Values";
+import {
+    ScrollView,
+    SafeAreaView,
+} from 'react-native';
+
+const wait = (timeout: any) => {
+    return new Promise(resolve => {
+        setTimeout(resolve, timeout);
+    });
+}
 
 interface SettingsObject {
     language: string;
@@ -17,6 +27,14 @@ const SettingsScreen = (props: any) => {
 
     const [state, setState] = React.useState({settings: _settings})
     const [settings, setSettings] = React.useState(_settings);
+
+    const [refreshing, setRefreshing] = React.useState(false);
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+
+        wait(2000).then(() => setRefreshing(false));
+    }, []);
 
 
     React.useEffect(() => {
@@ -31,15 +49,20 @@ const SettingsScreen = (props: any) => {
     }, [settings]);
 
     return (
-        <View style={styles.container}>
-            <View style={styles.container}>
-                <Text style={styles.title}>Settings</Text>
-                <Text style={styles.title}>{state.settings.language}</Text>
-            </View>
-            <View style={styles.container}>
-            </View>
+        <SafeAreaView style={Styles.container}>
+            <ScrollView contentContainerStyle={Styles.scrollView}>
 
-        </View>
+            </ScrollView>
+        </SafeAreaView>
+        // <View style={styles.container}>
+        //     <View style={styles.container}>
+        //         <Text style={styles.title}>Settings</Text>
+        //         <Text style={styles.title}>{state.settings.language}</Text>
+        //     </View>
+        //     <View style={styles.container}>
+        //     </View>
+        //
+        // </View>
     );
 }
 

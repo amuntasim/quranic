@@ -95,7 +95,7 @@ function MiscNavigator() {
         <MiscStack.Navigator>
             <MiscStack.Screen
                 name="MiscScreen"
-                component={ChaptersScreen}
+                component={MiscScreen}
                 options={{headerTitle: 'Misc'}}
             />
         </MiscStack.Navigator>

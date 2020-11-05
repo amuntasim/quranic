@@ -9,11 +9,21 @@ export default {
         tabIconDefault: '#ccc',
         tabIconSelected: tintColorLight,
     },
+    lightBg: {
+        color: '#000',
+        tintColor: '#000',
+        backgroundColor: '#fff',
+    },
     dark: {
         text: '#fff',
         background: '#000',
         tint: tintColorDark,
         tabIconDefault: '#ccc',
         tabIconSelected: tintColorDark,
+    },
+    darkBg: {
+        color: '#fff',
+        tintColor: '#fff',
+        backgroundColor: '#000',
     },
 };
