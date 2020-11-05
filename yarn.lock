@@ -1189,7 +1189,7 @@
   dependencies:
     cross-spawn "^6.0.5"
 
-"@expo/vector-icons@^10.0.2":
+"@expo/vector-icons@^10.0.0", "@expo/vector-icons@^10.0.2":
   version "10.2.1"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/@expo/vector-icons/-/vector-icons-10.2.1.tgz#47fb2fa12d7ad601835babde6bd3ddea7f6fde89"
   integrity sha1-R/svoS161gGDW6vea9Pd6n9v3ok=
@@ -1905,6 +1905,54 @@
     strip-ansi "^5.2.0"
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
+
+"@react-native-community/masked-view@0.1.10":
+  version "0.1.10"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
+  integrity sha1-XdpkPhnlh3k7wgNN2b9zmK1D1AE=
+
+"@react-navigation/bottom-tabs@^5.8.0":
+  version "5.10.6"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/@react-navigation/bottom-tabs/-/bottom-tabs-5.10.6.tgz#bdc6d424c78bf757a08fe768723b20a66e8c17c2"
+  integrity sha1-vcbUJMeL91egj+docjsgpm6MF8I=
+  dependencies:
+    color "^3.1.3"
+    react-native-iphone-x-helper "^1.3.0"
+
+"@react-navigation/core@^5.14.0":
+  version "5.14.0"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/@react-navigation/core/-/core-5.14.0.tgz#7cfba86ca3042ddc4542bd3422b73b3cf3553f61"
+  integrity sha1-fPuobKMELdxFQr00Irc7PPNVP2E=
+  dependencies:
+    "@react-navigation/routers" "^5.6.0"
+    escape-string-regexp "^4.0.0"
+    nanoid "^3.1.15"
+    query-string "^6.13.6"
+    react-is "^16.13.0"
+
+"@react-navigation/native@^5.7.3":
+  version "5.8.6"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/@react-navigation/native/-/native-5.8.6.tgz#a853a93a7daf995beb0bb1051693caf9efc4c31e"
+  integrity sha1-qFOpOn2vmVvrC7EFFpPK+e/Ewx4=
+  dependencies:
+    "@react-navigation/core" "^5.14.0"
+    escape-string-regexp "^4.0.0"
+    nanoid "^3.1.15"
+
+"@react-navigation/routers@^5.6.0":
+  version "5.6.0"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/@react-navigation/routers/-/routers-5.6.0.tgz#90f56691b68cbab8d144503a66fa2a1742234d7e"
+  integrity sha1-kPVmkbaMurjRRFA6ZvoqF0IjTX4=
+  dependencies:
+    nanoid "^3.1.15"
+
+"@react-navigation/stack@^5.9.0":
+  version "5.12.3"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/@react-navigation/stack/-/stack-5.12.3.tgz#a9ad55b9ab8c2337a6298e92d5c38dc376cdfe83"
+  integrity sha1-qa1VuauMIzemKY6S1cONw3bN/oM=
+  dependencies:
+    color "^3.1.3"
+    react-native-iphone-x-helper "^1.3.0"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.1"
@@ -2852,7 +2900,7 @@ collection-visit@^1.0.0:
     map-visit "^1.0.0"
     object-visit "^1.0.0"
 
-color-convert@^1.9.0:
+color-convert@^1.9.0, color-convert@^1.9.1:
   version "1.9.3"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
   integrity sha1-u3GFBpDh8TZWfeYp0tVHHe2kweg=
@@ -2876,7 +2924,7 @@ color-name@^1.0.0, color-name@~1.1.4:
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=
 
-color-string@^1.5.3:
+color-string@^1.5.3, color-string@^1.5.4:
   version "1.5.4"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/color-string/-/color-string-1.5.4.tgz#dd51cd25cfee953d138fe4002372cc3d0e504cb6"
   integrity sha1-3VHNJc/ulT0Tj+QAI3LMPQ5QTLY=
@@ -2888,6 +2936,14 @@ color-support@^1.1.3:
   version "1.1.3"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
   integrity sha1-k4NDeaHMmgxh+C9S8NBDIiUb1aI=
+
+color@^3.1.3:
+  version "3.1.3"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/color/-/color-3.1.3.tgz#ca67fb4e7b97d611dcde39eceed422067d91596e"
+  integrity sha1-ymf7TnuX1hHc3jns7tQiBn2RWW4=
+  dependencies:
+    color-convert "^1.9.1"
+    color-string "^1.5.4"
 
 colorette@^1.0.7:
   version "1.2.1"
@@ -3407,6 +3463,11 @@ escape-string-regexp@^1.0.5:
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
+escape-string-regexp@^4.0.0:
+  version "4.0.0"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
+  integrity sha1-FLqDpdNz49MR5a/KKc9b+tllvzQ=
+
 escodegen@^1.11.1:
   version "1.14.3"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/escodegen/-/escodegen-1.14.3.tgz#4e7b81fba61581dc97582ed78cab7f0e8d63f503"
@@ -3607,6 +3668,11 @@ expo-sqlite@~8.4.0:
   dependencies:
     "@expo/websql" "^1.0.1"
     lodash "^4.17.15"
+
+expo-status-bar@~1.0.2:
+  version "1.0.2"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/expo-status-bar/-/expo-status-bar-1.0.2.tgz#2441a77c56be31597898337b0d086981f2adefd8"
+  integrity sha1-JEGnfFa+MVl4mDN7DQhpgfKt79g=
 
 expo-updates@~0.3.3:
   version "0.3.5"
@@ -5985,6 +6051,11 @@ nan@^2.12.1:
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha1-9TdkAGlRaPTMaUrJOT0MlYXu6hk=
 
+nanoid@^3.1.15:
+  version "3.1.16"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/nanoid/-/nanoid-3.1.16.tgz#b21f0a7d031196faf75314d7c65d36352beeef64"
+  integrity sha1-sh8KfQMRlvr3UxTXxl02NSvu72Q=
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -6642,6 +6713,15 @@ qs@~6.5.2:
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha1-yzroBuh0BERYTvFUzo7pjUA/PjY=
 
+query-string@^6.13.6:
+  version "6.13.6"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/query-string/-/query-string-6.13.6.tgz#e5ac7c74f2a5da43fbca0b883b4f0bafba439966"
+  integrity sha1-5ax8dPKl2kP7yguIO08Lr7pDmWY=
+  dependencies:
+    decode-uri-component "^0.2.0"
+    split-on-first "^1.0.0"
+    strict-uri-encode "^2.0.0"
+
 querystringify@^2.1.1:
   version "2.2.0"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/querystringify/-/querystringify-2.2.0.tgz#3345941b4153cb9d082d8eee4cda2016a9aef7f6"
@@ -6670,10 +6750,15 @@ react-dom@16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
+react-is@^16.12.0, react-is@^16.13.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
+
+react-native-default-preference@^1.4.3:
+  version "1.4.3"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/react-native-default-preference/-/react-native-default-preference-1.4.3.tgz#3c6411d32ea4ebc5286fbf5915546fc57a6014f6"
+  integrity sha1-PGQR0y6k68Uob79ZFVRvxXpgFPY=
 
 react-native-gesture-handler@~1.7.0:
   version "1.7.0"
@@ -6684,6 +6769,11 @@ react-native-gesture-handler@~1.7.0:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.4"
     prop-types "^15.7.2"
+
+react-native-iphone-x-helper@^1.3.0:
+  version "1.3.0"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.0.tgz#84fd13e6b89cc3aa4daa80ec514bf15cb724d86d"
+  integrity sha1-hP0T5ricw6pNqoDsUUvxXLck2G0=
 
 react-native-reanimated@~1.13.0:
   version "1.13.1"
@@ -7434,6 +7524,11 @@ spdx-license-ids@^3.0.0:
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/spdx-license-ids/-/spdx-license-ids-3.0.6.tgz#c80757383c28abf7296744998cbc106ae8b854ce"
   integrity sha1-yAdXODwoq/cpZ0SZjLwQaui4VM4=
 
+split-on-first@^1.0.0:
+  version "1.1.0"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/split-on-first/-/split-on-first-1.1.0.tgz#f610afeee3b12bce1d0c30425e76398b78249a5f"
+  integrity sha1-9hCv7uOxK84dDDBCXnY5i3gkml8=
+
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/split-string/-/split-string-3.1.0.tgz#7cb09dda3a86585705c64b39a6466038682e8fe2"
@@ -7495,6 +7590,11 @@ stream-buffers@~2.2.0:
   version "2.2.0"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/stream-buffers/-/stream-buffers-2.2.0.tgz#91d5f5130d1cef96dcfa7f726945188741d09ee4"
   integrity sha1-kdX1Ew0c75bc+n9yaUUYh0HQnuQ=
+
+strict-uri-encode@^2.0.0:
+  version "2.0.0"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
+  integrity sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
 
 string-length@^3.1.0:
   version "3.1.0"
