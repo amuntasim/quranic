@@ -22,4 +22,5 @@ export type MiscParamList = {
 };
 export type SettingsParamList = {
     SettingsScreen: undefined;
+    test: any;
 };
