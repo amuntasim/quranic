@@ -11,7 +11,6 @@ export default {
     },
     lightBg: {
         color: '#000',
-        tintColor: '#000',
         backgroundColor: '#fff',
     },
     dark: {
@@ -23,7 +22,6 @@ export default {
     },
     darkBg: {
         color: '#fff',
-        tintColor: '#fff',
         backgroundColor: '#000',
     },
 };

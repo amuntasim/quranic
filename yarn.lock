@@ -2561,6 +2561,11 @@ balanced-match@^1.0.0:
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
+base-64@^0.1.0:
+  version "0.1.0"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/base-64/-/base-64-0.1.0.tgz#780a99c84e7d600260361511c4877613bf24f6bb"
+  integrity sha1-eAqZyE59YAJgNhURxId2E78k9rs=
+
 base64-js@^1.1.2, base64-js@^1.2.3, base64-js@^1.3.1:
   version "1.3.1"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/base64-js/-/base64-js-1.3.1.tgz#58ece8cb75dd07e71ed08c736abc5fac4dbf8df1"
@@ -6794,6 +6799,14 @@ react-native-dialogs@^1.0.2:
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/react-native-dialogs/-/react-native-dialogs-1.1.1.tgz#db68fee6f6f654a2ae6fd45d5a75fc23118e4b96"
   integrity sha1-22j+5vb2VKKub9RdWnX8IxGOS5Y=
 
+react-native-fs@^2.16.6:
+  version "2.16.6"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/react-native-fs/-/react-native-fs-2.16.6.tgz#2901789a43210a35a0ef0a098019bbef3af395fd"
+  integrity sha1-KQF4mkMhCjWg7woJgBm77zrzlf0=
+  dependencies:
+    base-64 "^0.1.0"
+    utf8 "^3.0.0"
+
 react-native-gesture-handler@~1.7.0:
   version "1.7.0"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/react-native-gesture-handler/-/react-native-gesture-handler-1.7.0.tgz#0ef74a5ba836832e497dc49eb1ce58baa6c617e5"
@@ -8212,6 +8225,11 @@ use@^3.1.0:
   version "3.1.1"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha1-1QyMrHmhn7wg8pEfVuuXP04QBw8=
+
+utf8@^3.0.0:
+  version "3.0.0"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/utf8/-/utf8-3.0.0.tgz#f052eed1364d696e769ef058b183df88c87f69d1"
+  integrity sha1-8FLu0TZNaW52nvBYsYPfiMh/adE=
 
 utif@^2.0.1:
   version "2.0.1"

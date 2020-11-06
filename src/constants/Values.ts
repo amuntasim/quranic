@@ -1,4 +1,4 @@
 
 export default {
-    defaultLanguage: 'ds',
+    defaultLanguage: 'en',
 };

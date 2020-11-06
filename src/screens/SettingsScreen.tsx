@@ -51,7 +51,7 @@ const SettingsScreen = (props: any) => {
     return (
         <SafeAreaView style={Styles.container}>
             <ScrollView contentContainerStyle={Styles.scrollView}>
-
+                <Text style={Styles.title}>{state.settings.language}</Text>
             </ScrollView>
         </SafeAreaView>
         // <View style={styles.container}>

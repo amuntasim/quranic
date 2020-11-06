@@ -3,14 +3,17 @@ import Styles from '../components/Styles';
 
 import {Text,  View, RowViewText} from '../components/Themed';
 import {SafeAreaView, ScrollView} from "react-native";
-import DefaultPreference from "react-native-default-preference";
-import Constant from "../constants/Values";
+import ChaptersManager from '../managers/ChaptersManager';
 
 export default function ChaptersScreen() {
     const [state, setState] = React.useState({})
     const [chapters, setChapters] = React.useState([]);
     React.useEffect(() => {
-
+        ChaptersManager.baseChapters({}).then(function (_chapters:any){
+            setState({chapters: _chapters});
+            console.log('_chapters >>>');
+            console.log(_chapters);
+        })
         // const initSettings = async () => {
         //     _settings.language = await DefaultPreference.get('language') || Constant.defaultLanguage;
         //     setState({settings: _settings});
