@@ -54,6 +54,12 @@ export function RowViewText(props: TextProps) {
 
     return <DefaultText style={[styles.rowViewContainer, {color}, style]} {...otherProps} />;
 }
+export function RowViewBoxText(props: TextProps) {
+    const {style, lightColor, darkColor, ...otherProps} = props;
+    const color = useThemeColor({light: lightColor, dark: darkColor}, 'text');
+
+    return <DefaultText style={[styles.rowViewContainer, {color}, style]} {...otherProps} />;
+}
 
 const styles = StyleSheet.create({
     rowViewContainer: {

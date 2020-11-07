@@ -16,6 +16,7 @@ export type HomeParamList = {
 
 export type ChaptersParamList = {
     ChaptersScreen: undefined;
+    ChapterDetailScreen: undefined;
 };
 export type MiscParamList = {
     MiscScreen: undefined;

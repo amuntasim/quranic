@@ -1,41 +1,37 @@
 import * as React from 'react';
 import Styles from '../components/Styles';
 
-import {Text,  View, RowViewText} from '../components/Themed';
+import {Text, View, RowViewText} from '../components/Themed';
 import {SafeAreaView, ScrollView} from "react-native";
 import ChaptersManager from '../managers/ChaptersManager';
 
-export default function ChaptersScreen() {
-    const [state, setState] = React.useState({})
+interface StateObject {
+    chapters: any[]
+}
+
+export default function ChaptersScreen(props: any) {
+    const {navigation} = props;
+
+    const _state = {chapters: []} as StateObject;
+
+    const [state, setState] = React.useState(_state)
     const [chapters, setChapters] = React.useState([]);
     React.useEffect(() => {
-        ChaptersManager.baseChapters({}).then(function (_chapters:any){
+        ChaptersManager.baseChapters({}).then(function (_chapters: any) {
             setState({chapters: _chapters});
-            console.log('_chapters >>>');
-            console.log(_chapters);
         })
-        // const initSettings = async () => {
-        //     _settings.language = await DefaultPreference.get('language') || Constant.defaultLanguage;
-        //     setState({settings: _settings});
-        // }
-        // initSettings().then(function(){
-        //     console.log("settings loaded..")
-        // });
     }, [chapters]);
+
+
+    let chapterLists = state.chapters.map(function (chapter) {
+        return <RowViewText key={chapter.name} style={Styles.rowViewBox} onPress={() => navigation.navigate('ChapterDetailScreen', {chapterName: chapter.name, path: chapter.path})}>{chapter.name}</RowViewText>;
+    })
+
     return (
         <SafeAreaView style={Styles.container}>
             <ScrollView contentContainerStyle={Styles.scrollView}>
-            <RowViewText style={Styles.rowView}>Scroll me plz</RowViewText>
-            <RowViewText style={Styles.rowView}>Scroll me plz</RowViewText>
-            <RowViewText style={Styles.rowView}>Scroll me plz</RowViewText>
-            <RowViewText style={Styles.rowView}>Scroll me plz</RowViewText>
-            <RowViewText style={Styles.rowView}>Scroll me plz</RowViewText>
-            <RowViewText style={Styles.rowView}>Scroll me plz</RowViewText>
-                <RowViewText style={Styles.rowView}>....</RowViewText>
-                <RowViewText style={Styles.rowView}>....</RowViewText>
-                <RowViewText style={Styles.rowView}>....</RowViewText>
-            <RowViewText style={Styles.rowView}>Scroll me plz</RowViewText>
-        </ScrollView>
+                {chapterLists}
+            </ScrollView>
         </SafeAreaView>
     );
 }

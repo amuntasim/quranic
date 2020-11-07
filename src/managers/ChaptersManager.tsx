@@ -5,21 +5,49 @@ import PreferenceManager from './PreferenceManager';
 
 
 async function baseChapters(opts: any) {
-    const rootPath = Platform.OS === 'ios' ? RNFS.MainBundlePath : RNFS.DocumentDirectoryPath;
-    const chaptersPath = opts.path ? opts.path : await _baseChapterspath();
-    console.log('rootPath')
-    console.log(rootPath)
-    const dirs = await RNFS.readDir(rootPath);
-    console.log(dirs);
-    return dirs;
+    // const rootPath = Platform.OS === 'ios' ? RNFS.MainBundlePath : RNFS.DocumentDirectoryPath;
+    const chapters = await RNFS.readDirAssets(await _baseChapterspath());
+    console.log(chapters)
+    // const dirs = await RNFS.readDir(RNFS.DocumentDirectoryPath)
+    // let assetsExist =    await RNFS.existsAssets('test2.txt')
+    //    console.log(assetsExist, 'test2.txt')
+    // assetsExist =    await RNFS.existsAssets('chapters/test.txt')
+    //    console.log(assetsExist)
+
+    // RNFS.readFileAssets('test2.txt').then((res) => {
+    //     console.log('read file res: ', res);
+    // })
+    //
+    // RNFS.readFileAssets('./chapters/test.txt').then((res) => {
+    //     console.log('read file res: ', res);
+    // })
+
+    // RNFS.readFileAssets(chaptersPath+'test.txt').then((res) => {
+    //     console.log('read file res: ', res);
+    // })
+    //
+    // RNFS.downloadFile({
+    //     fromUrl: 'https://facebook.github.io/react-native/img/header_logo.png',
+    //     toFile: `${RNFS.DocumentDirectoryPath}/react-native.png`,
+    // }).promise.then((r) => {
+    //     console.log("download complete")
+    // });
+    return chapters;
+}
+
+async function chapterDetail(opts: any) {
+    const index = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/index.json'));
+    const sections = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/sections.json'));
+    return {index, sections};
 }
 
 async function _baseChapterspath() {
     const language = await PreferenceManager.languagePref();
-    return `/data/chapters/${language}`;
+    return `chapters/${language}`;
 }
 
-export default  {
-    baseChapters: baseChapters,
+export default {
+    baseChapters,
+    chapterDetail,
 };
 

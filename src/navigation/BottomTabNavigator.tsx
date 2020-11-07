@@ -9,6 +9,8 @@ import HomeScreen from '../screens/HomeScreen';
 import ChaptersScreen from '../screens/ChaptersScreen';
 import MiscScreen from '../screens/MiscScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ChapterDetailScreen from '../screens/ChapterDetailScreen';
+
 
 import {BottomTabParamList, HomeParamList, ChaptersParamList, MiscParamList, SettingsParamList} from '../types';
 
@@ -84,6 +86,11 @@ function ChaptersNavigator() {
                 name="ChaptersScreen"
                 component={ChaptersScreen}
                 options={{headerTitle: 'Chapters'}}
+            />
+            <ChaptersStack.Screen
+                name="ChapterDetailScreen"
+                component={ChapterDetailScreen}
+                options={{headerTitle: 'ChapterDetail'}}
             />
         </ChaptersStack.Navigator>
     );
