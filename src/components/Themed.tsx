@@ -1,6 +1,9 @@
 import * as React from 'react';
 import {StyleSheet} from 'react-native';
-import {Text as DefaultText, View as DefaultView, ScrollView as DefaultScrollView} from 'react-native';
+import {
+    Text as DefaultText, View as DefaultView, ScrollView as DefaultScrollView,
+    Button as DefaultButton
+} from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -26,6 +29,12 @@ type ThemeProps = {
 
 export type TextProps = ThemeProps & DefaultText['props'];
 export type ViewProps = ThemeProps & DefaultView['props'];
+export type ButtonProps = ThemeProps & DefaultButton['props'];
+
+export function Button(props: ButtonProps) {
+
+    return <DefaultButton  {...props} />;
+}
 
 export function Text(props: TextProps) {
     const {style, lightColor, darkColor, ...otherProps} = props;
@@ -54,6 +63,7 @@ export function RowViewText(props: TextProps) {
 
     return <DefaultText style={[styles.rowViewContainer, {color}, style]} {...otherProps} />;
 }
+
 export function RowViewBoxText(props: TextProps) {
     const {style, lightColor, darkColor, ...otherProps} = props;
     const color = useThemeColor({light: lightColor, dark: darkColor}, 'text');

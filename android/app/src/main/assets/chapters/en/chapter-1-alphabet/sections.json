@@ -30,6 +30,15 @@
         "body": " ب ت ث ج ح خ  د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن  ه "
       }
     ]
+  },
+  {
+    "title": "Sun letters and moon letters",
+    "type": "assessment",
+    "assessmentName": "SunMoonLetter",
+    "input": {
+      "sunLetter": "ت ,ث ,د ,ذ ,ر ,ز ,س ,ش ,ص ,ض ,ط ,ظ ,ل ,ن",
+      "moonLetter": "أ ,ب ,ج ,ح ,خ ,ع ,غ  ,ف ,ق ,ك ,م ,و ,ه ,ي"
+    }
   }
 ]
 
