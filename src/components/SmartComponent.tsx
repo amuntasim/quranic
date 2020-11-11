@@ -4,6 +4,7 @@ import Styles from '../components/Styles';
 
 const Assessments = {
     "SunMoonLetter": require('../components/assessments/SunMoonLetter').default,
+    "IdentifyIsm": require('../components/assessments/IdentifyIsm').default,
 };
 
 function _contentSegment(data: any, index: number) {
@@ -28,7 +29,7 @@ function _assessmentSection(data: any, index: number) {
         <View key={'assessment-' + index}>
             <Text style={Styles.title}> {data.title}</Text>
             <View>
-                <Assessment key={data.assessmentName} input={data.input}/>
+                <Assessment key={data.assessmentName} data={data}/>
             </View>
         </View>
     );

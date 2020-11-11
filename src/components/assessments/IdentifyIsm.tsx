@@ -8,13 +8,12 @@ import {
 } from 'react-native';
 import Styles from '../../components/Styles';
 
-
-export default function SunMoonLetter(props: any) {
+export default function IdentifyIsm(props: any) {
     if (!props.data && !props.data.input) {
         return (<View/>);
     }
 
-    const [isVisible, setVisible] = React.useState(false); // By default won't show
+    const [isVisible, setVisible] = React.useState(false);
 
     const startAssessment = () => {
         setVisible(true)
@@ -37,7 +36,7 @@ export default function SunMoonLetter(props: any) {
                           setVisible(false)
                       }}> Close </Text>
             </Modal>
-            <Text style={Styles.title}> {'Assessment'} </Text>
+            <Text style={Styles.title}> Assessment</Text>
 
             <TouchableOpacity
                 style={Styles.button}
@@ -51,30 +50,34 @@ export default function SunMoonLetter(props: any) {
 
 function Question(props: any) {
     const {data} = props;
-    const [sampledChar, setSampledChar] = React.useState('');
+    const [currentSentenceIndex, setCurrentSentenceIndex] = React.useState(0);
+    const [sampledWord, setSampledWord] = React.useState('');
     const [selectedType, setSelectedType] = React.useState('');
     const [answered, setAnswered] = React.useState(false);
     const [correctAnswer, setCorrectAnswer] = React.useState(false);
 
-    const sunLetters = data['input']['sunLetter'].split(',');
-    const moonLetters = data['input']['moonLetter'].split(',');
+    const sentenceCount = data['input'].length
+
     const shuffleQuestion = () => {
         const toss = Math.floor(Math.random() * 2);
-        let char: string;
-        let selectedType: string;
+        const currentSentence = data['input'][currentSentenceIndex]
+        const ismWords = currentSentence['ism'].split(',');
+        const otherWords = currentSentence['other'].split(',');
+
+        let word: string;
 
         if (toss == 0) {//Sun letter
-            char = sunLetters[Math.floor(Math.random() * sunLetters.length)]
-            selectedType = "sun"
+            word = ismWords[Math.floor(Math.random() * ismWords.length)]
+            setSelectedType('ism');
         } else {
-            char = moonLetters[Math.floor(Math.random() * moonLetters.length)];
-            selectedType = "moon";
+            word = otherWords[Math.floor(Math.random() * otherWords.length)];
+            setSelectedType('other');
         }
-        setSelectedType(selectedType);
         setAnswered(false);
         setCorrectAnswer(false);
-        setSampledChar(char);
+        setSampledWord(word);
     }
+
     React.useEffect(() => {
         shuffleQuestion();
     }, []);
@@ -84,14 +87,30 @@ function Question(props: any) {
         setCorrectAnswer(answer);
         setAnswered(true)
     }
+
+    const nextSentence = () => {
+        if (currentSentenceIndex < (sentenceCount - 1)) {
+            setCurrentSentenceIndex(currentSentenceIndex + 1)
+        }else {
+            setCurrentSentenceIndex(0)
+        }
+        shuffleQuestion();
+    }
+
     return (
         <View style={Styles.basicContainer}>
 
             <View style={Styles.rowJustified}>
+                <Text style={Styles.paragraph}>{data['input'][currentSentenceIndex]['sentence']}</Text>
+            </View>
+
+            <View style={Styles.rowJustified}>
                 <Text style={Styles.paragraph}>{data['questionTitle']}</Text>
             </View>
+
             <View style={Styles.rowJustified}>
-                <Text style={Styles.paragraph}> {sampledChar}</Text>
+                <Text style={Styles.paragraph}> {sampledWord}</Text>
+                <Text>    </Text>
                 <View style={Styles.label}>
                     {answered && correctAnswer ?
                         <Ionicons name={'ios-checkmark'} size={45} style={Styles.greenColor}/> : null}
@@ -104,9 +123,11 @@ function Question(props: any) {
                                       onPress={() => shuffleQuestion()}/> : null}
             </View>
             <View style={Styles.rowJustified}>
-                <Text style={[Styles.label, Styles.textButton]} onPress={() => updateResult("sun")}>Sun letter</Text>
+                <Text style={Styles.textButton} onPress={() => updateResult("ism")}>Ism</Text>
                 <Text> </Text>
-                <Text style={[Styles.label, Styles.textButton]} onPress={() => updateResult("moon")}>Moon letter</Text>
+                <Text style={Styles.textButton} onPress={() => updateResult("other")}>Other</Text>
+                <Text> </Text>
+                <Text style={Styles.textButton} onPress={() => nextSentence()}>{"Next >>"}</Text>
             </View>
         </View>
     );

@@ -38,13 +38,18 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         borderColor: Colors.lightBg.color,
         borderWidth: 1,
-        padding: 10,
+        paddingTop: 5,
+        paddingBottom: 5,
+        paddingLeft: 15,
+        paddingRight: 15,
+        borderRadius: 5,
     },
 
     paragraph: {
         ...Colors.lightBg,
-        fontSize: 16,
+        fontSize: 20,
         paddingBottom: 10,
+        marginTop: 10,
         textAlign: "justify"
     },
 
@@ -91,6 +96,7 @@ export default StyleSheet.create({
 
     scrollView: {
         alignItems: 'center',
+        paddingBottom: 40
     },
     button: {
         display: 'flex',
