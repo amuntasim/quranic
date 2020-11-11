@@ -5,6 +5,7 @@ import Styles from '../components/Styles';
 const Assessments = {
     "SunMoonLetter": require('../components/assessments/SunMoonLetter').default,
     "IdentifyIsm": require('../components/assessments/IdentifyIsm').default,
+    "IdentifyIrab": require('../components/assessments/IdentifyIrab').default,
 };
 
 function _contentSegment(data: any, index: number) {

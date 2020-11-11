@@ -1,10 +1,10 @@
 [
   {
-    "title": "Words",
+    "title": "Title",
     "content": [
       {
         "meta": {},
-        "body": "Three types of word"
+        "body": "content..."
       },
       {
         "body": ""
@@ -15,10 +15,10 @@
     ]
   },
   {
-    "title": "Identify Ism (اِسْمٌ)",
+    "title": "Identify I'rab (الْإِعْرَابٌُ)",
     "type": "assessment",
-    "assessmentName": "IdentifyIsm",
-    "questionTitle": "Identify the category of the following word",
+    "assessmentName": "IdentifyIrab",
+    "questionTitle": "I'rab of the following word in the sentence",
     "input": [
       {
         "sentence": "وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا (2:31)",
