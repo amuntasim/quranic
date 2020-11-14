@@ -1,6 +1,7 @@
 import {RowViewText, Text, View} from '../components/Themed';
 import * as React from 'react';
 import Styles from '../components/Styles';
+import {Modal, TouchableOpacity} from "react-native";
 
 const Assessments = {
     "SunMoonLetter": require('../components/assessments/SunMoonLetter').default,
@@ -24,13 +25,39 @@ function _contentSegment(data: any, index: number) {
 }
 
 function _assessmentSection(data: any, index: number) {
+    const [isVisible, setVisible] = React.useState(false);
+
+    const startAssessment = () => {
+        setVisible(true)
+    }
     // @ts-ignore
     const Assessment = Assessments[data.assessmentName];
     return (
         <View key={'assessment-' + index}>
             <Text style={Styles.title}> {data.title}</Text>
             <View>
-                <Assessment key={data.assessmentName} data={data}/>
+                <Modal
+                    animationType={"slide"}
+                    transparent={false}
+                    visible={isVisible}
+                    onRequestClose={() => {
+                        console.log("Closed")
+                    }}>
+
+                    <Assessment data={data}/>
+
+                    <Text style={Styles.closeText}
+                          onPress={() => {
+                              setVisible(false)
+                          }}> Close </Text>
+                </Modal>
+                <Text style={Styles.title}> Assessment</Text>
+
+                <TouchableOpacity
+                    style={Styles.button}
+                    onPress={startAssessment}>
+                    <Text style={Styles.buttonText}>Start</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );

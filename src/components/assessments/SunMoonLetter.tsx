@@ -1,8 +1,6 @@
 import * as React from 'react';
 import {Ionicons} from '@expo/vector-icons';
 import {
-    TouchableOpacity,
-    Modal,
     View,
     Text
 } from 'react-native';
@@ -10,47 +8,12 @@ import Styles from '../../components/Styles';
 
 
 export default function SunMoonLetter(props: any) {
-    if (!props.data && !props.data.input) {
+    const {data} = props;
+
+    if (!data && !data.input) {
         return (<View/>);
     }
 
-    const [isVisible, setVisible] = React.useState(false); // By default won't show
-
-    const startAssessment = () => {
-        setVisible(true)
-    }
-
-    return (
-        <View>
-            <Modal
-                animationType={"slide"}
-                transparent={false}
-                visible={isVisible}
-                onRequestClose={() => {
-                    console.log("Closed")
-                }}>
-
-                <Question data={props.data}/>
-
-                <Text style={Styles.closeText}
-                      onPress={() => {
-                          setVisible(false)
-                      }}> Close </Text>
-            </Modal>
-            <Text style={Styles.title}> {'Assessment'} </Text>
-
-            <TouchableOpacity
-                style={Styles.button}
-                onPress={startAssessment}>
-                <Text style={Styles.buttonText}>Start</Text>
-            </TouchableOpacity>
-        </View>
-    );
-}
-
-
-function Question(props: any) {
-    const {data} = props;
     const [sampledChar, setSampledChar] = React.useState('');
     const [selectedType, setSelectedType] = React.useState('');
     const [answered, setAnswered] = React.useState(false);
@@ -111,4 +74,3 @@ function Question(props: any) {
         </View>
     );
 }
-

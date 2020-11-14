@@ -95,7 +95,6 @@ export default StyleSheet.create({
     },
 
     scrollView: {
-        alignItems: 'center',
         paddingBottom: 40
     },
     button: {
