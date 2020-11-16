@@ -4,6 +4,7 @@ import Styles from '../components/Styles';
 import {Modal, TouchableOpacity} from "react-native";
 
 const Assessments = {
+    "MuslimunChart": require('../components/assessments/MuslimunChart').default,
     "SunMoonLetter": require('../components/assessments/SunMoonLetter').default,
     "IdentifyIsm": require('../components/assessments/IdentifyIsm').default,
     "IdentifyIrab": require('../components/assessments/IdentifyIrab').default,
@@ -70,7 +71,7 @@ export function ChapterDetailContent(props: any) {
 
     const data = JSON.parse(props.content);
     let contents = data.map(function (section: any, index: number) {
-        if (section.type == "assessment") {
+        if (section['type'] == "assessment") {
             return _assessmentSection(section, index)
         }
         return _contentSegment(section, index);

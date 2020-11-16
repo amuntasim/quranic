@@ -6854,6 +6854,11 @@ react-native-settings-screen@^2.2.1:
   dependencies:
     styled-components "^3.4.9"
 
+react-native-table-component@^1.2.1:
+  version "1.2.1"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/react-native-table-component/-/react-native-table-component-1.2.1.tgz#5f1e0f159b1dff9df0d5601c4a5ab99d1aa99a25"
+  integrity sha1-Xx4PFZsd/53w1WAcSlq5nRqpmiU=
+
 react-native-unimodules@~0.11.0:
   version "0.11.0"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/react-native-unimodules/-/react-native-unimodules-0.11.0.tgz#78483ee4e7eb27b439d34c3ba7455f40087ff166"

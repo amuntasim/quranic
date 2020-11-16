@@ -168,5 +168,12 @@ export default StyleSheet.create({
     },
     grayColor: {
         color: "#666666",
-    }
+    },
+    tableContainer: {flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff'},
+    tableHead: {height: 40, backgroundColor: '#f1f8ff'},
+    tableWrapper: {flexDirection: 'row'},
+    tableTitle: {flex: 1, backgroundColor: '#f6f8fa'},
+    tableRow: {height: 28},
+    tableText: {textAlign: 'center'},
+    tableTextBold: {textAlign: 'center', fontWeight: 'bold'}
 });
