@@ -1,16 +1,16 @@
 [
   {
     "title": "Title",
-    "content": [
+
+    "contents": [
       {
-        "meta": {},
-        "body": "content..."
+        "content": "content..."
       },
       {
-        "body": ""
+        "content": "second line content second line content second line content second line content second line content "
       },
       {
-        "body": ""
+        "content": "Third line content Third line content Third line content Third line content Third line content"
       }
     ]
   },
@@ -19,7 +19,7 @@
     "type": "assessment",
     "assessmentName": "MuslimunChart",
     "questionTitle": "Complete the chart for the following word",
-    "input": ["مُسْلِـمٌ", "نَاصِـرٌ", "سَاجِـدٌ"]
+    "input": ["مُسْلِـمٌ", "نَاصِـرٌ", "سَاجِـدٌ", "صادِقٌ"]
   }
 ]
 

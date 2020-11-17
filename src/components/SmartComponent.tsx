@@ -11,8 +11,8 @@ const Assessments = {
 };
 
 function _contentSegment(data: any, index: number) {
-    let contents = data.content.map(function (section: any, _index: number) {
-        return <Text key={'segment-' + _index + _index} style={Styles.paragraph}> {section.body}</Text>;
+    let contents = data.contents.map(function (section: any, _index: number) {
+        return <Text key={'segment-' + _index + _index} style={Styles.paragraph}>{section.section}</Text>;
     })
 
     return (
@@ -41,6 +41,7 @@ function _assessmentSection(data: any, index: number) {
                     animationType={"slide"}
                     transparent={false}
                     visible={isVisible}
+                    supportedOrientations={['portrait', 'landscape']}
                     onRequestClose={() => {
                         console.log("Closed")
                     }}>

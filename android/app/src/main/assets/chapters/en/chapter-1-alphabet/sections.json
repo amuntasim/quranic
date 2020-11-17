@@ -1,33 +1,32 @@
 [
   {
     "title": "Letter",
-    "content": [
+    "contents": [
       {
-        "meta": {},
-        "body": "28 arabic letters (حَرْفٌ)"
+        "content": "28 arabic letters (حَرْفٌ)"
       },
       {
-        "body": "Usually (ء) is not considered as separate letter"
+        "content": "Usually (ء) is not considered as separate letter"
       },
       {
-        "body": "ا ب ت ث ج ح خ  د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن و ه  ي"
+        "content": "ا ب ت ث ج ح خ  د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن و ه  ي"
       }
     ]
   },
   {
     "title": "Letter Types",
-    "content": [
+    "contents": [
       {
-        "body": "(1) Vowel (حَرْفُ عِلَّةٍ)"
+        "content": "(1) Vowel (حَرْفُ عِلَّةٍ)"
       },
       {
-        "body": " و ا ي"
+        "content": " و ا ي"
       },
       {
-        "body": "(2) Consonant (حَرْفٌ صَحِيْحٌ)"
+        "content": "(2) Consonant (حَرْفٌ صَحِيْحٌ)"
       },
       {
-        "body": " ب ت ث ج ح خ  د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن  ه "
+        "content": " ب ت ث ج ح خ  د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن  ه "
       }
     ]
   },

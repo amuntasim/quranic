@@ -1,16 +1,16 @@
 [
   {
     "title": "Title",
-    "content": [
+    "contents": [
       {
         "meta": {},
-        "body": "content..."
+        "content": "content..."
       },
       {
-        "body": ""
+        "content": ""
       },
       {
-        "body": ""
+        "content": ""
       }
     ]
   },

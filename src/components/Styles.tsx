@@ -28,13 +28,13 @@ export default StyleSheet.create({
 
     textBold: {
         ...Colors.lightBg,
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: 'bold',
     },
 
     textButton: {
         ...Colors.lightBg,
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: 'bold',
         borderColor: Colors.lightBg.color,
         borderWidth: 1,
@@ -43,6 +43,19 @@ export default StyleSheet.create({
         paddingLeft: 15,
         paddingRight: 15,
         borderRadius: 5,
+    },
+    textButtonCompact: {
+        ...Colors.lightBg,
+        fontSize: 20,
+        fontWeight: 'bold',
+        borderColor: Colors.lightBg.color,
+        borderWidth: 1,
+        paddingTop: 2,
+        paddingBottom: 2,
+        paddingLeft: 5,
+        paddingRight: 5,
+        borderRadius: 3,
+        margin:1,
     },
 
     paragraph: {
@@ -113,6 +126,24 @@ export default StyleSheet.create({
         },
         shadowRadius: 25,
     },
+    cellButton: {
+        display: 'flex',
+        height: 'auto',
+        borderRadius: 6,
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        width: '90%',
+        backgroundColor: '#2AC062',
+        shadowColor: '#2AC062',
+        shadowOpacity: 0.5,
+        shadowOffset: {
+            height: 10,
+            width: 0
+        },
+        shadowRadius: 25,
+    },
 
     closeButton: {
         display: 'flex',
@@ -150,7 +181,8 @@ export default StyleSheet.create({
     },
     rowJustified: {
         flexDirection: "row",
-        justifyContent: 'center'
+        justifyContent: 'center',
+        flexWrap: 'wrap',
     },
     inputWrap: {
         flex: 1,
@@ -173,7 +205,7 @@ export default StyleSheet.create({
     tableHead: {height: 40, backgroundColor: '#f1f8ff'},
     tableWrapper: {flexDirection: 'row'},
     tableTitle: {flex: 1, backgroundColor: '#f6f8fa'},
-    tableRow: {height: 28},
-    tableText: {textAlign: 'center'},
-    tableTextBold: {textAlign: 'center', fontWeight: 'bold'}
+    tableRow: {height: 32},
+    tableText: {textAlign: 'center',fontSize: 24},
+    tableTextBold: {textAlign: 'center',fontSize: 24, fontWeight: 'bold'}
 });

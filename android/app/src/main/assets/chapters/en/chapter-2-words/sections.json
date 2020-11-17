@@ -1,16 +1,16 @@
 [
   {
     "title": "Words",
-    "content": [
+    "contents": [
       {
         "meta": {},
-        "body": "Three types of word"
+        "content": "Three types of word"
       },
       {
-        "body": ""
+        "content": ""
       },
       {
-        "body": ""
+        "content": ""
       }
     ]
   },
