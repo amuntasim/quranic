@@ -15,7 +15,6 @@ export default function MuslimunChart(props: any) {
     if (!data && !data.input) {
         return (<View/>);
     }
-
     const initialTableContent = {
         tableHead: ['Plural', 'Dual', 'Singular', ''],
         tableTitle: ['RafAa', 'Nasb', 'Jar'],
@@ -63,19 +62,14 @@ export default function MuslimunChart(props: any) {
             '21': sliced + 'ً', '22,32': sliced + 'َيْنِ', '23,33': sliced + 'ِيْنَ',
             '31': sliced + 'ٍ'
         }
-        setWordDetails(shuffle(_wordBreakdown))
+        setWordDetails(_wordBreakdown)
         setCellDataMap(new Map().set('11', word));
         setCurrentCellIndex('21');
         openAnswerOption('21')
-        // this is for triggering useEffect that rerenders table
+        // this is for triggering useEffect that re-renders table
         setRevealedTable(revealedTable + '11');
         setSampledWord(word);
     }
-
-    function shuffle(o:any){ //v1.0
-        for(let j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-        return o;
-    };
 
     const updateTableView = () => {
         const _tableData = [
@@ -114,12 +108,6 @@ export default function MuslimunChart(props: any) {
         }
     }
 
-    const tableDataIndexMap = {
-        '11': [0, 2], '12': [0, 1], '13': [0, 0],
-        '21': [1, 2], '22': [1, 1], '23': [1, 0],
-        '31': [2, 2], '32': [2, 1], '33': [2, 0],
-    }
-
     const _getKeyValue_ = (key: string) => (obj: Record<string, any>) => obj[key];
 
     const updateTableData = (cellData: string) => {
@@ -135,9 +123,9 @@ export default function MuslimunChart(props: any) {
             return;
         }
         if (nextIndex > 33) {
-            setCurrentCellIndex('' + (parseInt(currentCellIndex) + 1 - 20))
+            setCurrentCellIndex((parseInt(currentCellIndex) + 1 - 20).toString())
         }else{
-            setCurrentCellIndex('' + nextIndex)
+            setCurrentCellIndex( nextIndex.toString())
         }
     }
 
