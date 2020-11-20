@@ -1,3 +1,5 @@
+// For chapter 5
+
 import * as React from 'react';
 import {Ionicons} from '@expo/vector-icons';
 import {
@@ -15,6 +17,8 @@ export default function MuslimunChart(props: any) {
     if (!data && !data.input) {
         return (<View/>);
     }
+    const assessmentSubType = data.assessmentSubType
+
     const initialTableContent = {
         tableHead: ['Plural', 'Dual', 'Singular', ''],
         tableTitle: ['RafAa', 'Nasb', 'Jar'],
@@ -53,16 +57,37 @@ export default function MuslimunChart(props: any) {
         setAnswerOption(true)
         setCurrentCellIndex(cellIndex)
     }
-    const shuffleWord = () => {
 
-        const word = data.input[currentWordIndex];
-        const sliced = word.slice(0, -1)
-        const _wordBreakdown = {
-            '11': word, '12': sliced + 'َانِ', '13': sliced + 'ُوْنَ',
+    const wordBreakDown = (baseWord:string) => {
+        if (assessmentSubType == 'sound-feminine') {
+            return soundFeminine(baseWord);
+        }else {
+            return soundMasculine(baseWord);
+        }
+    }
+
+    const soundFeminine = (baseWord:string) => {
+        const sliced = baseWord.slice(0, -2)
+        return  {
+            '11': baseWord, '12': sliced + 'تَانِ', '13': sliced + 'اتٌ',
+            '21': sliced + 'ةً', '22,32': sliced + 'تَيْنِ', '23,33': sliced + 'اتٍ',
+            '31': sliced + 'ةٍ'
+        }
+    }
+
+    const soundMasculine = (baseWord:string) => {
+        const sliced = baseWord.slice(0, -1)
+        return  {
+            '11': baseWord, '12': sliced + 'َانِ', '13': sliced + 'ُوْنَ',
             '21': sliced + 'ً', '22,32': sliced + 'َيْنِ', '23,33': sliced + 'ِيْنَ',
             '31': sliced + 'ٍ'
         }
-        setWordDetails(_wordBreakdown)
+    }
+
+    const shuffleWord = () => {
+
+        const word = data.input[currentWordIndex];
+        setWordDetails(wordBreakDown(word))
         setCellDataMap(new Map().set('11', word));
         setCurrentCellIndex('21');
         openAnswerOption('21')
@@ -104,18 +129,35 @@ export default function MuslimunChart(props: any) {
 
     const matchAnswer = (selectedKeys: string) => {
         if (selectedKeys.includes(currentCellIndex)) {
-            updateTableData(_getKeyValue_(selectedKeys)(wordDetails))
+            handleCorrectAnswer(_getKeyValue_(selectedKeys)(wordDetails))
+        } else {
+            handleWrongAnswer()
         }
     }
 
     const _getKeyValue_ = (key: string) => (obj: Record<string, any>) => obj[key];
 
-    const updateTableData = (cellData: string) => {
+    const handleCorrectAnswer = (cellData: string) => {
         cellDataMap.set(currentCellIndex, cellData);
         setCellDataMap(cellDataMap)
         setRevealedTable(revealedTable + currentCellIndex)
         setNextCellIndex();
     }
+    const wrongAnswerContent = () => {
+        return (
+            <View style={Styles.rowJustified}>
+                <View style={Styles.cellButton}>
+                    <Ionicons name={'ios-close'} size={25} style={Styles.redColor}/>
+                </View>
+            </View>
+        )
+    }
+    const handleWrongAnswer = () => {
+        cellDataMap.set(currentCellIndex, wrongAnswerContent());
+        setCellDataMap(cellDataMap)
+        setRevealedTable(revealedTable + '1')
+    }
+
     const setNextCellIndex = () => {
         let nextIndex = parseInt(currentCellIndex) + 10;
 
@@ -124,8 +166,8 @@ export default function MuslimunChart(props: any) {
         }
         if (nextIndex > 33) {
             setCurrentCellIndex((parseInt(currentCellIndex) + 1 - 20).toString())
-        }else{
-            setCurrentCellIndex( nextIndex.toString())
+        } else {
+            setCurrentCellIndex(nextIndex.toString())
         }
     }
 

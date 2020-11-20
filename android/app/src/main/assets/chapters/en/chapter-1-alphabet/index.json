@@ -1,16 +1,15 @@
 {
   "title": "Arabic Alphabet",
-  "intro": {
-    "sections": [
-      {
-        "content": "Lets start with the Arabic alphabet"
-      },
-      {
-        "content": "More contents.."
-      },
-      {
-        "content": "More contents 33333.. More contents 33333..More contents 33333.. More contents 33333.. "
-      }
-    ]
-  }
+  "contents": [
+    {
+      "content": "Lets start with the Arabic alphabet"
+    },
+    {
+      "content": "More contents.."
+    },
+    {
+      "content": "More contents 33333.. More contents 33333..More contents 33333.. More contents 33333.. "
+    }
+  ]
 }
+

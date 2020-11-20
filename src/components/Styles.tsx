@@ -80,8 +80,8 @@ export default StyleSheet.create({
     title: {
         fontSize: 20,
         fontWeight: 'bold',
-        paddingTop: 10,
-        paddingBottom: 10,
+        marginTop: 50,
+        marginBottom: 10,
     },
 
     separator: {
@@ -200,6 +200,9 @@ export default StyleSheet.create({
     },
     grayColor: {
         color: "#666666",
+    },
+    blankLine: {
+       height: 30
     },
     tableContainer: {flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff'},
     tableHead: {height: 40, backgroundColor: '#f1f8ff'},

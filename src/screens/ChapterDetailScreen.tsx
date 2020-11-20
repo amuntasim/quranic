@@ -3,7 +3,7 @@ import Styles from '../components/Styles';
 
 import {SafeAreaView, ScrollView} from 'react-native';
 import ChaptersManager from "../managers/ChaptersManager";
-import {ChapterDetailIntro, ChapterDetailContent} from "../components/SmartComponent";
+import {ChapterDetailIntro, ChapterDetailContent, ChapterAssessment} from "../components/SmartComponent";
 
 interface StateObject {
     chapter: any
@@ -28,8 +28,9 @@ export default function ChapterDetailScreen(props: any) {
     return (
         <SafeAreaView style={Styles.basicContainer}>
             <ScrollView contentContainerStyle={Styles.scrollView}>
-            <ChapterDetailIntro content={state.chapter.index}/>
+            <ChapterDetailIntro data={state.chapter.index}/>
             <ChapterDetailContent content={state.chapter.sections}/>
+            <ChapterAssessment content={state.chapter.assessments}/>
             </ScrollView>
         </SafeAreaView>
     );

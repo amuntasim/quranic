@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Identify Ism (اِسْمٌ)",
+    "type": "assessment",
+    "assessmentName": "IdentifyIsm",
+    "questionTitle": "Identify the category of the following word",
+    "input": [
+      {
+        "sentence": "وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا (2:31)",
+        "ism": "هَا, الْأَسْمَاءَ,آدَمَ",
+        "other": "وَ,عَلَّم, كُل"
+      },
+      {
+        "sentence": "وَنَبِّئْهُمْ عَن ضَيْفِ إِبْرَاهِيمَ  (15:51)",
+        "ism": "هُم, ضَيْفِ,إِبْرَاهِيمَ",
+        "other": "وَ,نَبِّئْ, عَن"
+      },
+      {
+        "sentence": "هَلْ أَتَاكَ حَدِيثُ مُوسَىٰ  (79:15)",
+        "ism": "ك, حَدِيثُ,مُوسَىٰ",
+        "other": "هَلْ, أَتَا"
+      }
+    ]
+  }
+]

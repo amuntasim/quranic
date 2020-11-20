@@ -30,15 +30,23 @@
       }
     ]
   },
+
   {
-    "title": "Sun letters and moon letters",
-    "type": "assessment",
-    "assessmentName": "SunMoonLetter",
-    "questionTitle": "What kind of letter is this?",
-    "input": {
-      "sunLetter": "ت ,ث ,د ,ذ ,ر ,ز ,س ,ش ,ص ,ض ,ط ,ظ ,ل ,ن",
-      "moonLetter": "أ ,ب ,ج ,ح ,خ ,ع ,غ  ,ف ,ق ,ك ,م ,و ,ه ,ي"
-    }
+    "title": "Letter Types",
+    "contents": [
+      {
+        "content": "(1) Vowel (حَرْفُ عِلَّةٍ)"
+      },
+      {
+        "content": " و ا ي"
+      },
+      {
+        "content": "(2) Consonant (حَرْفٌ صَحِيْحٌ)"
+      },
+      {
+        "content": " ب ت ث ج ح خ  د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن  ه "
+      }
+    ]
   }
 ]
 

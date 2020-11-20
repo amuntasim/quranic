@@ -2,6 +2,7 @@ import {RowViewText, Text, View} from '../components/Themed';
 import * as React from 'react';
 import Styles from '../components/Styles';
 import {Modal, TouchableOpacity} from "react-native";
+import {Col, Row, Rows, Table, TableWrapper} from "react-native-table-component";
 
 const Assessments = {
     "MuslimunChart": require('../components/assessments/MuslimunChart').default,
@@ -10,9 +11,21 @@ const Assessments = {
     "IdentifyIrab": require('../components/assessments/IdentifyIrab').default,
 };
 
+function tableData(data: any, index:number){
+   const tableData =  data.content.map( (row:any) => row['row'])
+    return (
+        <Table key={index} borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
+            <Row data={data.heading} style={Styles.tableHead} textStyle={Styles.tableText}/>
+            <Rows data={tableData} textStyle={Styles.tableText}/>
+        </Table>
+    )
+}
 function _contentSegment(data: any, index: number) {
     let contents = data.contents.map(function (section: any, _index: number) {
-        return <Text key={'segment-' + _index + _index} style={Styles.paragraph}>{section.section}</Text>;
+        if(section.type === 'table'){
+            return tableData(section, _index)
+        }
+        return <Text key={'segment-' + _index + _index} style={Styles.paragraph}>{section.content}</Text>;
     })
 
     return (
@@ -72,9 +85,9 @@ export function ChapterDetailContent(props: any) {
 
     const data = JSON.parse(props.content);
     let contents = data.map(function (section: any, index: number) {
-        if (section['type'] == "assessment") {
-            return _assessmentSection(section, index)
-        }
+        // if (section['type'] == "blank") {
+        //     return <View key={'segment-' + index} style={Styles.blankLine}></View>
+        // }
         return _contentSegment(section, index);
     })
 
@@ -85,19 +98,36 @@ export function ChapterDetailContent(props: any) {
     );
 }
 
-export function ChapterDetailIntro(props: any) {
+export function ChapterAssessment(props: any) {
     if (!props.content) {
         return (<View/>);
     }
-    const content = JSON.parse(props.content);
-    let contents = content.intro.sections.map(function (section: any, index: number) {
+
+    const data = JSON.parse(props.content);
+    let contents = data.map(function (section: any, index: number) {
+        return _assessmentSection(section, index)
+    })
+
+    return (
+        <View>
+            {contents}
+        </View>
+    );
+}
+
+export function ChapterDetailIntro(props: any) {
+    if (!props.data) {
+        return (<View/>);
+    }
+    const data = JSON.parse(props.data);
+    let contents = data.contents.map(function (section: any, index: number) {
         return <Text key={'intro-content-' + index} style={Styles.paragraph}> {section.content}</Text>;
     })
 
     return (
         <View>
             <View style={Styles.centeredView}>
-                <Text style={Styles.title}> {content.title}</Text>
+                <Text style={Styles.title}> {data.title}</Text>
             </View>
             <View>
                 {contents}

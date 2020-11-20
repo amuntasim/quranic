@@ -38,7 +38,11 @@ async function baseChapters(opts: any) {
 async function chapterDetail(opts: any) {
     const index = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/index.json'));
     const sections = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/sections.json'));
-    return {index, sections};
+    let assessments = null
+    try{
+        assessments = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/assessments.json'));
+    } catch(e){}
+    return {index, sections, assessments};
 }
 
 async function _baseChapterspath() {

@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Muslimun chart",
+    "assessmentName": "MuslimunChart",
+    "assessmentSubType": "sound-masculine",
+    "questionTitle": "Complete the chart for the following word",
+    "input": ["مُسْلِـمٌ", "نَاصِـرٌ", "سَاجِـدٌ", "صادِقٌ", "مُؤْمِنٌ", "صَابِرٌ", "مُسْتَغْفِرٌ", "كَافِرٌ", "مُصْلِحٌ"]
+  },
+
+  {
+    "title": "Muslimatun chart",
+    "assessmentName": "MuslimunChart",
+    "assessmentSubType": "sound-feminine",
+    "questionTitle": "Complete the chart for the following word",
+    "input": ["مُسْلِـمَةٌ", "نَاصِـرَةٌ", "سَاجِـدَةٌ", "صادِقَةٌ", "مُؤْمِنَةٌ", "صَابِرَةٌ", "مُسْتَغْفِرَةٌ", "كَافِرَةٌ", "مُصْلِحَةٌ"]
+  }
+]
+

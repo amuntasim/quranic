@@ -13,53 +13,6 @@
         "content": ""
       }
     ]
-  },
-  {
-    "title": "Identify I'rab (الْإِعْرَابٌُ)",
-    "type": "assessment",
-    "assessmentName": "IdentifyIrab",
-    "questionTitle": "I'rab of the following word in the sentence",
-    "input": [
-      {
-        "sentence": "قَتَلَ دَاوُودُ جَالُوتَ",
-        "words": [
-          {
-            "type": "rafAa",
-            "word": "دَاوُودُ"
-          },
-          {
-            "type": "nasb",
-            "word": "جَالُوتَ"
-          }
-        ]
-      },
-      {
-        "sentence": "مُحَمَّدٌ رَسُولُ ٱللَّٰهِ",
-        "words": [
-          {
-            "type": "rafAa",
-            "word": "مُحَمَّدٌ"
-          },
-          {
-            "type": "jar",
-            "word": "ٱللَّٰهِ"
-          }
-        ]
-      },
-      {
-        "sentence": "أَطِيعُواللَّـهَ وَأَطِيعُوٱلرَّسُولَ",
-        "words": [
-          {
-            "type":"nasb",
-            "word": "اللَّـهَ"
-          },
-          {
-            "type":"nasb",
-            "word": "ٱلرَّسُولَ"
-          }
-        ]
-      }
-    ]
   }
 ]
 
