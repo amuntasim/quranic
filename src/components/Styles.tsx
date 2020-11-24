@@ -38,11 +38,12 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         borderColor: Colors.lightBg.color,
         borderWidth: 1,
-        paddingTop: 5,
-        paddingBottom: 5,
-        paddingLeft: 15,
-        paddingRight: 15,
+        paddingTop: 3,
+        paddingBottom: 3,
+        paddingLeft: 10,
+        paddingRight: 10,
         borderRadius: 5,
+        marginBottom: 5
     },
     textButtonCompact: {
         ...Colors.lightBg,
@@ -82,6 +83,7 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 50,
         marginBottom: 10,
+        marginLeft: -3
     },
 
     separator: {

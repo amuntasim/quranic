@@ -58,31 +58,57 @@ export default function MuslimunChart(props: any) {
         setCurrentCellIndex(cellIndex)
     }
 
-    const wordBreakDown = (baseWord:string) => {
-        if (assessmentSubType == 'sound-feminine') {
-            return soundFeminine(baseWord);
-        }else {
-            return soundMasculine(baseWord);
+    const wordBreakDown = (baseWord: string) => {
+        console.log(assessmentSubType)
+        switch (assessmentSubType) {
+            case 'sound-feminine':
+                return soundFeminine(baseWord);
+            case 'sound-feminine-light':
+                return soundFeminineLight(baseWord);
+            case 'sound-masculine-light':
+                return soundMasculineLight(baseWord);
+            default:
+                return soundMasculine(baseWord);
         }
     }
 
-    const soundFeminine = (baseWord:string) => {
+    const soundMasculine = (baseWord: string) => {
+        const sliced = baseWord.slice(0, -1)
+        return {
+            '11': baseWord, '12': sliced + 'َانِ', '13': sliced + 'ُوْنَ',
+            '21': sliced + 'ً', '22,32': sliced + 'َيْنِ', '23,33': sliced + 'ِيْنَ',
+            '31': sliced + 'ٍ'
+        }
+    }
+
+    const soundFeminine = (baseWord: string) => {
         const sliced = baseWord.slice(0, -2)
-        return  {
+        return {
             '11': baseWord, '12': sliced + 'تَانِ', '13': sliced + 'اتٌ',
             '21': sliced + 'ةً', '22,32': sliced + 'تَيْنِ', '23,33': sliced + 'اتٍ',
             '31': sliced + 'ةٍ'
         }
     }
 
-    const soundMasculine = (baseWord:string) => {
-        const sliced = baseWord.slice(0, -1)
-        return  {
-            '11': baseWord, '12': sliced + 'َانِ', '13': sliced + 'ُوْنَ',
-            '21': sliced + 'ً', '22,32': sliced + 'َيْنِ', '23,33': sliced + 'ِيْنَ',
-            '31': sliced + 'ٍ'
+    const soundFeminineLight = (baseWord: string) => {
+        const sliced = baseWord.slice(0, -2)
+        return {
+            '11': baseWord, '12': sliced + 'تَا', '13': sliced + 'اتَ',
+            '21': sliced + 'ةَ', '22,32': sliced + 'تَيْ', '23,33': sliced + 'اتِ',
+            '31': sliced + 'ةِ'
         }
     }
+
+    const soundMasculineLight = (baseWord: string) => {
+        console.log(baseWord)
+        const sliced = baseWord.slice(0, -1)
+        return {
+            '11': baseWord, '12': sliced + 'َا', '13': sliced + 'ُوْ',
+            '21': sliced + 'َ', '22,32': sliced + 'َيْ', '23,33': sliced + 'ِيْ',
+            '31': sliced + 'ِ'
+        }
+    }
+
 
     const shuffleWord = () => {
 

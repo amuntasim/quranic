@@ -1,14 +1,15 @@
-import {RowViewText, Text, View} from '../components/Themed';
 import * as React from 'react';
 import Styles from '../components/Styles';
 import {Modal, TouchableOpacity} from "react-native";
-import {Col, Row, Rows, Table, TableWrapper} from "react-native-table-component";
+import {Row, Rows, Table} from "react-native-table-component";
 
 const Assessments = {
     "MuslimunChart": require('../components/assessments/MuslimunChart').default,
     "SunMoonLetter": require('../components/assessments/SunMoonLetter').default,
     "IdentifyIsm": require('../components/assessments/IdentifyIsm').default,
     "IdentifyIrab": require('../components/assessments/IdentifyIrab').default,
+    "IsmLightness": require('../components/assessments/IsmLightness').default,
+    "IdentifyGins": require('../components/assessments/IdentifyGins').default,
 };
 
 function tableData(data: any, index:number){
@@ -66,12 +67,11 @@ function _assessmentSection(data: any, index: number) {
                               setVisible(false)
                           }}> Close </Text>
                 </Modal>
-                <Text style={Styles.title}> Assessment</Text>
 
                 <TouchableOpacity
                     style={Styles.button}
                     onPress={startAssessment}>
-                    <Text style={Styles.buttonText}>Start</Text>
+                    <Text style={Styles.buttonText}>Start Assessment</Text>
                 </TouchableOpacity>
             </View>
         </View>
