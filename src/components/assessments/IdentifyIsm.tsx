@@ -72,7 +72,7 @@ export default function IdentifyIsm(props: any) {
             </View>
 
             <View style={Styles.rowJustified}>
-                <Text style={Styles.paragraph}> {sampledWord}</Text>
+                <Text style={[Styles.paragraph, Styles.tableTextBold]}> {sampledWord}</Text>
                 <Text>    </Text>
                 <View style={Styles.label}>
                     {answered && correctAnswer ?

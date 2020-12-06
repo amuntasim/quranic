@@ -54,7 +54,7 @@ export default function SunMoonLetter(props: any) {
                 <Text style={Styles.paragraph}>{data['questionTitle']}</Text>
             </View>
             <View style={Styles.rowJustified}>
-                <Text style={Styles.paragraph}> {sampledChar}</Text>
+                <Text style={[Styles.paragraph, Styles.tableTextBold]}> {sampledChar}</Text>
                 <View style={Styles.label}>
                     {answered && correctAnswer ?
                         <Ionicons name={'ios-checkmark'} size={45} style={Styles.greenColor}/> : null}

@@ -20,6 +20,7 @@ export type ChaptersParamList = {
 };
 export type MiscParamList = {
     MiscScreen: undefined;
+    AssessmentListScreen: undefined;
 };
 export type SettingsParamList = {
     SettingsScreen: undefined;

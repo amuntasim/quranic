@@ -40,7 +40,7 @@ async function chapterDetail(opts: any) {
     const sections = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/sections.json'));
     let assessments = null
     try{
-        assessments = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/assessments.json'));
+        // assessments = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/assessments.json'));
     } catch(e){}
     return {index, sections, assessments};
 }

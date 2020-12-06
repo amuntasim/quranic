@@ -10,6 +10,7 @@ import ChaptersScreen from '../screens/ChaptersScreen';
 import MiscScreen from '../screens/MiscScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import ChapterDetailScreen from '../screens/ChapterDetailScreen';
+import AssessmentListScreen from '../screens/AssessmentListScreen';
 
 
 import {BottomTabParamList, HomeParamList, ChaptersParamList, MiscParamList, SettingsParamList} from '../types';
@@ -104,6 +105,11 @@ function MiscNavigator() {
                 name="MiscScreen"
                 component={MiscScreen}
                 options={{headerTitle: 'Misc'}}
+            />
+            <MiscStack.Screen
+                name="AssessmentListScreen"
+                component={AssessmentListScreen}
+                options={{headerTitle: 'Assessments'}}
             />
         </MiscStack.Navigator>
     );

@@ -30,7 +30,7 @@ export default function ChapterDetailScreen(props: any) {
             <ScrollView contentContainerStyle={Styles.scrollView}>
             <ChapterDetailIntro data={state.chapter.index}/>
             <ChapterDetailContent content={state.chapter.sections}/>
-            <ChapterAssessment content={state.chapter.assessments}/>
+            {/*<ChapterAssessment content={state.chapter.assessments}/>*/}
             </ScrollView>
         </SafeAreaView>
     );

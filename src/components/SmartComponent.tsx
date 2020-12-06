@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Styles from '../components/Styles';
-import {Modal, TouchableOpacity} from "react-native";
+import {Modal, TouchableOpacity, View, Text} from "react-native";
 import {Row, Rows, Table} from "react-native-table-component";
 
 const Assessments = {

@@ -56,7 +56,7 @@ export default StyleSheet.create({
         paddingLeft: 5,
         paddingRight: 5,
         borderRadius: 3,
-        margin:1,
+        margin: 1,
     },
 
     paragraph: {
@@ -83,7 +83,6 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 50,
         marginBottom: 10,
-        marginLeft: -3
     },
 
     separator: {
@@ -204,13 +203,31 @@ export default StyleSheet.create({
         color: "#666666",
     },
     blankLine: {
-       height: 30
+        height: 30
     },
     tableContainer: {flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff'},
     tableHead: {height: 40, backgroundColor: '#f1f8ff'},
     tableWrapper: {flexDirection: 'row'},
     tableTitle: {flex: 1, backgroundColor: '#f6f8fa'},
     tableRow: {height: 32},
-    tableText: {textAlign: 'center',fontSize: 24},
-    tableTextBold: {textAlign: 'center',fontSize: 24, fontWeight: 'bold'}
+    tableText: {textAlign: 'center', fontSize: 24},
+    tableTextBold: {textAlign: 'center', fontSize: 24, fontWeight: 'bold'},
+
+    leftMargin: {
+        marginLeft: '2%'
+    },
+    miscItem: {
+        borderColor: Colors.lightBg.color,
+        borderWidth: 1,
+        paddingTop: 3,
+        paddingBottom: 3,
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderRadius: 5,
+        marginTop: 10,
+        width: '49%',
+    },
+    miscItemText: {
+        fontSize: 20
+    }
 });
