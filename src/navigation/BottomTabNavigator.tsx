@@ -2,6 +2,7 @@ import {Ionicons} from '@expo/vector-icons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import * as React from 'react';
+import translation from '../../src/services/translation';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -14,12 +15,17 @@ import AssessmentListScreen from '../screens/AssessmentListScreen';
 
 
 import {BottomTabParamList, HomeParamList, ChaptersParamList, MiscParamList, SettingsParamList} from '../types';
+import PreferenceManager from "../managers/PreferenceManager";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
     const colorScheme = useColorScheme();
+    const [refreshedAt, setRefreshedAt] = React.useState(Date.now());
 
+    const reloadTabs = () => {
+        setRefreshedAt(Date.now())
+    }
     return (
         <BottomTab.Navigator
             initialRouteName="Home"
@@ -28,6 +34,7 @@ export default function BottomTabNavigator() {
                 name="Home"
                 component={HomeNavigator}
                 options={{
+                    title: translation.navigation.home,
                     tabBarIcon: ({color}) => <TabBarIcon name="ios-home" color={color}/>,
                 }}
             />
@@ -47,7 +54,7 @@ export default function BottomTabNavigator() {
             />
             <BottomTab.Screen
                 name="Settings"
-                component={SettingsNavigator}
+                children={() => <SettingsNavigator screenData={{reloading: reloadTabs}} />}
                 options={{
                     tabBarIcon: ({color}) => <TabBarIcon name="ios-cog" color={color}/>,
                 }}
@@ -116,13 +123,25 @@ function MiscNavigator() {
 }
 const SettingsStack = createStackNavigator<SettingsParamList>();
 
-function SettingsNavigator() {
+function SettingsNavigator(props: any) {
+    const languageChanged = (language: any) => {
+        console.log("language... ", language)
+        props.screenData.reloading()
+    }
+    const lessonsSourceChanged = (lessonsSource: any) => {
+        console.log("lessonsSource... ", lessonsSource)
+        props.screenData.reloading()
+    }
+
+
     return (
         <SettingsStack.Navigator>
             <SettingsStack.Screen
                 name="SettingsScreen"
                 component={SettingsScreen}
                 options={{headerTitle: 'Settings'}}
+                initialParams={{languageChanged: languageChanged, lessonsSourceChanged: lessonsSourceChanged}}
+
             />
         </SettingsStack.Navigator>
     );

@@ -85,6 +85,12 @@ export default StyleSheet.create({
         marginBottom: 10,
     },
 
+    pageTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 10,
+    },
+
     separator: {
         marginVertical: 30,
         height: 1,
@@ -229,5 +235,14 @@ export default StyleSheet.create({
     },
     miscItemText: {
         fontSize: 20
-    }
+    },
+    link: {
+        marginTop: 15,
+        paddingVertical: 15,
+    },
+    linkText: {
+        fontSize: 14,
+        color: '#2e78b7',
+    },
+
 });

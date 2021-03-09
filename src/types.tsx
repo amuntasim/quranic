@@ -7,7 +7,7 @@ export type BottomTabParamList = {
     Home: undefined;
     Chapters: undefined;
     Misc: undefined;
-    Settings: undefined;
+    Settings: { reloading: any };
 };
 
 export type HomeParamList = {
@@ -23,6 +23,6 @@ export type MiscParamList = {
     AssessmentListScreen: undefined;
 };
 export type SettingsParamList = {
-    SettingsScreen: undefined;
+    SettingsScreen: { languageChanged: any, lessonsSourceChanged: any };
     test: any;
 };
