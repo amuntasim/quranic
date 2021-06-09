@@ -15,6 +15,7 @@ import {
 import LanguageSettings from "../components/LanguageSettings";
 import LessonsSettings from "../components/LessonsSettings";
 import translation from '../../src/services/translation';
+import ContentManager from '../managers/ContentManager';
 
 const wait = (timeout: any) => {
     return new Promise(resolve => {
@@ -46,7 +47,7 @@ const SettingsScreen = (props: any) => {
 
     const languageSelected = (language: string) => {
         if (language != translation.getLanguage()) {
-            PreferenceManager.setLanguagePref(language).then(()=> {
+            PreferenceManager.setLanguagePref(language).then(() => {
                 translation.setLanguage(language);
                 console.log(`Language changed to ${language}`)
                 settings.language = language;
@@ -63,7 +64,11 @@ const SettingsScreen = (props: any) => {
                 settings.lessonsSource = lessonsSource;
                 settings.updatedAt = Date.now();
                 setSettings(settings);
+                ContentManager.lookup(lessonsSource).then((res) => {
+                    console.log('lookup completed')
+                })
                 props.route.params.lessonsSourceChanged(lessonsSource)
+
             })
         }
     }
@@ -112,22 +117,14 @@ const SettingsScreen = (props: any) => {
                     <ListItem.Content>
                         <ListItem.Title>{translation.lessonsSource}</ListItem.Title>
                     </ListItem.Content>
-                    <ListItem.Content right >
-                        <ListItem.Title style={{width: 200}}>{translation.getString(`lessonsSources.${settings.lessonsSource}`)}</ListItem.Title>
+                    <ListItem.Content right>
+                        <ListItem.Title
+                            style={{width: 200}}>{translation.getString(`lessonsSources.${settings.lessonsSource}`)}</ListItem.Title>
                     </ListItem.Content>
                 </ListItem>
 
             </ScrollView>
         </SafeAreaView>
-        // <View style={styles.container}>
-        //     <View style={styles.container}>
-        //         <Text style={styles.title}>Settings</Text>
-        //         <Text style={styles.title}>{state.settings.language}</Text>
-        //     </View>
-        //     <View style={styles.container}>
-        //     </View>
-        //
-        // </View>
     );
 }
 

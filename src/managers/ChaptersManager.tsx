@@ -2,11 +2,12 @@ import * as RNFS from 'react-native-fs';
 
 import {Platform} from 'react-native';
 import PreferenceManager from './PreferenceManager';
+import {readdir} from "react-native-fs";
 
 
 async function baseChapters(opts: any) {
     // const rootPath = Platform.OS === 'ios' ? RNFS.MainBundlePath : RNFS.DocumentDirectoryPath;
-    const chapters = await RNFS.readDirAssets(await _baseChapterspath());
+    const chapters = await RNFS.readdir(await _baseChapterspath());
     console.log(chapters)
     // const dirs = await RNFS.readDir(RNFS.DocumentDirectoryPath)
     // let assetsExist =    await RNFS.existsAssets('test2.txt')
@@ -46,8 +47,10 @@ async function chapterDetail(opts: any) {
 }
 
 async function _baseChapterspath() {
-    const language = await PreferenceManager.languagePref();
-    return `chapters/${language}`;
+    // const language = await PreferenceManager.languagePref();
+    const lessonsSource = await PreferenceManager.lessonsSource();
+    console.log('lessonsSource', lessonsSource)
+    return `${RNFS.DocumentDirectoryPath}/chapters/${lessonsSource}/${lessonsSource}`;
 }
 
 export default {

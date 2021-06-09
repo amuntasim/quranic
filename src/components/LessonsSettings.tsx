@@ -10,8 +10,8 @@ export default function LessonsSettings(props: any) {
 
     const [currentLessonsSource, setCurrentSource] = React.useState(currentSource)
 
-    const languageList = () => {
-        const _languageList = [
+    const lessonsList = () => {
+        const _lessonsList = [
             <ListItem key='lessons-source-title' bottomDivider>
                 <ListItem.Content>
                     <ListItem.Title style={Styles.pageTitle}>{pageTitle}</ListItem.Title>
@@ -19,7 +19,7 @@ export default function LessonsSettings(props: any) {
             </ListItem>
         ]
         for (let sourceKey in sourcesMap) {
-            _languageList.push(
+            _lessonsList.push(
                 <ListItem key={sourceKey} bottomDivider onPress={() => sourceChanged(sourceKey)}>
                     <ListItem.Content>
                         <ListItem.Title>{sourcesMap[sourceKey]}</ListItem.Title>
@@ -31,7 +31,7 @@ export default function LessonsSettings(props: any) {
                 </ListItem>
             )
         }
-        return _languageList;
+        return _lessonsList;
     }
 
     const sourceChanged = (sourceKey:string) => {
@@ -52,7 +52,7 @@ export default function LessonsSettings(props: any) {
                     console.log("Closed")
                 }}>
 
-                {languageList()}
+                {lessonsList()}
 
                 <Text style={Styles.closeText}
                       onPress={() => {

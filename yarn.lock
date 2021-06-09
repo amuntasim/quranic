@@ -2006,11 +2006,6 @@
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/@types/hammerjs/-/hammerjs-2.0.36.tgz#17ce0a235e9ffbcdcdf5095646b374c2bf615a4c"
   integrity sha1-F84KI16f+83N9QlWRrN0wr9hWkw=
 
-"@types/i18n@^0.12.0":
-  version "0.12.0"
-  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/@types/i18n/-/i18n-0.12.0.tgz#ea4e247c2da05a35002d7535d339c912c4513549"
-  integrity sha1-6k4kfC2gWjUALXU10znJEsRRNUk=
-
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.3"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz#4ba8ddb720221f432e443bd5f9117fd22cfd4762"
@@ -4376,11 +4371,6 @@ hyphenate-style-name@^1.0.2, hyphenate-style-name@^1.0.3:
   version "1.0.4"
   resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/hyphenate-style-name/-/hyphenate-style-name-1.0.4.tgz#691879af8e220aea5750e8827db4ef62a54e361d"
   integrity sha1-aRh5r44iCupXUOiCfbTvYqVONh0=
-
-i18n-js@^3.8.0:
-  version "3.8.0"
-  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/i18n-js/-/i18n-js-3.8.0.tgz#b8fd6b12e1d88cb71f9806c29bca7c31c012e504"
-  integrity sha1-uP1rEuHYjLcfmAbCm8p8McAS5QQ=
 
 iconv-lite@0.4.24, iconv-lite@^0.4.17:
   version "0.4.24"
@@ -7034,6 +7024,11 @@ react-native-web@~0.13.12:
     normalize-css-color "^1.0.2"
     prop-types "^15.6.0"
     react-timer-mixin "^0.13.4"
+
+react-native-zip-archive@^6.0.3:
+  version "6.0.3"
+  resolved "https://art-bobcat.autodesk.com:443/artifactory/api/npm/autodesk-npm-virtual/react-native-zip-archive/-/react-native-zip-archive-6.0.3.tgz#19dad30565b068b352c55048c8c535a6195f0b46"
+  integrity sha1-GdrTBWWwaLNSxVBIyMU1phlfC0Y=
 
 react-native@~0.63.3:
   version "0.63.3"
