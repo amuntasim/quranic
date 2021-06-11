@@ -21,7 +21,7 @@ export default function ChapterDetailScreen(props: any) {
         //TODO translate
         navigation.setOptions({ headerTitle: chapterDetail['chapterName'] })
 
-        ChaptersManager.chapterDetail({path: chapterDetail['path']}).then(function (_chapter: any) {
+        ChaptersManager.chapterDetail({path: chapterDetail['chapterName']}).then(function (_chapter: any) {
             setState({chapter: _chapter});
         })
     }, [chapter]);

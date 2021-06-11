@@ -1,9 +1,6 @@
 import * as RNFS from 'react-native-fs';
 
-import {Platform} from 'react-native';
 import PreferenceManager from './PreferenceManager';
-import {readdir} from "react-native-fs";
-
 
 async function baseChapters(opts: any) {
     // const rootPath = Platform.OS === 'ios' ? RNFS.MainBundlePath : RNFS.DocumentDirectoryPath;
@@ -33,12 +30,13 @@ async function baseChapters(opts: any) {
     // }).promise.then((r) => {
     //     console.log("download complete")
     // });
-    return chapters;
+    return chapters.filter(function(x) { return !['.DS_Store'].includes(x); });
 }
 
 async function chapterDetail(opts: any) {
-    const index = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/index.json'));
-    const sections = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/sections.json'));
+    const filePath = await _baseChapterspath() +'/'+ opts.path;
+    const index = decodeURIComponent(await RNFS.readFile(filePath+'/index.json'));
+    const sections = decodeURIComponent(await RNFS.readFile(filePath+'/sections.json'));
     let assessments = null
     try{
         // assessments = decodeURIComponent(await RNFS.readFileAssets(opts.path+'/assessments.json'));
