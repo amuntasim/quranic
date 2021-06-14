@@ -19,7 +19,7 @@ export default function ChaptersScreen(props: any) {
     const [state, setState] = React.useState(_state)
     const [chapters, setChapters] = React.useState([]);
 
-    const reloadChapters = ()=> {
+    const reloadChapters = () => {
         ChaptersManager.baseChapters({}).then(function (_chapters: any) {
             setState({chapters: _chapters});
         })
@@ -31,7 +31,7 @@ export default function ChaptersScreen(props: any) {
 
     const checkContentStatus = async function () {
         const lessonsSourcesChanged = await PreferenceManager.getLessonsSourcesChanged();
-        if(lessonsSourcesChanged === 'true'){
+        if (lessonsSourcesChanged === 'true') {
             console.log('checking content status');
             await PreferenceManager.setLessonsSourcesChanged('false')
             reloadChapters();
@@ -58,7 +58,10 @@ export default function ChaptersScreen(props: any) {
 
 
     let chapterLists = state.chapters.map(function (chapter) {
-        return <RowViewText key={chapter} style={Styles.rowViewBox} onPress={() => navigation.navigate('ChapterDetailScreen', {chapterName: chapter})}>{chapter}</RowViewText>;
+        return (<RowViewText key={chapter} style={Styles.rowViewBox}
+                             onPress={() => navigation.navigate('ChapterDetailScreen', {chapterName: chapter})}>
+            {chapter.split('.')[1]}
+        </RowViewText>);
     })
 
     return (

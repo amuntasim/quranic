@@ -7,7 +7,7 @@ import {
 import Styles from '../../components/Styles';
 
 
-export default function IsmLightness(props: any) {
+export default function IsmFlexibility(props: any) {
     const {data} = props;
 
     if (!data && !data.input) {

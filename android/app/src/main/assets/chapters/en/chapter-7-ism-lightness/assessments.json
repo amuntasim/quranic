@@ -1,8 +1,8 @@
 [
   {
-    "title": "Identify Ism lightness",
+    "title": "Identify Ism's flexibility",
     "type": "assessment",
-    "assessmentName": "IsmLightness",
+    "assessmentName": "IsmFlexibility",
     "questionTitle": "What kind of Ism is this?",
     "input": {
       "flex": "الْعِرَاقِ,الْهِنْدَ,الْهِنْدُ ,الْعِرَاقَ,الْعِرَاقُ,الْأَكْبَرَ,الْأَكْبَرُ,عَدْنِ ,عَدْنَ,عَدْنُ,عَدْنٍ,عَدْنًا,عَدْنٌ,لُوْطِ,لُوْطَ,لُوْطُ,لُوْطٍ,لُوْطًا,لُوْطٌ,نُوْحِ,نُوْحَ,نُوْحُ ,نُوْحٍ,نُوْحًا,نُوْحٌ ,نُوْحًا, نُوْحٌ ,هُوْدٌ , صَالِحٌ , شُعَيْبٌ ,مُحَمَّدٌ , مُحَمَّدُ",

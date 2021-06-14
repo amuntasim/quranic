@@ -8,7 +8,7 @@ const Assessments = {
     "SunMoonLetter": require('../components/assessments/SunMoonLetter').default,
     "IdentifyIsm": require('../components/assessments/IdentifyIsm').default,
     "IdentifyIrab": require('../components/assessments/IdentifyIrab').default,
-    "IsmLightness": require('../components/assessments/IsmLightness').default,
+    "IsmLightness": require('./assessments/IsmFlexibility').default,
     "IdentifyGins": require('../components/assessments/IdentifyGins').default,
 };
 

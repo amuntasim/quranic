@@ -1,18 +1,28 @@
 import * as React from 'react';
 import Styles from '../components/Styles';
 
-import {Text, View, RowViewText} from '../components/Themed';
-import {Modal, SafeAreaView, ScrollView} from "react-native";
+import {RowViewText, Text} from '../components/Themed';
+import {Modal, SafeAreaView, ScrollView, Alert} from "react-native";
 import AssessmentsManager from '../managers/AssessmentsManager';
-import ChaptersManager from "../managers/ChaptersManager";
+import SunMoonLetter from '../components/assessments/SunMoonLetter';
+import IdentifyIsm from '../components/assessments/IdentifyIsm';
+import IdentifyIrab from '../components/assessments/IdentifyIrab';
+import MuslimunChart from '../components/assessments/MuslimunChart';
+import IsmFlexibility from '../components/assessments/IsmFlexibility';
+import IdentifyGins from '../components/assessments/IdentifyGins';
+import PreferenceManager from "../managers/PreferenceManager";
+import {Ionicons} from "@expo/vector-icons";
+import * as RNFS from "react-native-fs";
+import {unzip} from "react-native-zip-archive";
+import Constant from "../constants/Values";
 
 const Assessments = {
-    "SunMoonLetter": require('../components/assessments/SunMoonLetter').default,
-    "IdentifyIsm": require('../components/assessments/IdentifyIsm').default,
-    "IdentifyIrab": require('../components/assessments/IdentifyIrab').default,
-    "MuslimunChart": require('../components/assessments/MuslimunChart').default,
-    "IsmLightness": require('../components/assessments/IsmLightness').default,
-    "IdentifyGins": require('../components/assessments/IdentifyGins').default,
+    SunMoonLetter,
+    IdentifyIsm,
+    IdentifyIrab,
+    MuslimunChart,
+    IsmFlexibility,
+    IdentifyGins
 };
 
 interface StateObject {
@@ -30,11 +40,59 @@ export default function AssessmentListScreen(props: any) {
     const [assessmentDetail, setAssessmentDetail] = React.useState(_assessmentDetail);
 
     const [assessments, setAssessments] = React.useState([]);
-    React.useEffect(() => {
+    const loadAssessments = () => {
         AssessmentsManager.getAssessments({}).then(function (_assessments: any) {
             setState({assessments: _assessments});
         })
+    }
+    React.useEffect(() => {
+        loadAssessments();
     }, [assessments]);
+
+    const updateAssessmentsAlert = () =>
+        Alert.alert(
+            "Update Assessments",
+            "Do you want to update the assessment contents?",
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => console.log("Cancel Pressed"),
+                    style: "cancel"
+                },
+                { text: "OK", onPress: () => reloadAssessments() }
+            ]
+        );
+
+
+    const reloadAssessments = async function () {
+        const tmpFileName = `${RNFS.TemporaryDirectoryPath}/${Date.now()}.zip`;
+        RNFS.downloadFile({
+            fromUrl: `${Constant.fileBaseUrl}assessments.zip`,
+            toFile: tmpFileName,
+        }).promise.then((r) => {
+            const charset = 'UTF-8';
+            const targetPath = `${RNFS.DocumentDirectoryPath}`;
+            RNFS.unlink(`${RNFS.DocumentDirectoryPath}/assessments`)
+
+            unzip(tmpFileName, targetPath, charset)
+                .then((path) => {
+                    console.log(`unzip completed at ${path}`);
+                    loadAssessments();
+                })
+                .catch((error) => {
+                    console.error(error)
+                })
+        });
+    }
+
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <Ionicons name={'md-refresh'} size={30} style={Styles.grayColor}
+                          onPress={async () => await updateAssessmentsAlert()}/>
+            ),
+        });
+    }, [navigation]);
 
     function openAssessment(assessment: string) {
         AssessmentsManager.assessmentDetail(assessment).then(function (assessmentDetail: any) {
@@ -47,14 +105,21 @@ export default function AssessmentListScreen(props: any) {
     const assessmentBody = function () {
         // @ts-ignore
         const Assessment = Assessments[assessmentDetail.assessmentName];
-        return <Assessment data={assessmentDetail}/>
+        if(Assessment){
+            return <Assessment data={assessmentDetail}/>
+        }
+        return <></>;
+
     }
 
-    let assessmentLists = state.assessments.map(function (assessment) {
-        return <RowViewText key={assessment.name} style={Styles.rowViewBox}
-                            onPress={() => openAssessment(assessment.name)}>{assessment.name}</RowViewText>;
-    })
 
+    const assessmentLists = function () {
+        const list = state.assessments.map(function (assessment) {
+            return <RowViewText key={assessment} style={Styles.rowViewBox}
+                                onPress={() => openAssessment(assessment)}>{assessment.split('.')[1]}</RowViewText>;
+        });
+        return list.length ? list : <Text onPress={()=> updateAssessmentsAlert()}>No Assessments found, Download!</Text>
+    }
     return (
         <SafeAreaView style={Styles.basicContainer}>
             <ScrollView contentContainerStyle={Styles.scrollView}>
@@ -72,7 +137,7 @@ export default function AssessmentListScreen(props: any) {
                               setModalVisible(false)
                           }}> Close </Text>
                 </Modal>
-                {assessmentLists}
+                {assessmentLists()}
             </ScrollView>
         </SafeAreaView>
     );

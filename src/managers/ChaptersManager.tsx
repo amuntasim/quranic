@@ -30,7 +30,7 @@ async function baseChapters(opts: any) {
     // }).promise.then((r) => {
     //     console.log("download complete")
     // });
-    return chapters.filter(function(x) { return !['.DS_Store'].includes(x); });
+    return chapters.sort();
 }
 
 async function chapterDetail(opts: any) {
@@ -48,7 +48,7 @@ async function _baseChapterspath() {
     // const language = await PreferenceManager.languagePref();
     const lessonsSource = await PreferenceManager.lessonsSource();
     console.log('lessonsSource', lessonsSource)
-    return `${RNFS.DocumentDirectoryPath}/chapters/${lessonsSource}/${lessonsSource}`;
+    return `${RNFS.DocumentDirectoryPath}/chapters/${lessonsSource}/${lessonsSource}/chapters`;
 }
 
 export default {

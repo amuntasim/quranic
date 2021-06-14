@@ -1,8 +1,8 @@
 import * as RNFS from 'react-native-fs';
 import { unzip} from 'react-native-zip-archive'
+import Constant from "../constants/Values";
 
 const chapterPath = 'chapters/';
-const fileBaseUrl = 'http://quranic.ishkul.com/files/'
 
 async function lookup(lessonSource: string) {
     const lessonPath = chapterPath + lessonSource;
@@ -14,11 +14,12 @@ async function lookup(lessonSource: string) {
                 console.log(lessonSource + " DOES NOT EXIST, loading..");
                 const tmpFileName = `${RNFS.TemporaryDirectoryPath}/${Date.now()}.zip`;
                 RNFS.downloadFile({
-                    fromUrl: `${fileBaseUrl}${lessonSource}.zip`,
+                    fromUrl: `${Constant.fileBaseUrl}${lessonSource}.zip`,
                     toFile: tmpFileName,
                 }).promise.then((r) => {
                     const charset = 'UTF-8';
                     const targetPath = `${RNFS.DocumentDirectoryPath}/${lessonPath}`;
+                    RNFS.unlink(`${RNFS.DocumentDirectoryPath}/${lessonPath}/`)
                     console.log(lessonSource + " downloaded, extracting...");
 
                     unzip(tmpFileName, targetPath, charset)

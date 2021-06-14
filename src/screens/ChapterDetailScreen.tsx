@@ -19,7 +19,7 @@ export default function ChapterDetailScreen(props: any) {
     const [chapter, setChapter] = React.useState([]);
     React.useEffect(() => {
         //TODO translate
-        navigation.setOptions({ headerTitle: chapterDetail['chapterName'] })
+        navigation.setOptions({ headerTitle: chapterDetail['chapterName'].split('.')[1] })
 
         ChaptersManager.chapterDetail({path: chapterDetail['chapterName']}).then(function (_chapter: any) {
             setState({chapter: _chapter});
