@@ -11,7 +11,7 @@ export default StyleSheet.create({
     basicContainer: {
         ...Colors.lightBg,
         flex: 1,
-        padding: 5
+        padding: 5,
     },
 
     flexContainer: {
@@ -31,6 +31,9 @@ export default StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
     },
+    arabicFontSize: {
+        fontSize: 24,
+    },
 
     textButton: {
         ...Colors.lightBg,
@@ -44,6 +47,18 @@ export default StyleSheet.create({
         paddingRight: 10,
         borderRadius: 5,
         marginBottom: 5
+    },
+    borderBottom: {
+        borderColor: '#cdcdcd',
+        borderBottomWidth: .2,
+    },
+
+    shadow: {
+        shadowColor: "black",
+        shadowOffset: { width: 0, height: 4 },
+        shadowRadius: 6,
+        shadowOpacity: 0.2,
+        elevation: 1,
     },
     textButtonCompact: {
         ...Colors.lightBg,

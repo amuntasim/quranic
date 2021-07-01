@@ -21,6 +21,7 @@ export type ChaptersParamList = {
 export type MiscParamList = {
     MiscScreen: undefined;
     AssessmentListScreen: undefined;
+    QuranicVerbsScreen: undefined;
 };
 export type SettingsParamList = {
     SettingsScreen: { languageChanged: any, lessonsSourceChanged: any };

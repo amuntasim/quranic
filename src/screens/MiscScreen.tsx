@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Styles from '../components/Styles';
-import {Ionicons, MaterialIcons} from '@expo/vector-icons';
+import {MaterialIcons} from '@expo/vector-icons';
 
 import {Text, View} from '../components/Themed';
 
@@ -14,7 +14,10 @@ export default function ChaptersScreen(props: any) {
                     <MaterialIcons name={'assessment'} size={30} style={Styles.greenColor}
                                    onPress={() => navigation.navigate('AssessmentListScreen', {})}
                     />
-                    <Text style={Styles.miscItemText}>Assessment</Text>
+                    <Text style={Styles.miscItemText}
+                          onPress={() => navigation.navigate('AssessmentListScreen', {})}>
+                        Assessment
+                    </Text>
                 </View>
                 <View style={[Styles.miscItem, Styles.leftMargin]}>
                     <MaterialIcons name={'event-note'} size={30} style={Styles.greenColor}/>
@@ -23,8 +26,12 @@ export default function ChaptersScreen(props: any) {
             </View>
             <View style={Styles.tableWrapper}>
                 <View style={Styles.miscItem}>
-                    <MaterialIcons name={'flip-to-front'} size={30} style={Styles.greenColor}/>
-                    <Text style={Styles.miscItemText}>Conjugation</Text>
+                    <MaterialIcons name={'flip-to-front'} size={30} style={Styles.greenColor}
+                                   onPress={() => navigation.navigate('QuranicVerbsScreen', {})}
+                    />
+                    <Text style={Styles.miscItemText}
+                          onPress={() => navigation.navigate('QuranicVerbsScreen', {})}>
+                        Quranic verbs</Text>
                 </View>
                 <View style={[Styles.miscItem, Styles.leftMargin]}>
                     <MaterialIcons name={'pages'} size={30} style={Styles.greenColor}/>

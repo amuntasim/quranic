@@ -4,26 +4,12 @@ import Styles from '../components/Styles';
 import {RowViewText, Text} from '../components/Themed';
 import {Modal, SafeAreaView, ScrollView, Alert} from "react-native";
 import AssessmentsManager from '../managers/AssessmentsManager';
-import SunMoonLetter from '../components/assessments/SunMoonLetter';
-import IdentifyIsm from '../components/assessments/IdentifyIsm';
-import IdentifyIrab from '../components/assessments/IdentifyIrab';
-import MuslimunChart from '../components/assessments/MuslimunChart';
-import IsmFlexibility from '../components/assessments/IsmFlexibility';
-import IdentifyGins from '../components/assessments/IdentifyGins';
-import PreferenceManager from "../managers/PreferenceManager";
+import Assessments from '../components/assessments/index';
+
 import {Ionicons} from "@expo/vector-icons";
 import * as RNFS from "react-native-fs";
 import {unzip} from "react-native-zip-archive";
 import Constant from "../constants/Values";
-
-const Assessments = {
-    SunMoonLetter,
-    IdentifyIsm,
-    IdentifyIrab,
-    MuslimunChart,
-    IsmFlexibility,
-    IdentifyGins
-};
 
 interface StateObject {
     assessments: any[]

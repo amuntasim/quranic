@@ -1,0 +1,6 @@
+Upload zip file
+`scp ~/Desktop/assessments.zip deploy@51.79.158.164:/var/www/quranic-server/resources/static/assets`
+
+list files on devices:
+
+`adb shell && run-as com.quranic`

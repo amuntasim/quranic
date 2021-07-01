@@ -12,6 +12,7 @@ import MiscScreen from '../screens/MiscScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import ChapterDetailScreen from '../screens/ChapterDetailScreen';
 import AssessmentListScreen from '../screens/AssessmentListScreen';
+import QuranicVerbsScreen from '../screens/QuranicVerbsScreen';
 
 
 import {BottomTabParamList, HomeParamList, ChaptersParamList, MiscParamList, SettingsParamList} from '../types';
@@ -117,6 +118,11 @@ function MiscNavigator() {
                 name="AssessmentListScreen"
                 component={AssessmentListScreen}
                 options={{headerTitle: 'Assessments'}}
+            />
+            <MiscStack.Screen
+                name="QuranicVerbsScreen"
+                component={QuranicVerbsScreen}
+                options={{headerTitle: 'Quranic Verbs'}}
             />
         </MiscStack.Navigator>
     );

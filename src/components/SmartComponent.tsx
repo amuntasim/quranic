@@ -3,14 +3,7 @@ import Styles from '../components/Styles';
 import {Modal, TouchableOpacity, View, Text} from "react-native";
 import {Row, Rows, Table} from "react-native-table-component";
 
-const Assessments = {
-    "MuslimunChart": require('../components/assessments/MuslimunChart').default,
-    "SunMoonLetter": require('../components/assessments/SunMoonLetter').default,
-    "IdentifyIsm": require('../components/assessments/IdentifyIsm').default,
-    "IdentifyIrab": require('../components/assessments/IdentifyIrab').default,
-    "IsmLightness": require('./assessments/IsmFlexibility').default,
-    "IdentifyGins": require('../components/assessments/IdentifyGins').default,
-};
+import Assessments from '../components/assessments/index';
 
 function tableData(data: any, index:number){
    const tableData =  data.content.map( (row:any) => row['row'])

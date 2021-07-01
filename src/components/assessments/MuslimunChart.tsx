@@ -59,7 +59,6 @@ export default function MuslimunChart(props: any) {
     }
 
     const wordBreakDown = (baseWord: string) => {
-        console.log(assessmentSubType)
         switch (assessmentSubType) {
             case 'sound-feminine':
                 return soundFeminine(baseWord);
@@ -100,7 +99,6 @@ export default function MuslimunChart(props: any) {
     }
 
     const soundMasculineLight = (baseWord: string) => {
-        console.log(baseWord)
         const sliced = baseWord.slice(0, -1)
         return {
             '11': baseWord, '12': sliced + 'َا', '13': sliced + 'ُوْ',
