@@ -105,7 +105,7 @@ export default function AssessmentListScreen(props: any) {
         return list.length ? list : <Text onPress={()=> updateAssessmentsAlert()}>No Assessments found, Download!</Text>
     }
     return (
-        <SafeAreaView style={Styles.basicContainer}>
+        <SafeAreaView style={Styles.container}>
             <ScrollView contentContainerStyle={Styles.scrollView}>
                 <Modal
                     // animationType={"slide"}

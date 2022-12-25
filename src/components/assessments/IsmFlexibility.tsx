@@ -57,7 +57,7 @@ export default function IsmFlexibility(props: any) {
         setAnswered(true)
     }
     return (
-        <View style={Styles.basicContainer}>
+        <View style={Styles.container}>
 
             <View style={Styles.rowJustified}>
                 <Text style={Styles.paragraph}>{data['questionTitle']}</Text>

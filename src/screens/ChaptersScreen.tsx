@@ -65,7 +65,7 @@ export default function ChaptersScreen(props: any) {
     })
 
     return (
-        <SafeAreaView style={Styles.basicContainer}>
+        <SafeAreaView style={Styles.container}>
             <ScrollView contentContainerStyle={Styles.scrollView}>
                 {chapterLists}
             </ScrollView>

@@ -8,7 +8,7 @@ export default function ChaptersScreen(props: any) {
     const {navigation} = props;
 
     return (
-        <View style={Styles.basicContainer}>
+        <View style={Styles.container}>
             <View style={Styles.tableWrapper}>
                 <View style={Styles.miscItem}>
                     <MaterialIcons name={'assessment'} size={30} style={Styles.greenColor}

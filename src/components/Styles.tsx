@@ -1,38 +1,172 @@
 import {StyleSheet} from "react-native";
 import Colors from "../constants/Colors";
 
+const arabicFontSize = 30;
+
 export default StyleSheet.create({
     container: {
-        ...Colors.lightBg,
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    basicContainer: {
-        ...Colors.lightBg,
-        flex: 1,
-        padding: 5,
+        padding: 10,
     },
 
     flexContainer: {
-        ...Colors.lightBg,
         flex: 1,
     },
 
+    subtitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+
+    logoText: {
+        fontSize: 40,
+        fontWeight: "800",
+        marginTop: 150,
+        marginBottom: 30,
+        textAlign: 'center',
+    },
+
+    loginScreenContainer: {
+        flex: 1
+    },
+    loginFormView: {
+        flex: 1,
+        margin: 15
+    },
+    loginFormTextInput: {
+        height: 43,
+        fontSize: 14,
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: '#eaeaea',
+        backgroundColor: '#fafafa',
+        paddingLeft: 10,
+        marginTop: 5,
+        marginBottom: 5,
+
+    },
+    loginButton: {
+        backgroundColor: '#3897f1',
+        borderRadius: 5,
+        height: 45,
+        marginTop: 10,
+    },
+
+    header: {
+        width: '100%',
+        height: '100%',
+        flexDirection: 'row',
+    },
+    headerText: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        color: '#333',
+        letterSpacing: 1,
+    },
+    modalCloseIcon: {
+        position: 'absolute',
+        right: 0,
+        top: 0,
+        fontWeight: 'bold'
+    },
+    headerIcon: {
+        position: 'absolute',
+        right: 16,
+    },
+    headerTitle: {
+        flexDirection: 'row'
+    },
+    centeredHorView: {
+        flex: 1,
+        marginTop: 22,
+        alignItems: "center",
+    },
+    modalContent: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 0,
+        padding: 15
+    },
+    verbFormModal: {
+        position: "absolute",
+        top: 100,
+    },
+
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+    },
+    modalContainer: {
+        flex: 1,
+        backgroundColor: 'rgba(0,0,0,0.2)',
+    },
+    modalView: {
+        margin: 10,
+        marginTop: '20%',
+        // backgroundColor: "white",
+        borderRadius: 20,
+        borderColor: '#414141',
+        justifyContent: "center",
+        padding: 15,
+        // alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 2,
+            height: 5
+        },
+        shadowOpacity: 0.6,
+        shadowRadius: 4,
+        elevation: 5
+    },
+
+    buttonOpen: {
+        backgroundColor: "#F194FF",
+    },
+    buttonClose: {
+        backgroundColor: "#2196F3",
+    },
+
+    modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+    },
+    gridContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'flex-start',
+        backgroundColor: "#f1f1f1",
+    },
+    twoColumnItem: {
+        width: '50%',
+        backgroundColor: "#ffffff",
+        margin: 5,
+        padding: 5
+    },
+    center: {
+        height: "100%",
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+    },
     text: {
         ...Colors.lightBg,
         fontSize: 18,
         marginBottom: 10,
-        padding: 10
+        padding: 10,
+    },
+    textCompact: {
+        ...Colors.lightBg,
+        fontSize: 18,
+        padding: 5,
     },
 
     textBold: {
-        ...Colors.lightBg,
-        fontSize: 18,
         fontWeight: 'bold',
     },
     arabicFontSize: {
-        fontSize: 24,
+        fontSize: arabicFontSize,
     },
 
     textButton: {
@@ -55,7 +189,7 @@ export default StyleSheet.create({
 
     shadow: {
         shadowColor: "black",
-        shadowOffset: { width: 0, height: 4 },
+        shadowOffset: {width: 0, height: 4},
         shadowRadius: 6,
         shadowOpacity: 0.2,
         elevation: 1,
@@ -76,7 +210,7 @@ export default StyleSheet.create({
 
     paragraph: {
         ...Colors.lightBg,
-        fontSize: 20,
+        fontSize: 24,
         paddingBottom: 10,
         marginTop: 10,
         textAlign: "justify"
@@ -124,10 +258,6 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    centeredView: {
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
 
     scrollView: {
         paddingBottom: 40
@@ -147,6 +277,7 @@ export default StyleSheet.create({
             width: 0
         },
         shadowRadius: 25,
+        elevation: 2
     },
     cellButton: {
         display: 'flex',
@@ -165,6 +296,7 @@ export default StyleSheet.create({
             width: 0
         },
         shadowRadius: 25,
+        elevation: 2
     },
 
     closeButton: {
@@ -223,17 +355,31 @@ export default StyleSheet.create({
     grayColor: {
         color: "#666666",
     },
+    whiteColor: {
+        color: "#ffffff",
+    },
     blankLine: {
         height: 30
     },
+    selectedText: {
+        borderBottomColor: Colors.light.tint,
+        borderBottomWidth: 2
+    },
     tableContainer: {flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff'},
-    tableHead: {height: 40, backgroundColor: '#f1f8ff'},
+    tableHead: {backgroundColor: '#f1f8ff'},
+    tableHeadTextCompact: {
+        ...Colors.lightBg,
+        fontSize: 16, textAlign: "center"
+    },
     tableWrapper: {flexDirection: 'row'},
     tableTitle: {flex: 1, backgroundColor: '#f6f8fa'},
-    tableRow: {height: 32},
+    tableRow: {},
     tableText: {textAlign: 'center', fontSize: 24},
-    tableTextBold: {textAlign: 'center', fontSize: 24, fontWeight: 'bold'},
-
+    tableTextSmall: {textAlign: 'center', fontSize: 18},
+    tableTextBold: {textAlign: 'center', fontSize: arabicFontSize, fontWeight: 'bold'},
+    tableBorder: {
+        borderWidth: 1, borderColor: '#c8e1ff'
+    },
     leftMargin: {
         marginLeft: '2%'
     },
@@ -259,5 +405,17 @@ export default StyleSheet.create({
         fontSize: 14,
         color: '#2e78b7',
     },
+    rowViewContainer: {
+        flex: 1,
+        paddingRight: 15,
+        paddingTop: 13,
+        paddingBottom: 13,
+        borderBottomWidth: 0.5,
+        borderColor: '#c9c9c9',
+        flexDirection: 'row',
+        alignItems: 'center',
+        fontSize: 20,
+        marginLeft: 10,
+    },
+})
 
-});

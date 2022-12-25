@@ -26,7 +26,7 @@ export default function ChapterDetailScreen(props: any) {
         })
     }, [chapter]);
     return (
-        <SafeAreaView style={Styles.basicContainer}>
+        <SafeAreaView style={Styles.container}>
             <ScrollView contentContainerStyle={Styles.scrollView}>
             <ChapterDetailIntro data={state.chapter.index}/>
             <ChapterDetailContent content={state.chapter.sections}/>
