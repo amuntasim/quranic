@@ -4,13 +4,13 @@ import Constant from "../constants/Values";
 
 const chapterPath = 'chapters/';
 
-async function chaptersLookup(lessonSource: string) {
+async function chaptersLookup(lessonSource: string, force: boolean) {
     const lessonPath = chapterPath + lessonSource;
     const targetPath = `${FileSystem.documentDirectory}${lessonPath}`;
 
     console.log('lessonPath', lessonPath)
     FileSystem.getInfoAsync(targetPath).then( (status:any) => {
-        if (status.exists) {
+        if (!force && status.exists) {
             console.log(lessonSource + " EXISTS");
         } else {
             console.log(lessonSource + " DOES NOT EXIST, loading..");

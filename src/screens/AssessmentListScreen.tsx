@@ -28,6 +28,7 @@ export default function AssessmentListScreen(props: any) {
     const [assessments, setAssessments] = React.useState([]);
     const loadAssessments = () => {
         AssessmentsManager.getAssessments({}).then(function (_assessments: any) {
+            console.log(_assessments)
             setState({assessments: _assessments});
         })
     }
@@ -55,7 +56,7 @@ export default function AssessmentListScreen(props: any) {
         FileSystem.downloadAsync(`${Constant.fileBaseUrl}assessments.zip`, tmpFileName).
         then((r) => {
             const charset = 'UTF-8';
-            const targetPath = `${FileSystem.documentDirectory}/assessments`;
+            const targetPath = `${FileSystem.documentDirectory}assessments`;
 
             unzip(tmpFileName, targetPath, charset)
                 .then((path) => {

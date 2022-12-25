@@ -73,6 +73,11 @@ const SettingsScreen = (props: any) => {
         }
     }
 
+    const downloadLessons = async () => {
+        const lessonsSource = await PreferenceManager.lessonsSource();
+        await ContentManager.chaptersLookup(lessonsSource, true)
+    }
+
     React.useEffect(() => {
 
         const initSettings = async () => {
@@ -123,6 +128,11 @@ const SettingsScreen = (props: any) => {
                     </ListItem.Content>
                 </ListItem>
 
+                <ListItem key="re-download" bottomDivider onPress={() => downloadLessons()}>
+                    <ListItem.Content>
+                        <ListItem.Title>{i18n.t('re-download-lesson')}</ListItem.Title>
+                    </ListItem.Content>
+                </ListItem>
             </ScrollView>
         </SafeAreaView>
     );

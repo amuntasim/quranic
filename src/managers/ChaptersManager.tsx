@@ -4,7 +4,7 @@ import PreferenceManager from './PreferenceManager';
 
 async function baseChapters(opts: any) {
     let tmp = await FileSystem.getInfoAsync(await _baseChapterspath());
-    console.log(await FileSystem.readDirectoryAsync(`${FileSystem.documentDirectory}chapters`))
+    console.log(await FileSystem.readDirectoryAsync(`${FileSystem.documentDirectory}`))
     if(tmp.exists){
         const chapters = await FileSystem.readDirectoryAsync(await _baseChapterspath());
         console.log(chapters)
