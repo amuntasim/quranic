@@ -19,6 +19,11 @@ export default StyleSheet.create({
         flex: 1,
     },
 
+    subtitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+
     text: {
         ...Colors.lightBg,
         fontSize: 18,

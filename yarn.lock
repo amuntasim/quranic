@@ -5725,10 +5725,9 @@ react-native-size-matters@^0.3.1:
   resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.3.1.tgz#24d0cfc335a2c730f6d58bd7b43ea5a41be4b49f"
   integrity sha512-mKOfBLIBFBcs9br1rlZDvxD5+mAl8Gfr5CounwJtxI6Z82rGrMO+Kgl9EIg3RMVf3G855a85YVqHJL2f5EDRlw==
 
-react-native-table-component@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/react-native-table-component/-/react-native-table-component-1.2.2.tgz#1c9bdcd8f1fd7edf10d1e93ebc3b7877ecd74def"
-  integrity sha512-7bbsi5431iWcjj3toASh8lFHGi6AG/+MTd4M7GuksXKxx/CFs/Qwv1Ys7D2wgyuYKe3hxWNfSVrteFj0tOYXYw==
+"react-native-table-component@https://github.com/slice312/react-native-table-component.git":
+  version "1.2.1"
+  resolved "https://github.com/slice312/react-native-table-component.git#e761c87ff56a463ad0452ef2a9c7ede315eef123"
 
 react-native-vector-icons@^9.2.0:
   version "9.2.0"
@@ -5737,6 +5736,11 @@ react-native-vector-icons@^9.2.0:
   dependencies:
     prop-types "^15.7.2"
     yargs "^16.1.1"
+
+react-native-virtualized-view@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-virtualized-view/-/react-native-virtualized-view-1.0.0.tgz#fd2129f1309d1ff4b9e869d5050e803640ca64c5"
+  integrity sha512-7YyFMMkNzJ787/giGkKcm0JEx0IcLEE/XHREGz2I4K1RISQGFjEDe6iWsapOnHSR/e1vhebZJ8VmqhSpg5YPzg==
 
 react-native-zip-archive@^6.0.9:
   version "6.0.9"
