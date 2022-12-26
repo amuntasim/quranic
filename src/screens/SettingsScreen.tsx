@@ -92,7 +92,7 @@ const SettingsScreen = (props: any) => {
     }, [settings]);
 
     return (
-        <SafeAreaView style={Styles.container}>
+        <SafeAreaView style={Styles.basicContainer}>
             <ScrollView contentContainerStyle={Styles.scrollView}>
                 <LanguageSettings visibility={isVisibleLanguageSettings}
                                   setVisibility={setLanguageSettingsVisibility}

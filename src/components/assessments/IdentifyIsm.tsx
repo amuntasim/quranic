@@ -61,7 +61,7 @@ export default function IdentifyIsm(props: any) {
     }
 
     return (
-        <View style={Styles.container}>
+        <View style={Styles.basicContainer}>
 
             <View style={Styles.rowJustified}>
                 <Text style={Styles.paragraph}>{data['input'][currentSentenceIndex]['sentence']}</Text>

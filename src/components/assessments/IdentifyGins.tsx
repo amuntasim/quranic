@@ -54,7 +54,7 @@ export default function IdentifyGins(props: any) {
         setAnswered(true)
     }
     return (
-        <View style={Styles.container}>
+        <View style={Styles.basicContainer}>
 
             <View style={Styles.rowJustified}>
                 <Text style={Styles.paragraph}>{data['questionTitle']}</Text>

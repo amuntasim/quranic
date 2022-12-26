@@ -1,55 +1,29 @@
 import {StyleSheet} from "react-native";
 import Colors from "../constants/Colors";
-
 const arabicFontSize = 30;
 
 export default StyleSheet.create({
     container: {
+        ...Colors.lightBg,
         flex: 1,
-        padding: 10,
+        padding: 5,
+    },
+    basicContainer: {
+        ...Colors.lightBg,
+        flex: 1,
+        padding: 5,
     },
 
     flexContainer: {
+        ...Colors.lightBg,
         flex: 1,
     },
 
-    subtitle: {
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-
-    logoText: {
-        fontSize: 40,
-        fontWeight: "800",
-        marginTop: 150,
-        marginBottom: 30,
-        textAlign: 'center',
-    },
-
-    loginScreenContainer: {
-        flex: 1
-    },
-    loginFormView: {
-        flex: 1,
-        margin: 15
-    },
-    loginFormTextInput: {
-        height: 43,
-        fontSize: 14,
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: '#eaeaea',
-        backgroundColor: '#fafafa',
-        paddingLeft: 10,
-        marginTop: 5,
-        marginBottom: 5,
-
-    },
-    loginButton: {
-        backgroundColor: '#3897f1',
-        borderRadius: 5,
-        height: 45,
-        marginTop: 10,
+    text: {
+        ...Colors.lightBg,
+        fontSize: 18,
+        marginBottom: 10,
+        padding: 10
     },
 
     header: {
@@ -418,4 +392,3 @@ export default StyleSheet.create({
         marginLeft: 10,
     },
 })
-
