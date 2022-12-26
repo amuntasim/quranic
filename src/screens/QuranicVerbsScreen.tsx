@@ -5,9 +5,7 @@ import Styles from '../components/Styles';
 import {Text, View} from '../components/Themed';
 import {Alert, FlatList, TextInput, TouchableOpacity,} from "react-native";
 import { ScrollView } from 'react-native-virtualized-view'
-
-import {Chip, ListItem, Overlay} from 'react-native-elements';
-
+import {Chip, ListItem, Overlay} from '@rneui/themed';
 import QuranicVerbsManager from '../managers/QuranicVerbsManager';
 import {Ionicons} from "@expo/vector-icons";
 import * as FileSystem from 'expo-file-system';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Modal, Text, View} from 'react-native';
 import Styles from './Styles';
-import {ListItem} from 'react-native-elements'
+import { ListItem } from '@rneui/themed'
 import {RadioButton} from './Themed'
 
 export default function LanguageSettings(props: any) {

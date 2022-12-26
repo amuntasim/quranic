@@ -129,12 +129,7 @@ export default StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    text: {
-        ...Colors.lightBg,
-        fontSize: 18,
-        marginBottom: 10,
-        padding: 10,
-    },
+
     textCompact: {
         ...Colors.lightBg,
         fontSize: 18,

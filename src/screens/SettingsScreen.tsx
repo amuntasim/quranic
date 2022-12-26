@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import Styles from '../components/Styles';
-import {ListItem} from 'react-native-elements'
+import { ListItem } from '@rneui/themed'
 
 import {Text, View} from '../components/Themed';
 import PreferenceManager from '../managers/PreferenceManager';
@@ -64,7 +64,7 @@ const SettingsScreen = (props: any) => {
                 settings.lessonsSource = lessonsSource;
                 settings.updatedAt = Date.now();
                 setSettings(settings);
-                ContentManager.chaptersLookup(lessonsSource).then((res) => {
+                ContentManager.chaptersLookup(lessonsSource, false).then((res) => {
                     console.log('lookup completed')
                 })
                 props.lessonsSourceChanged(lessonsSource)
