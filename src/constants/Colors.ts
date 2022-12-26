@@ -9,7 +9,8 @@ export default {
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorLight,
     headerBgColor: '#864577',
-    headerTintColor: tintColorDark
+    headerTintColor: tintColorDark,
+    tabTintColor: tintColorLight
   },
   dark: {
     text: '#000',
@@ -18,7 +19,8 @@ export default {
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorLight,
     headerBgColor: '#864577',
-    headerTintColor: tintColorDark
+    headerTintColor: tintColorDark,
+    tabTintColor: tintColorLight
   },
 
   lightBg: {

@@ -31,6 +31,7 @@ const HomeStack = createStackNavigator<HomeParamList>();
 
 function headerOptions() {
     const colorScheme = useColorScheme();
+
     return {
         headerStatusBarHeight:25,
 
@@ -126,6 +127,9 @@ function SettingsNavigator(props: any) {
     );
 }
 
+const screenOptionStyle = {
+    tabBarStyle:  Colors.light
+};
 
 export default function AppBottomTabNavigator() {
     const colorScheme = useColorScheme();
@@ -141,7 +145,11 @@ export default function AppBottomTabNavigator() {
             initialRouteName="Home"
             screenOptions={{
                 headerShown: false,
-
+                tabBarActiveTintColor: Colors[colorScheme].tabTintColor,
+                tabBarInactiveTintColor: 'gray',
+                //Tab bar styles can be added here
+                tabBarStyle:{backgroundColor:'white'},
+                tabBarLabelStyle:{paddingBottom:3},
             }}>
             <BottomTab.Screen
                 name="Home"
