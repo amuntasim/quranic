@@ -20,5 +20,12 @@ const formMap = {
 
 export function verbFormInst(opts: any) {
     // @ts-ignore
-    return new (formMap[opts.form])(opts);
+    const instance = new (formMap[opts.form])(opts);
+    // if(instance.isMithal){
+    //     instance.prototype = {
+    //         ...instance.prototype,
+    //
+    //     }
+    // }
+    return instance;
 }

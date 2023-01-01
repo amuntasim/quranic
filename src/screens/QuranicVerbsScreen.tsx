@@ -4,7 +4,7 @@ import Styles from '../components/Styles';
 
 import {Text, View} from '../components/Themed';
 import {Alert, FlatList, TextInput, TouchableOpacity,} from "react-native";
-import { ScrollView } from 'react-native-virtualized-view'
+import {ScrollView} from 'react-native-virtualized-view'
 import {Chip, ListItem, Overlay} from '@rneui/themed';
 import QuranicVerbsManager from '../managers/QuranicVerbsManager';
 import {Ionicons} from "@expo/vector-icons";
@@ -19,6 +19,7 @@ type VerbProps = {
     item?: any;
     openVerbPopup?: any;
 };
+
 class Verb extends React.PureComponent<VerbProps> {
     render() {
         const {item, openVerbPopup} = this.props;
@@ -42,8 +43,8 @@ class Verb extends React.PureComponent<VerbProps> {
     }
 }
 
-export default function QuranicVerbsScreen(props: any) {
-    const {navigation} = props;
+export default function QuranicVerbsScreen({route, navigation}) {
+    const {conjugation = false} = route.params;
 
     const [isModalVisible, setModalVisible] = React.useState(false);
     const [isFormModalVisible, setFormModalVisible] = React.useState(false);
@@ -65,6 +66,7 @@ export default function QuranicVerbsScreen(props: any) {
     let ref_lamQalimah: TextInput | null;
 
     const [verbs, setVerbs] = React.useState([]);
+    const [renderingVerbs, setRenderingVerbs] = React.useState([]);
     const [baseVerbs, setBaseVerbs] = React.useState([]);
     const [modalBodyContent, setModalBodyContent] = React.useState(null);
 
@@ -82,6 +84,13 @@ export default function QuranicVerbsScreen(props: any) {
         setSelectedForm('')
         setSelectedMeaning('')
     }, []);
+
+    React.useEffect(() => {
+        if(!conjugation)
+            setRenderingVerbs(verbs)
+        else
+            setRenderingVerbs([])
+    }, [conjugation, verbs]);
 
     // filter verbs
     React.useEffect(() => {
@@ -136,10 +145,12 @@ export default function QuranicVerbsScreen(props: any) {
 
     React.useLayoutEffect(() => {
         navigation.setOptions({
-            headerRight: () => (
-                <Ionicons name={'md-refresh'} size={30} style={Styles.whiteColor}
-                          onPress={async () => await updateVerbsAlert()}/>
-            ),
+            headerRight: () => {
+                if (!conjugation) {
+                    return <Ionicons name={'md-refresh'} size={30} style={Styles.whiteColor}
+                                     onPress={async () => await updateVerbsAlert()}/>
+                }
+            },
         });
     }, [navigation]);
 
@@ -172,11 +183,13 @@ export default function QuranicVerbsScreen(props: any) {
             setModalBodyContent(content);
         })
     }
+
     function madiMajhul() {
         QuranicVerbsManager.madiMajhul({verbDetail}).then(function (content: any) {
             setModalBodyContent(content);
         })
     }
+
     function mudariMajhul() {
         QuranicVerbsManager.mudariMajhul({verbDetail}).then(function (content: any) {
             setModalBodyContent(content);
@@ -283,10 +296,12 @@ export default function QuranicVerbsScreen(props: any) {
                       }}> Close </Text>
             </Overlay>
             <View style={[Styles.borderBottom, {flexDirection: 'row'}]}>
-                <TextInput placeholder="Meaning" style={[Styles.text, {width: 130, flex: 1,}]}
-                           value={selectedMeaning}
-                           onChangeText={meaning => setSelectedMeaning(meaning)}
-                />
+                {!conjugation && (
+                    <TextInput placeholder="Meaning" style={[Styles.text, {width: 130, flex: 1,}]}
+                               value={selectedMeaning}
+                               onChangeText={meaning => setSelectedMeaning(meaning)}
+                    />
+                )}
 
                 <View style={{flex: 1}}>
                     <Text style={Styles.text} onPress={() => setFormModalVisible(true)}>Form - {selectedForm}</Text>
@@ -363,42 +378,47 @@ export default function QuranicVerbsScreen(props: any) {
                         </View>
                     </Overlay>
                 </View>
-                <Ionicons name={'caret-down'} size={30} style={[Styles.grayColor, {marginTop: 5, marginLeft: 10}]}
-                          onPress={() => setOrderModalVisible(true)}/>
-                <Overlay overlayStyle={Styles.verbFormModal} isVisible={isOrderModalVisible}
-                         onBackdropPress={() => setOrderModalVisible(false)}>
-                    <View style={[Styles.centeredView, {marginTop: 0, flexDirection: "row"}]}>
-                        <Text style={Styles.subtitle} key={'label'}>Sort by</Text>
-                        <Ionicons name={'md-refresh'} size={30} style={[Styles.grayColor, {marginLeft: 50}]}
-                                  onPress={() => {
-                                      setVerbOrder('');
-                                      setOrderModalVisible(false)
-                                  }}/>
-                    </View>
+                {!conjugation && (
+                    <View>
+                        <Ionicons name={'caret-down'} size={30}
+                                  style={[Styles.grayColor, {marginTop: 5, marginLeft: 10}]}
+                                  onPress={() => setOrderModalVisible(true)}/>
+                        <Overlay overlayStyle={Styles.verbFormModal} isVisible={isOrderModalVisible}
+                                 onBackdropPress={() => setOrderModalVisible(false)}>
+                            <View style={[Styles.centeredView, {marginTop: 0, flexDirection: "row"}]}>
+                                <Text style={Styles.subtitle} key={'label'}>Sort by</Text>
+                                <Ionicons name={'md-refresh'} size={30} style={[Styles.grayColor, {marginLeft: 50}]}
+                                          onPress={() => {
+                                              setVerbOrder('');
+                                              setOrderModalVisible(false)
+                                          }}/>
+                            </View>
 
-                    <View style={[Styles.modalContent, {flexDirection: "row", flexWrap: "wrap"}]}>
-                        <TouchableOpacity onPress={() => {
-                            setVerbOrder("count-asc");
-                            setOrderModalVisible(false);
-                        }}>
-                            <Text style={[{margin: 10}, verbOrder === 'count-asc' && Styles.selectedText]}>Count
-                                ASC</Text>
+                            <View style={[Styles.modalContent, {flexDirection: "row", flexWrap: "wrap"}]}>
+                                <TouchableOpacity onPress={() => {
+                                    setVerbOrder("count-asc");
+                                    setOrderModalVisible(false);
+                                }}>
+                                    <Text style={[{margin: 10}, verbOrder === 'count-asc' && Styles.selectedText]}>Count
+                                        ASC</Text>
 
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => {
-                            setVerbOrder("count-desc");
-                            setOrderModalVisible(false);
-                        }}>
-                            <Text style={[{margin: 10}, verbOrder === 'count-desc' && Styles.selectedText]}>Count
-                                DSC</Text>
-                        </TouchableOpacity>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => {
+                                    setVerbOrder("count-desc");
+                                    setOrderModalVisible(false);
+                                }}>
+                                    <Text style={[{margin: 10}, verbOrder === 'count-desc' && Styles.selectedText]}>Count
+                                        DSC</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </Overlay>
                     </View>
-                </Overlay>
+                )}
             </View>
             <FlatList
-                data={verbs}
+                data={renderingVerbs}
                 renderItem={({item}) => <Verb item={item} openVerbPopup={openVerbPopup}/>}
-                keyExtractor={(item:any) => `${item.id}`}
+                keyExtractor={(item: any) => `${item.id}`}
             />
         </View>
     );

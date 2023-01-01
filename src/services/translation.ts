@@ -7,7 +7,7 @@ import bn from '../locales/bn.json';
 import PreferenceManager from '../managers/PreferenceManager';
 
 const i18n = new I18n({ en, bn });
-i18n.locale = Localization.getLocales()[0].languageCode;
+i18n.locale = 'en'//Localization.getLocales()[0].languageCode;
 
 //
 // const translation = new LocalizedStrings({

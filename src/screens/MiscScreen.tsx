@@ -34,8 +34,12 @@ export default function ChaptersScreen(props: any) {
                         Quranic verbs</Text>
                 </View>
                 <View style={[Styles.miscItem, Styles.leftMargin]}>
-                    <MaterialIcons name={'pages'} size={30} style={Styles.greenColor}/>
-                    <Text style={Styles.miscItemText}>Others</Text>
+                    <MaterialIcons name={'pages'} size={30} style={Styles.greenColor}
+                                   onPress={() => navigation.navigate('QuranicVerbsScreen', {conjugation: true, headerTitle: "Conjugation"})}
+                    />
+                    <Text style={Styles.miscItemText}
+                          onPress={() => navigation.navigate('QuranicVerbsScreen', {conjugation: true, headerTitle: "Conjugation"})}
+                    >Conjugation</Text>
                 </View>
             </View>
         </View>

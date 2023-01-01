@@ -94,7 +94,7 @@ function MiscNavigator() {
             <MiscStack.Screen
                 name="QuranicVerbsScreen"
                 component={QuranicVerbsScreen}
-                options={{headerTitle: 'Quranic Verbs'}}
+                options={({ route }) => ({ title: (route.params.headerTitle || "Quranic Verbs..") })}
             />
         </MiscStack.Navigator>
     );
@@ -147,7 +147,6 @@ export default function AppBottomTabNavigator() {
                 headerShown: false,
                 tabBarActiveTintColor: Colors[colorScheme].tabTintColor,
                 tabBarInactiveTintColor: 'gray',
-                //Tab bar styles can be added here
                 tabBarStyle:{backgroundColor:'white'},
                 tabBarLabelStyle:{paddingBottom:3},
             }}>
