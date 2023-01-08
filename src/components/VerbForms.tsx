@@ -19,13 +19,20 @@ const formMap = {
 }
 
 export function verbFormInst(opts: any) {
-    // @ts-ignore
     const instance = new (formMap[opts.form])(opts);
-    // if(instance.isMithal){
-    //     instance.prototype = {
-    //         ...instance.prototype,
-    //
-    //     }
-    // }
+    // console.log(getAllMethodNames(instance))
     return instance;
+}
+
+function getAllMethodNames(obj) {
+    let methods = new Set();
+    while (obj = Reflect.getPrototypeOf(obj)) {
+        let keys = Reflect.ownKeys(obj)
+        keys.forEach((k) => {
+            let method = obj[k];
+            if (method instanceof Function && k !== 'constructor' && k[0] !== '_')
+                methods.add(k)
+        });
+    }
+    return methods;
 }
