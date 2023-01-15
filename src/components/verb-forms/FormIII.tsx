@@ -5,15 +5,16 @@ export default class FormIII extends VerbForm {
 
     constructor(opts: any) {
         super(opts);
-        this.mdBase = this.fa + symbols.fatah + symbols.alif +
+        this.mdSukunBase = this.fa + symbols.fatah + symbols.alif +
             this.ain + symbols.fatah + this.lam;
         this.mdrVowel = symbols.dammah;
-        this.mdrBase = this.fa + symbols.fatah + symbols.alif +
+        this.mdrSukunBase = this.fa + symbols.fatah + symbols.alif +
             this.ain + symbols.kasrah + this.lam;
-        this.amrBase = this.mdrBase;
-        this.mdMjBase = this.fa + symbols.dammah + symbols.oao +
+        this.amrSukunBase = this.mdrSukunBase;
+        this.mdMjSukunBase = this.fa + symbols.dammah + symbols.oao +
             this.ain + symbols.kasrah + this.lam;
-        this.mdrMjBase = this.mdBase;
+        this.mdrMjSukunBase = this.mdSukunBase;
+        this.setDefaults();
     }
 
     // masder

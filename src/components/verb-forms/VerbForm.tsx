@@ -1,33 +1,44 @@
-import {symbols} from "./resources";
-
-const nahiPrefix = symbols.lamALif + symbols.fatah + ' ' + symbols.ta ;
+import {symbols, nahiPrefix} from "./resources";
 
 export default class VerbForm {
     protected opts: object;
+    protected rootLetters: any;
     protected root: string;
     protected fa: string;
     protected ain: string;
     protected lam: string;
 
-    protected mdBase: any;
-    protected mdrBase: any;
+    protected mdSukunBase: any;
+    protected mdMutahrrkBase: any;
+    protected mdrSukunBase: any;
+    protected mdrMutahrrkBase: any;
     protected mdrVowel: any;
-    protected amrBase: any;
-    protected mdMjBase: any;
-    protected mdrMjBase: any;
+    protected amrSukunBase: any;
+    protected amrMutahrrkBase: any;
+    protected mdMjSukunBase: any;
+    protected mdMjMutahrrkBase: any;
+    protected mdrMjSukunBase: any;
+    protected mdrMjMutahrrkBase: any;
 
     constructor(opts: any) {
         this.opts = opts
         this.root = opts.root;
-        const rootLetters = opts.root.replace(/\s+/g, '').split('');
-        this.fa = rootLetters[0];
-        this.ain = rootLetters[1];
-        this.lam = rootLetters[2];
+        this.rootLetters = opts.root.replace(/\s+/g, '').split('');
+        this.fa = this.rootLetters[0];
+        this.ain = this.rootLetters[1];
+        this.lam = this.rootLetters[2];
     }
 
+    public setDefaults(){
+        this.mdMutahrrkBase = this.mdSukunBase;
+        this.mdrMutahrrkBase = this.mdrSukunBase;
+        this.mdMjMutahrrkBase = this.mdMjSukunBase;
+        this.mdrMjMutahrrkBase = this.mdrMjSukunBase;
+        this.amrMutahrrkBase = this.amrSukunBase;
+    }
     //madi masculine singular
     public mdM1() {
-        return this.mdBase + symbols.fatah;
+        return this.mdSukunBase + symbols.fatah;
     }
 
     //madi masculine dual
@@ -37,7 +48,7 @@ export default class VerbForm {
 
     //madi masculine plural
     public mdMP() {
-        return this.mdBase + symbols.dammah + symbols.oao +
+        return this.mdSukunBase + symbols.dammah + symbols.oao +
             symbols.sukun + symbols.alif;
     }
 
@@ -53,27 +64,27 @@ export default class VerbForm {
 
     //madi feminine plural
     public mdFP() {
-        return this.mdBase + symbols.sukun + symbols.nun + symbols.fatah;
+        return this.mdMutahrrkBase + symbols.sukun + symbols.nun + symbols.fatah;
     }
 
     //madi masculine 2nd person singular
     public mdM21() {
-        return this.mdBase + symbols.sukun + symbols.ta + symbols.fatah;
+        return this.mdMutahrrkBase + symbols.sukun + symbols.ta + symbols.fatah;
     }
 
     //madi masculine 2nd person dual
     public mdM22() {
-        return this.mdBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.mim + symbols.fatah;
+        return this.mdMutahrrkBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.mim +  symbols.fatah + symbols.alif;
     }
 
     //madi masculine 2nd person plural
     public mdM2P() {
-        return this.mdBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.mim + symbols.sukun;
+        return this.mdMutahrrkBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.mim + symbols.sukun;
     }
 
     //madi feminine 2nd person singular
     public mdF21() {
-        return this.mdBase + symbols.sukun + symbols.ta + symbols.kasrah;
+        return this.mdMutahrrkBase + symbols.sukun + symbols.ta + symbols.kasrah;
     }
 
     //madi feminine 2nd person dual
@@ -83,22 +94,22 @@ export default class VerbForm {
 
     //madi feminine 2nd person plural
     public mdF2P() {
-        return this.mdBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.nun + symbols.shadda + symbols.fatah;
+        return this.mdMutahrrkBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.nun + symbols.shadda + symbols.fatah;
     }
 
     //madi 1st  person singular (both)
     public mdB1() {
-        return this.mdBase + symbols.sukun + symbols.ta + symbols.dammah;
+        return this.mdMutahrrkBase + symbols.sukun + symbols.ta + symbols.dammah;
     }
 
     //madi 1st  person all (both)
     public mdB3() {
-        return this.mdFP();
+        return this.mdFP() + symbols.alif;
     }
 
     // madi majhul masculine singular
     public mdMjM1() {
-        return this.mdMjBase + symbols.fatah;
+        return this.mdMjSukunBase + symbols.fatah;
     }
 
     public mdMjM2() {
@@ -106,7 +117,7 @@ export default class VerbForm {
     }
 
     public mdMjMP() {
-        return this.mdMjBase + symbols.dammah + symbols.oao +
+        return this.mdMjSukunBase + symbols.dammah + symbols.oao +
             symbols.sukun + symbols.alif;
     }
 
@@ -119,24 +130,23 @@ export default class VerbForm {
     }
 
     public mdMjFP() {
-        return this.mdMjBase + symbols.sukun + symbols.nun + symbols.fatah;
+        return this.mdMjMutahrrkBase + symbols.sukun + symbols.nun + symbols.fatah;
     }
 
     public mdMjM21() {
-        return this.mdMjBase + symbols.sukun + symbols.ta + symbols.fatah;
+        return this.mdMjMutahrrkBase + symbols.sukun + symbols.ta + symbols.fatah;
     }
 
     public mdMjM22() {
-        return this.mdMjBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.mim + symbols.fatah;
+        return this.mdMjMutahrrkBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.mim + symbols.fatah + symbols.alif;
     }
 
     public mdMjM2P() {
-        return this.mdMjBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.mim + symbols.sukun;
-        ;
+        return this.mdMjMutahrrkBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.mim + symbols.sukun;
     }
 
     public mdMjF21() {
-        return this.mdMjBase + symbols.sukun + symbols.ta + symbols.kasrah;
+        return this.mdMjMutahrrkBase + symbols.sukun + symbols.ta + symbols.kasrah;
     }
 
     public mdMjF22() {
@@ -144,45 +154,43 @@ export default class VerbForm {
     }
 
     public mdMjF2P() {
-        return this.mdMjBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.nun + symbols.shadda + symbols.fatah;
+        return this.mdMjMutahrrkBase + symbols.sukun + symbols.ta + symbols.dammah + symbols.nun + symbols.shadda + symbols.fatah;
     }
 
     public mdMjB1() {
-        return this.mdMjBase + symbols.sukun + symbols.ta + symbols.dammah;
+        return this.mdMjMutahrrkBase + symbols.sukun + symbols.ta + symbols.dammah;
     }
 
     public mdMjB3() {
-        return this.mdMjFP();
+        return this.mdMjMutahrrkBase + symbols.sukun + symbols.nun + symbols.fatah + symbols.alif;
     }
 
     // Ism fa'eel
     public ismF() {
-        return symbols.mim + symbols.dammah + this.mdrBase + symbols.dun;
+        return symbols.mim + symbols.dammah + this.mdrSukunBase + symbols.dun;
     }
 
     // Ism maf'ul
     public ismMfl() {
-        const {length} = this.ismF();
-        return this.ismF().substr(0, length - 3) + symbols.fatah +
-            this.ismF().substr(length - 2, length-1);
+        return symbols.mim + symbols.dammah + this.mdrSukunBase + symbols.dan;
     }
 
     // fel amr masculine singular
     public amrM1() {
-        return  this.amrBase + symbols.sukun;
+        return  this.amrSukunBase + symbols.sukun;
     }
     // fel amr masculine dual
     public amrM2() {
-        return  this.amrBase + symbols.fatah + symbols.alif;
+        return  this.amrSukunBase + symbols.fatah + symbols.alif;
     }
     // fel amr masculine plural
     public amrMP() {
-        return  this.amrBase + symbols.dammah + symbols.oao +
+        return  this.amrSukunBase + symbols.dammah + symbols.oao +
             symbols.sukun + symbols.alif ;
     }
     // fel amr feminine singular
     public amrF1() {
-        return  this.amrBase + symbols.kasrah + symbols.ea + symbols.sukun;
+        return  this.amrSukunBase + symbols.kasrah + symbols.ea + symbols.sukun;
     }
     // fel amr feminine dual
     public amrF2() {
@@ -190,25 +198,25 @@ export default class VerbForm {
     }
     // fel amr feminine plural
     public amrFP() {
-        return  this.amrBase + symbols.sukun + symbols.nun + symbols.fatah;
+        return  this.amrMutahrrkBase + symbols.sukun + symbols.nun + symbols.fatah;
     }
 
     // fel nahi masculine singular
     public nahiM1() {
-        return nahiPrefix + this.mdrVowel + this.mdrBase + symbols.sukun;
+        return nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.sukun;
     }
 
     public nahiM2() {
-        return nahiPrefix + this.mdrVowel + this.mdrBase + symbols.fatah + symbols.alif;
+        return nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.fatah + symbols.alif;
     }
 
     public nahiMP() {
-        return nahiPrefix + this.mdrVowel + this.mdrBase + symbols.dammah
+        return nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.dammah
             + symbols.oao + symbols.sukun + symbols.alif;
     }
 
     public nahiF1() {
-        return nahiPrefix + this.mdrVowel + this.mdrBase + symbols.kasrah +
+        return nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.kasrah +
             symbols.ea + symbols.sukun;
     }
 
@@ -217,7 +225,7 @@ export default class VerbForm {
     }
 
     public nahiFP() {
-        return nahiPrefix + this.mdrVowel + this.mdrBase + symbols.sukun +
+        return nahiPrefix + this.mdrVowel + this.mdrMutahrrkBase + symbols.sukun +
             symbols.nun + symbols.fatah;
     }
 
@@ -227,35 +235,35 @@ export default class VerbForm {
 
     // mudari masculine singular
     public mdrM1() {
-        return symbols.ea + this.mdrVowel + this.mdrBase + symbols.dammah;
+        return symbols.ea + this.mdrVowel + this.mdrSukunBase + symbols.dammah;
     }
 
     //mudari masculine dual
     public mdrM2() {
-        return symbols.ea + this.mdrVowel + this.mdrBase + symbols.fatah +
+        return symbols.ea + this.mdrVowel + this.mdrSukunBase + symbols.fatah +
             symbols.alif + symbols.nun + symbols.kasrah;
     }
 
     //mudari masculine plural
     public mdrMP() {
-        return symbols.ea + this.mdrVowel + this.mdrBase + symbols.dammah +
+        return symbols.ea + this.mdrVowel + this.mdrSukunBase + symbols.dammah +
             symbols.oao + symbols.sukun + symbols.nun + symbols.fatah;
     }
 
     //mudari feminine singular
     public mdrF1() {
-        return symbols.ta + this.mdrVowel + this.mdrBase + symbols.dammah;
+        return symbols.ta + this.mdrVowel + this.mdrSukunBase + symbols.dammah;
     }
 
     //mudari feminine dual
     public mdrF2() {
-        return symbols.ta + this.mdrVowel + this.mdrBase + symbols.fatah +
+        return symbols.ta + this.mdrVowel + this.mdrSukunBase + symbols.fatah +
             symbols.alif + symbols.nun + symbols.kasrah;
     }
 
     //mudari feminine plural
     public mdrFP() {
-        return symbols.ea + this.mdrVowel + this.mdrBase +
+        return symbols.ea + this.mdrVowel + this.mdrMutahrrkBase +
             symbols.sukun + symbols.nun + symbols.fatah;
     }
 
@@ -271,13 +279,13 @@ export default class VerbForm {
 
     //mudari masculine 2nd person plural
     public mdrM2P() {
-        return symbols.ta + this.mdrVowel + this.mdrBase + symbols.dammah +
+        return symbols.ta + this.mdrVowel + this.mdrSukunBase + symbols.dammah +
             symbols.oao + symbols.sukun + symbols.nun + symbols.fatah;
     }
 
     //mudari feminine 2nd person singular
     public mdrF21() {
-        return symbols.ta + this.mdrVowel + this.mdrBase + symbols.kasrah +
+        return symbols.ta + this.mdrVowel + this.mdrSukunBase + symbols.kasrah +
             symbols.ea + symbols.sukun + symbols.nun + symbols.fatah;
     }
 
@@ -288,51 +296,51 @@ export default class VerbForm {
 
     //mudari feminine 2nd person plural
     public mdrF2P() {
-        return symbols.ta + this.mdrVowel + this.mdrBase +
+        return symbols.ta + this.mdrVowel + this.mdrMutahrrkBase +
             symbols.sukun + symbols.nun + symbols.fatah;
     }
 
     //mudari 1st  person singular (both)
     public mdrB1() {
-        return symbols.qata + this.mdrVowel + this.mdrBase + symbols.dammah;
+        return symbols.qata + this.mdrVowel + this.mdrSukunBase + symbols.dammah;
     }
 
     //mudari 1st  person all (both)
     public mdrB3() {
-        return symbols.nun + this.mdrVowel + this.mdrBase + symbols.dammah;
+        return symbols.nun + this.mdrVowel + this.mdrSukunBase + symbols.dammah;
     }
 
     // mudari majhul masculine singullar
     public mdrMjM1() {
-        return symbols.ea + symbols.dammah + this.mdrMjBase + symbols.dammah;
+        return symbols.ea + symbols.dammah + this.mdrMjSukunBase + symbols.dammah;
     }
 
     //mudari majhul masculine dual
     public mdrMjM2() {
-        return symbols.ea + symbols.dammah + this.mdrMjBase + symbols.fatah +
+        return symbols.ea + symbols.dammah + this.mdrMjSukunBase + symbols.fatah +
             symbols.alif + symbols.nun + symbols.kasrah;
     }
 
     //mudari majhul masculine plural
     public mdrMjMP() {
-        return symbols.ea + symbols.dammah + this.mdrMjBase + symbols.dammah +
+        return symbols.ea + symbols.dammah + this.mdrMjSukunBase + symbols.dammah +
             symbols.oao + symbols.sukun + symbols.nun + symbols.fatah;
     }
 
     //mudari majhul feminine singular
     public mdrMjF1() {
-        return symbols.ta + symbols.dammah + this.mdrMjBase + symbols.dammah;
+        return symbols.ta + symbols.dammah + this.mdrMjSukunBase + symbols.dammah;
     }
 
     //mudari majhul feminine dual
     public mdrMjF2() {
-        return symbols.ta + symbols.dammah + this.mdrMjBase + symbols.fatah +
+        return symbols.ta + symbols.dammah + this.mdrMjSukunBase + symbols.fatah +
             symbols.alif + symbols.nun + symbols.kasrah;
     }
 
     //mudari majhul feminine plural
     public mdrMjFP() {
-        return symbols.ea + symbols.dammah + this.mdrMjBase +
+        return symbols.ea + symbols.dammah + this.mdrMjMutahrrkBase +
             symbols.sukun + symbols.nun + symbols.fatah;
     }
 
@@ -348,13 +356,13 @@ export default class VerbForm {
 
     //mudari majhul masculine 2nd person plural
     public mdrMjM2P() {
-        return symbols.ta + symbols.dammah + this.mdrMjBase + symbols.dammah +
+        return symbols.ta + symbols.dammah + this.mdrMjSukunBase + symbols.dammah +
             symbols.oao + symbols.sukun + symbols.nun + symbols.fatah;
     }
 
     //mudari majhul feminine 2nd person singular
     public mdrMjF21() {
-        return symbols.ta + symbols.dammah + this.mdrMjBase + symbols.kasrah +
+        return symbols.ta + symbols.dammah + this.mdrMjSukunBase + symbols.kasrah +
             symbols.ea + symbols.sukun + symbols.nun + symbols.fatah;
     }
 
@@ -365,18 +373,22 @@ export default class VerbForm {
 
     //mudari majhul feminine 2nd person plural
     public mdrMjF2P() {
-        return symbols.ta + symbols.dammah + this.mdrMjBase +
+        return symbols.ta + symbols.dammah + this.mdrMjMutahrrkBase +
             symbols.sukun + symbols.nun + symbols.fatah;
     }
 
     //mudari majhul 1st  person singular (both)
     public mdrMjB1() {
-        return symbols.qata + symbols.dammah + this.mdrMjBase + symbols.dammah;
+        return symbols.qata + symbols.dammah + this.mdrMjSukunBase + symbols.dammah;
     }
 
     //mudari majhul 1st  person all (both)
     public mdrMjB3() {
-        return symbols.nun + symbols.dammah + this.mdrMjBase + symbols.dammah;
+        return symbols.nun + symbols.dammah + this.mdrMjSukunBase + symbols.dammah;
+    }
+
+    public isMudaAf(){
+        return this.ain === this.lam;
     }
 
 }

@@ -4,14 +4,15 @@ import {symbols} from "./resources";
 export default class FormVI extends VerbForm {
     constructor(opts: any) {
         super(opts);
-        this.mdBase = symbols.ta + symbols.fatah + this.fa + symbols.fatah +
+        this.mdSukunBase = symbols.ta + symbols.fatah + this.fa + symbols.fatah +
             symbols.alif + this.ain + symbols.fatah + this.lam;
         this.mdrVowel = symbols.fatah;
-        this.mdrBase = this.mdBase;
-        this.amrBase = this.mdBase;
-        this.mdMjBase = symbols.ta + symbols.dammah + this.fa + symbols.dammah +
+        this.mdrSukunBase = this.mdSukunBase;
+        this.amrSukunBase = this.mdSukunBase;
+        this.mdMjSukunBase = symbols.ta + symbols.dammah + this.fa + symbols.dammah +
             symbols.oao + this.ain + symbols.kasrah + this.lam;
-        this.mdrMjBase = this.mdBase;
+        this.mdrMjSukunBase = this.mdSukunBase;
+        this.setDefaults();
     }
 
     // masder

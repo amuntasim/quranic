@@ -7,3 +7,5 @@ export const symbols = {
     fatah: 'َ', dammah: 'ُ', kasrah: 'ِ', dun: 'ٌ', dan: 'ً', din: 'ٍ', sukun: 'ْ', shadda: 'ّ',
     lamALif: 'لا',
 };
+
+export const nahiPrefix = symbols.lamALif + symbols.fatah + ' ' + symbols.ta

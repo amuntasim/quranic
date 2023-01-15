@@ -4,15 +4,16 @@ import {symbols} from "./resources";
 export default class FormVIII extends VerbForm {
     constructor(opts: any) {
         super(opts);
-        this.mdBase = symbols.alif + symbols.kasrah + this.fa + symbols.sukun +
+        this.mdSukunBase = symbols.alif + symbols.kasrah + this.fa + symbols.sukun +
             symbols.ta + symbols.fatah + this.ain + symbols.fatah + this.lam;
         this.mdrVowel = symbols.fatah;
-        this.mdrBase = this.fa + symbols.sukun + symbols.ta + symbols.fatah +
+        this.mdrSukunBase = this.fa + symbols.sukun + symbols.ta + symbols.fatah +
             this.ain + symbols.kasrah + this.lam;
-        this.amrBase = symbols.alif + symbols.kasrah + this.mdrBase;
-        this.mdMjBase = symbols.alif + symbols.dammah + this.fa + symbols.sukun +
+        this.amrSukunBase = symbols.alif + symbols.kasrah + this.mdrSukunBase;
+        this.mdMjSukunBase = symbols.alif + symbols.dammah + this.fa + symbols.sukun +
             symbols.ta + symbols.dammah + this.ain +  symbols.kasrah + this.lam;
-        this.mdrMjBase = this.mdBase;
+        this.mdrMjSukunBase = this.mdSukunBase;
+        this.setDefaults();
     }
 
     // masder

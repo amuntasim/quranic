@@ -4,13 +4,14 @@ import {symbols} from "./resources";
 export default class FormVII extends VerbForm {
     constructor(opts: any) {
         super(opts);
-        this.mdBase = symbols.alif + symbols.kasrah + symbols.nun + symbols.sukun +
+        this.mdSukunBase = symbols.alif + symbols.kasrah + symbols.nun + symbols.sukun +
             this.fa + symbols.fatah +  this.ain + symbols.fatah + this.lam;
         this.mdrVowel = symbols.fatah;
-        this.mdrBase = symbols.ea + symbols.kasrah + symbols.nun + symbols.sukun +
+        this.mdrSukunBase = symbols.ea + symbols.kasrah + symbols.nun + symbols.sukun +
             this.fa + symbols.fatah +  this.ain + symbols.kasrah + this.lam;
-        this.amrBase = symbols.alif + symbols.kasrah + symbols.nun + symbols.sukun +
+        this.amrSukunBase = symbols.alif + symbols.kasrah + symbols.nun + symbols.sukun +
             this.fa + symbols.fatah +  this.ain + symbols.kasrah + this.lam;
+        this.setDefaults();
     }
 
     // masder

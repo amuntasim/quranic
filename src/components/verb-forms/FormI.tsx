@@ -37,16 +37,17 @@ export default class FormI extends VerbForm {
         super(opts);
         const {mdAinVowel, mdrAinVowel, amrVowel = symbols.kasrah} =
         babConfig[opts.bab] || {}
-        this.mdBase = this.fa + symbols.fatah +
+        this.mdSukunBase = this.fa + symbols.fatah +
             this.ain + mdAinVowel + this.lam;
         this.mdrVowel = symbols.fatah;
-        this.mdrBase = this.fa + symbols.sukun +
+        this.mdrSukunBase = this.fa + symbols.sukun +
             this.ain + mdrAinVowel + this.lam;
-        this.amrBase = symbols.alif + amrVowel + this.mdrBase;
-        this.mdMjBase = this.fa + symbols.dammah +
+        this.amrSukunBase = symbols.alif + amrVowel + this.mdrSukunBase;
+        this.mdMjSukunBase = this.fa + symbols.dammah +
             this.ain + symbols.kasrah + this.lam;
-        this.mdrMjBase = this.fa + symbols.sukun +
+        this.mdrMjSukunBase = this.fa + symbols.sukun +
             this.ain + symbols.fatah + this.lam;
+        this.setDefaults();
     }
 
     // Ism fa'eel
