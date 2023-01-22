@@ -12,7 +12,8 @@ export default class FormVIII extends VerbForm {
         this.amrSukunBase = symbols.alif + symbols.kasrah + this.mdrSukunBase;
         this.mdMjSukunBase = symbols.alif + symbols.dammah + this.fa + symbols.sukun +
             symbols.ta + symbols.dammah + this.ain +  symbols.kasrah + this.lam;
-        this.mdrMjSukunBase = this.mdSukunBase;
+        this.mdrMjSukunBase = this.fa + symbols.sukun +
+            symbols.ta + symbols.fatah + this.ain + symbols.fatah + this.lam;
         this.setDefaults();
     }
 

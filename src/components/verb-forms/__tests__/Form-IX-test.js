@@ -1,7 +1,7 @@
 import {verbFormInst} from "../../VerbForms";
 
 let verbInstance;
-describe("FormII", () => {
+describe("Form-IX", () => {
 
     describe("root `ح م ر`", () => {
         beforeEach(() => {
@@ -17,8 +17,8 @@ describe("FormII", () => {
         it("mdM2() (madi masculine dual) returns اِحْمَرَّا", () => {
             expect(verbInstance.mdM2()).toEqual("اِحْمَرَّا");
         })
-        it("mdMP() (madi masculine plural) returns اِحْمَرُّوْا", () => {
-            expect(verbInstance.mdMP()).toEqual("اِحْمَرُّوْا");
+        it("mdMP() (madi masculine plural) returns اِحْمَرُّواْ", () => {
+            expect(verbInstance.mdMP()).toEqual("اِحْمَرُّواْ");
         })
         it("mdF1() (madi faminine singular) returns اِحْمَرَّتْ", () => {
             expect(verbInstance.mdF1()).toEqual("اِحْمَرَّتْ");
@@ -61,8 +61,8 @@ describe("FormII", () => {
         it("mdMjM2() (madi majhul masculine dual) returns اُحْمُرَّا", () => {
             expect(verbInstance.mdMjM2()).toEqual("اُحْمُرَّا");
         })
-        it("mdMjMP() (madi majhul masculine plural) returns اُحْمُرُّوْا", () => {
-            expect(verbInstance.mdMjMP()).toEqual("اُحْمُرُّوْا");
+        it("mdMjMP() (madi majhul masculine plural) returns اُحْمُرُّواْ", () => {
+            expect(verbInstance.mdMjMP()).toEqual("اُحْمُرُّواْ");
         })
         it("mdMjF1() (madi majhul faminine singular) returns اُحْمُرَّتْ", () => {
             expect(verbInstance.mdMjF1()).toEqual("اُحْمُرَّتْ");
@@ -200,8 +200,8 @@ describe("FormII", () => {
         it("amrM2() (fel amr masculine dual) returns اِحْمَرَّا", () => {
             expect(verbInstance.amrM2()).toEqual("اِحْمَرَّا");
         })
-        it("amrMP() (fel amr masculine plural) returns اِحْمَرُّوْا", () => {
-            expect(verbInstance.amrMP()).toEqual("اِحْمَرُّوْا");
+        it("amrMP() (fel amr masculine plural) returns اِحْمَرُّواْ", () => {
+            expect(verbInstance.amrMP()).toEqual("اِحْمَرُّواْ");
         })
         it("amrF1() (fel amr feminine singular) returns اِحْمَرِّيْ", () => {
             expect(verbInstance.amrF1()).toEqual("اِحْمَرِّيْ");
@@ -219,8 +219,8 @@ describe("FormII", () => {
         it("nahiM2() (fel nahi masculine dual) returns لاَ تَحْمَرَّا", () => {
             expect(verbInstance.nahiM2()).toEqual("لاَ تَحْمَرَّا");
         })
-        it("nahiMP() (fel nahi masculine plural) returns لاَ تَحْمَرُّوْا", () => {
-            expect(verbInstance.nahiMP()).toEqual("لاَ تَحْمَرُّوْا");
+        it("nahiMP() (fel nahi masculine plural) returns لاَ تَحْمَرُّواْ", () => {
+            expect(verbInstance.nahiMP()).toEqual("لاَ تَحْمَرُّواْ");
         })
         it("nahiF1() (fel nahi feminine singular) returns لاَ تَحْمَرِّيْ", () => {
             expect(verbInstance.nahiF1()).toEqual("لاَ تَحْمَرِّيْ");

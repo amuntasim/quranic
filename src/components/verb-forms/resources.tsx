@@ -5,7 +5,18 @@ export const symbols = {
     kaf: 'ك', lam: 'ل', mim: 'م', nun: 'ن', hha: 'ه', oao: 'و', ea: 'ي',
     hamza: 'ء', roundTa: 'ة', maksurah: 'ى', mamdudah: 'آ', qata: 'أ', qate: 'إ',
     fatah: 'َ', dammah: 'ُ', kasrah: 'ِ', dun: 'ٌ', dan: 'ً', din: 'ٍ', sukun: 'ْ', shadda: 'ّ',
-    lamALif: 'لا',
+    lamALif: 'لا', hamzaQursi: 'ئ'
 };
 
-export const nahiPrefix = symbols.lamALif + symbols.fatah + ' ' + symbols.ta
+export const nahiPrefix = symbols.lamALif + symbols.fatah + ' ' + symbols.ta;
+export const replaces = {
+    'two-sukun-one-weak': [/(وْ|يْ)(.\ْ)/, '$2'],
+    'oao-sukun-after-fatah': [/َ(وْ)/, 'َ' + 'ا'],
+    'hamza-qursi-sukun': [/(ءْ)/, 'ئ'+ 'ْ'],
+    'hamza-qursi-dammah': [/(ءُ)(.+)/, 'ئُ'+'$2'],
+    'hamza-qursi-kasrah': [/(ءِ)(.+)/, 'ئِ'+'$2'],
+    'hamza-qursi-fatah': [/(يءَ)(.+)/, 'يئَ'+'$2'],
+    'hamza-qursi-fatah-ea-sukun': [/(يْءَ)(.+)/, 'يْئَ'+'$2'],
+    'ee-un-to-een': [/يِءٌ/, 'ءٍ'],
+    'kasra-oao-to-ea': [/ِو/, 'ِي']
+}

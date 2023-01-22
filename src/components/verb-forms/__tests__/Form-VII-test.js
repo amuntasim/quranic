@@ -11,230 +11,154 @@ describe("Form-VII", () => {
             })
         })
 
-        it("mdM1() (madi masculine singular) returns فَتَّحَ", () => {
-            expect(verbInstance.mdM1()).toEqual("فَتَّحَ");
+        it("mdM1() (madi masculine singular) returns اِنْفَتَحَ", () => {
+            expect(verbInstance.mdM1()).toEqual("اِنْفَتَحَ");
         })
-        it("mdM2() (madi masculine dual) returns فَتَّحَا", () => {
-            expect(verbInstance.mdM2()).toEqual("فَتَّحَا");
+        it("mdM2() (madi masculine dual) returns اِنْفَتَحَا", () => {
+            expect(verbInstance.mdM2()).toEqual("اِنْفَتَحَا");
         })
-        it("mdMP() (madi masculine plural) returns فَتَّحُوْا", () => {
-            expect(verbInstance.mdMP()).toEqual("فَتَّحُوْا");
+        it("mdMP() (madi masculine plural) returns اِنْفَتَحُواْ", () => {
+            expect(verbInstance.mdMP()).toEqual("اِنْفَتَحُواْ");
         })
-        it("mdF1() (madi faminine singular) returns فَتَّحَتْ", () => {
-            expect(verbInstance.mdF1()).toEqual("فَتَّحَتْ");
+        it("mdF1() (madi faminine singular) returns اِنْفَتَحَتْ", () => {
+            expect(verbInstance.mdF1()).toEqual("اِنْفَتَحَتْ");
         })
-        it("mdF2() (madi faminine dual) returns فَتَّحَتَا", () => {
-            expect(verbInstance.mdF2()).toEqual("فَتَّحَتَا");
+        it("mdF2() (madi faminine dual) returns اِنْفَتَحَتَا", () => {
+            expect(verbInstance.mdF2()).toEqual("اِنْفَتَحَتَا");
         })
-        it("mdFP() (madi faminine plural) returns فَتَّحْنَ", () => {
-            expect(verbInstance.mdFP()).toEqual("فَتَّحْنَ");
+        it("mdFP() (madi faminine plural) returns اِنْفَتَحْنَ", () => {
+            expect(verbInstance.mdFP()).toEqual("اِنْفَتَحْنَ");
         })
-        it("mdM21() (madi masculine 2nd person singular) returns فَتَّحْتَ", () => {
-            expect(verbInstance.mdM21()).toEqual("فَتَّحْتَ");
+        it("mdM21() (madi masculine 2nd person singular) returns اِنْفَتَحْتَ", () => {
+            expect(verbInstance.mdM21()).toEqual("اِنْفَتَحْتَ");
         })
-        it("mdM22() (madi masculine 2nd person dual) returns فَتَّحْتُمَ", () => {
-            expect(verbInstance.mdM22()).toEqual("فَتَّحْتُمَ");
+        it("mdM22() (madi masculine 2nd person dual) returns اِنْفَتَحْتُمَا", () => {
+            expect(verbInstance.mdM22()).toEqual("اِنْفَتَحْتُمَا");
         })
-        it("mdM2P() (madi masculine 2nd person plural) returns فَتَّحْتُمْ", () => {
-            expect(verbInstance.mdM2P()).toEqual("فَتَّحْتُمْ");
+        it("mdM2P() (madi masculine 2nd person plural) returns اِنْفَتَحْتُمْ", () => {
+            expect(verbInstance.mdM2P()).toEqual("اِنْفَتَحْتُمْ");
         })
-        it("mdF21() (madi feminine 2nd person singular) returns فَتَحْتِ", () => {
-            expect(verbInstance.mdF21()).toEqual("فَتَحْتِ");
+        it("mdF21() (madi feminine 2nd person singular) returns اِنْفَتَحْتِ", () => {
+            expect(verbInstance.mdF21()).toEqual("اِنْفَتَحْتِ");
         })
-        it("mdF22() (madi feminine 2nd person dual) returns فَتَحْتُمَ", () => {
-            expect(verbInstance.mdF22()).toEqual("فَتَحْتُمَ");
+        it("mdF22() (madi feminine 2nd person dual) returns اِنْفَتَحْتُمَا", () => {
+            expect(verbInstance.mdF22()).toEqual("اِنْفَتَحْتُمَا");
         })
-        it("mdF2P() (madi feminine 2nd person plural) returns فَتَحْتُنَّ", () => {
-            expect(verbInstance.mdF2P()).toEqual("فَتَحْتُنَّ");
+        it("mdF2P() (madi feminine 2nd person plural) returns اِنْفَتَحْتُنَّ", () => {
+            expect(verbInstance.mdF2P()).toEqual("اِنْفَتَحْتُنَّ");
         })
-        it("mdB1() (madi 1st  person singular (both)) returns فَتَحْتُ", () => {
-            expect(verbInstance.mdB1()).toEqual("فَتَحْتُ");
+        it("mdB1() (madi 1st  person singular (both)) returns اِنْفَتَحْتُ", () => {
+            expect(verbInstance.mdB1()).toEqual("اِنْفَتَحْتُ");
         })
-        it("mdB3() (madi 1st  person all (both)) returns فَتَحْنَ", () => {
-            expect(verbInstance.mdB3()).toEqual("فَتَحْنَ");
+        it("mdB3() (madi 1st  person all (both)) returns اِنْفَتَحْنَا", () => {
+            expect(verbInstance.mdB3()).toEqual("اِنْفَتَحْنَا");
         })
 
         // madi majhul
-        it("mdMjM1() (madi majhul masculine singular) returns فُتِحَ", () => {
-            expect(verbInstance.mdMjM1()).toEqual("فُتِحَ");
-        })
-        it("mdMjM2() (madi majhul masculine dual) returns فُتِحَا", () => {
-            expect(verbInstance.mdMjM2()).toEqual("فُتِحَا");
-        })
-        it("mdMjMP() (madi majhul masculine plural) returns فُتِحُوْا", () => {
-            expect(verbInstance.mdMjMP()).toEqual("فُتِحُوْا");
-        })
-        it("mdMjF1() (madi majhul faminine singular) returns فُتِحَتْ", () => {
-            expect(verbInstance.mdMjF1()).toEqual("فُتِحَتْ");
-        })
-        it("mdMjF2() (madi majhul faminine dual) returns فُتِحَتَا", () => {
-            expect(verbInstance.mdMjF2()).toEqual("فُتِحَتَا");
-        })
-        it("mdMjFP() (madi majhul faminine plural) returns فُتِحْنَ", () => {
-            expect(verbInstance.mdMjFP()).toEqual("فُتِحْنَ");
-        })
-        it("mdMjM21() (madi majhul masculine 2nd person singular) returns فُتِحْتَ", () => {
-            expect(verbInstance.mdMjM21()).toEqual("فُتِحْتَ");
-        })
-        it("mdMjM22() (madi majhul masculine 2nd person dual) returns فُتِحْتُمَ", () => {
-            expect(verbInstance.mdMjM22()).toEqual("فُتِحْتُمَ");
-        })
-        it("mdMjM2P() (madi majhul masculine 2nd person plural) returns فُتِحْتُمْ", () => {
-            expect(verbInstance.mdMjM2P()).toEqual("فُتِحْتُمْ");
-        })
-        it("mdMjF21() (madi majhul feminine 2nd person singular) returns فُتِحْتِ", () => {
-            expect(verbInstance.mdMjF21()).toEqual("فُتِحْتِ");
-        })
-        it("mdMjF22() (madi majhul feminine 2nd person dual) returns فُتِحْتُمَ", () => {
-            expect(verbInstance.mdMjF22()).toEqual("فُتِحْتُمَ");
-        })
-        it("mdMjF2P() (madi majhul feminine 2nd person plural) returns فُتِحْتُنَّ", () => {
-            expect(verbInstance.mdMjF2P()).toEqual("فُتِحْتُنَّ");
-        })
-        it("mdMjB1() (madi majhul 1st  person singular (both)) returns فُتِحْتُ", () => {
-            expect(verbInstance.mdMjB1()).toEqual("فُتِحْتُ");
-        })
-        it("mdMjB3() (madi majhul 1st  person all (both)) returns فُتِحْنَ", () => {
-            expect(verbInstance.mdMjB3()).toEqual("فُتِحْنَ");
+        it("mdMjM1() (madi majhul masculine singular) returns blank", () => {
+            expect(verbInstance.mdMjM1()).toEqual("");
         })
 
+
         // mudari starts here
-        it("mdrM1() (mudari masculine singular) returns يَفْتَحُ", () => {
-            expect(verbInstance.mdrM1()).toEqual("يَفْتَحُ");
+        it("mdrM1() (mudari masculine singular) returns يَيِنْفَتِحُ", () => {
+            expect(verbInstance.mdrM1()).toEqual("يَيِنْفَتِحُ");
         })
-        it("mdrM2() (mudari masculine dual) returns يَفْتَحَانِ", () => {
-            expect(verbInstance.mdrM2()).toEqual("يَفْتَحَانِ");
+        it("mdrM2() (mudari masculine dual) returns يَيِنْفَتِحَانِ", () => {
+            expect(verbInstance.mdrM2()).toEqual("يَيِنْفَتِحَانِ");
         })
-        it("mdrMP() (mudari masculine plural) returns يَفْتَحُوْنَ", () => {
-            expect(verbInstance.mdrMP()).toEqual("يَفْتَحُوْنَ");
+        it("mdrMP() (mudari masculine plural) returns يَيِنْفَتِحُوْنَ", () => {
+            expect(verbInstance.mdrMP()).toEqual("يَيِنْفَتِحُوْنَ");
         })
-        it("mdrF1() (mudari faminine singular) returns تَفْتَحُ", () => {
-            expect(verbInstance.mdrF1()).toEqual("تَفْتَحُ");
+        it("mdrF1() (mudari faminine singular) returns تَيِنْفَتِحُ", () => {
+            expect(verbInstance.mdrF1()).toEqual("تَيِنْفَتِحُ");
         })
-        it("mdrF2() (mudari faminine dual) returns تَفْتَحَانِ", () => {
-            expect(verbInstance.mdrF2()).toEqual("تَفْتَحَانِ");
+        it("mdrF2() (mudari faminine dual) returns تَيِنْفَتِحَانِ", () => {
+            expect(verbInstance.mdrF2()).toEqual("تَيِنْفَتِحَانِ");
         })
-        it("mdrFP() (mudari faminine plural) returns يَفْتَحْنَ", () => {
-            expect(verbInstance.mdrFP()).toEqual("يَفْتَحْنَ");
+        it("mdrFP() (mudari faminine plural) returns يَيِنْفَتِحْنَ", () => {
+            expect(verbInstance.mdrFP()).toEqual("يَيِنْفَتِحْنَ");
         })
-        it("mdrM21() (mudari masculine 2nd person singular) returns تَفْتَحُ", () => {
-            expect(verbInstance.mdrM21()).toEqual("تَفْتَحُ");
+        it("mdrM21() (mudari masculine 2nd person singular) returns تَيِنْفَتِحُ", () => {
+            expect(verbInstance.mdrM21()).toEqual("تَيِنْفَتِحُ");
         })
-        it("mdrM22() (mudari masculine 2nd person dual) returns تَفْتَحَانِ", () => {
-            expect(verbInstance.mdrM22()).toEqual("تَفْتَحَانِ");
+        it("mdrM22() (mudari masculine 2nd person dual) returns تَيِنْفَتِحَانِ", () => {
+            expect(verbInstance.mdrM22()).toEqual("تَيِنْفَتِحَانِ");
         })
-        it("mdrM2P() (mudari masculine 2nd person plural) returns تَفْتَحُوْنَ", () => {
-            expect(verbInstance.mdrM2P()).toEqual("تَفْتَحُوْنَ");
+        it("mdrM2P() (mudari masculine 2nd person plural) returns تَيِنْفَتِحُوْنَ", () => {
+            expect(verbInstance.mdrM2P()).toEqual("تَيِنْفَتِحُوْنَ");
         })
-        it("mdrF21() (mudari feminine 2nd person singular) returns تَفْتَحِيْنَ", () => {
-            expect(verbInstance.mdrF21()).toEqual("تَفْتَحِيْنَ");
+        it("mdrF21() (mudari feminine 2nd person singular) returns تَيِنْفَتِحِيْنَ", () => {
+            expect(verbInstance.mdrF21()).toEqual("تَيِنْفَتِحِيْنَ");
         })
-        it("mdrF22() (mudari feminine 2nd person dual) returns تَفْتَحَانِ", () => {
-            expect(verbInstance.mdrF22()).toEqual("تَفْتَحَانِ");
+        it("mdrF22() (mudari feminine 2nd person dual) returns تَيِنْفَتِحَانِ", () => {
+            expect(verbInstance.mdrF22()).toEqual("تَيِنْفَتِحَانِ");
         })
-        it("mdrF2P() (mudari feminine 2nd person plural) returns تَفْتَحْنَ", () => {
-            expect(verbInstance.mdrF2P()).toEqual("تَفْتَحْنَ");
+        it("mdrF2P() (mudari feminine 2nd person plural) returns تَيِنْفَتِحْنَ", () => {
+            expect(verbInstance.mdrF2P()).toEqual("تَيِنْفَتِحْنَ");
         })
-        it("mdrB1() (mudari 1st  person singular (both)) returns أَفْتَحُ", () => {
-            expect(verbInstance.mdrB1()).toEqual("أَفْتَحُ");
+        it("mdrB1() (mudari 1st  person singular (both)) returns أَيِنْفَتِحُ", () => {
+            expect(verbInstance.mdrB1()).toEqual("أَيِنْفَتِحُ");
         })
-        it("mdrB3() (mudari 1st  person all (both)) returns نَفْتَحُ", () => {
-            expect(verbInstance.mdrB3()).toEqual("نَفْتَحُ");
+        it("mdrB3() (mudari 1st  person all (both)) returns نَيِنْفَتِحُ", () => {
+            expect(verbInstance.mdrB3()).toEqual("نَيِنْفَتِحُ");
         })
 
         // mudari majhul
-        it("mdrMjM1() (mudari majhul masculine singular) returns يُفْتَحُ", () => {
-            expect(verbInstance.mdrMjM1()).toEqual("يُفْتَحُ");
-        })
-        it("mdrMjM2() (mudari majhul masculine dual) returns يُفْتَحَانِ", () => {
-            expect(verbInstance.mdrMjM2()).toEqual("يُفْتَحَانِ");
-        })
-        it("mdrMjMP() (mudari majhul masculine plural) returns يُفْتَحُوْنَ", () => {
-            expect(verbInstance.mdrMjMP()).toEqual("يُفْتَحُوْنَ");
-        })
-        it("mdrMjF1() (mudari majhul faminine singular) returns تُفْتَحُ", () => {
-            expect(verbInstance.mdrMjF1()).toEqual("تُفْتَحُ");
-        })
-        it("mdrMjF2() (mudari majhul faminine dual) returns تُفْتَحَانِ", () => {
-            expect(verbInstance.mdrMjF2()).toEqual("تُفْتَحَانِ");
-        })
-        it("mdrMjFP() (mudari majhul faminine plural) returns يُفْتَحْنَ", () => {
-            expect(verbInstance.mdrMjFP()).toEqual("يُفْتَحْنَ");
-        })
-        it("mdrMjM21() (mudari majhul masculine 2nd person singular) returns تُفْتَحُ", () => {
-            expect(verbInstance.mdrMjM21()).toEqual("تُفْتَحُ");
-        })
-        it("mdrMjM22() (mudari majhul masculine 2nd person dual) returns تُفْتَحَانِ", () => {
-            expect(verbInstance.mdrMjM22()).toEqual("تُفْتَحَانِ");
-        })
-        it("mdrMjM2P() (mudari majhul masculine 2nd person plural) returns تُفْتَحُوْنَ", () => {
-            expect(verbInstance.mdrMjM2P()).toEqual("تُفْتَحُوْنَ");
-        })
-        it("mdrMjF21() (mudari majhul feminine 2nd person singular) returns تُفْتَحِيْنَ", () => {
-            expect(verbInstance.mdrMjF21()).toEqual("تُفْتَحِيْنَ");
-        })
-        it("mdrMjF22() (mudari majhul feminine 2nd person dual) returns تُفْتَحَانِ", () => {
-            expect(verbInstance.mdrMjF22()).toEqual("تُفْتَحَانِ");
-        })
-        it("mdrMjF2P() (mudari majhul feminine 2nd person plural) returns تُفْتَحْنَ", () => {
-            expect(verbInstance.mdrMjF2P()).toEqual("تُفْتَحْنَ");
-        })
-        it("mdrMjB1() (mudari majhul 1st  person singular (both)) returns أُفْتَحُ", () => {
-            expect(verbInstance.mdrMjB1()).toEqual("أُفْتَحُ");
-        })
-        it("mdrMjB3() (mudari majhul 1st  person all (both)) returns نُفْتَحُ", () => {
-            expect(verbInstance.mdrMjB3()).toEqual("نُفْتَحُ");
+        it("mdrMjM1() (mudari majhul masculine singular) returns blank", () => {
+            expect(verbInstance.mdrMjM1()).toEqual("");
         })
 
-        it("ismF() (Ism fa'eel) returns فاَتِحٌ", () => {
-            expect(verbInstance.ismF()).toEqual("فاَتِحٌ");
+
+        it("ismF() (Ism fa'eel) returns مُيِنْفَتِحٌ", () => {
+            expect(verbInstance.ismF()).toEqual("مُيِنْفَتِحٌ");
         })
-        it("ismMfl() (Ism maf'ul) returns مَفْتُوحُ", () => {
-            expect(verbInstance.ismMfl()).toEqual("مَفْتُوحُ");
+        it("ismMfl() (Ism maf'ul) returns blank", () => {
+            expect(verbInstance.ismMfl()).toEqual("");
         })
         // amr
-        it("amrM1() (fel amr masculine singular) returns اِفْتَحْ", () => {
-            expect(verbInstance.amrM1()).toEqual("اِفْتَحْ");
+        it("amrM1() (fel amr masculine singular) returns اِنْفَتِحْ", () => {
+            expect(verbInstance.amrM1()).toEqual("اِنْفَتِحْ");
         })
-        it("amrM2() (fel amr masculine dual) returns اِفْتَحَا", () => {
-            expect(verbInstance.amrM2()).toEqual("اِفْتَحَا");
+        it("amrM2() (fel amr masculine dual) returns اِنْفَتِحَا", () => {
+            expect(verbInstance.amrM2()).toEqual("اِنْفَتِحَا");
         })
-        it("amrMP() (fel amr masculine plural) returns اِفْتَحُوْا", () => {
-            expect(verbInstance.amrMP()).toEqual("اِفْتَحُوْا");
+        it("amrMP() (fel amr masculine plural) returns اِنْفَتِحُواْ", () => {
+            expect(verbInstance.amrMP()).toEqual("اِنْفَتِحُواْ");
         })
-        it("amrF1() (fel amr feminine singular) returns اِفْتَحِيْ", () => {
-            expect(verbInstance.amrF1()).toEqual("اِفْتَحِيْ");
+        it("amrF1() (fel amr feminine singular) returns اِنْفَتِحِيْ", () => {
+            expect(verbInstance.amrF1()).toEqual("اِنْفَتِحِيْ");
         })
-        it("amrF2() (fel amr feminine dual) returns اِفْتَحَا", () => {
-            expect(verbInstance.amrF2()).toEqual("اِفْتَحَا");
+        it("amrF2() (fel amr feminine dual) returns اِنْفَتِحَا", () => {
+            expect(verbInstance.amrF2()).toEqual("اِنْفَتِحَا");
         })
-        it("amrFP() (fel amr feminine plural) returns اِفْتَحْنَ", () => {
-            expect(verbInstance.amrFP()).toEqual("اِفْتَحْنَ");
+        it("amrFP() (fel amr feminine plural) returns اِنْفَتِحْنَ", () => {
+            expect(verbInstance.amrFP()).toEqual("اِنْفَتِحْنَ");
         })
         // nahi
-        it("nahiM1() (fel nahi masculine singular) returns لاَ تَفْتَحْ", () => {
-            expect(verbInstance.nahiM1()).toEqual("لاَ تَفْتَحْ");
+        it("nahiM1() (fel nahi masculine singular) returns لاَ تَيِنْفَتِحْ", () => {
+            expect(verbInstance.nahiM1()).toEqual("لاَ تَيِنْفَتِحْ");
         })
-        it("nahiM2() (fel nahi masculine dual) returns لاَ تَفْتَحَا", () => {
-            expect(verbInstance.nahiM2()).toEqual("لاَ تَفْتَحَا");
+        it("nahiM2() (fel nahi masculine dual) returns لاَ تَيِنْفَتِحَا", () => {
+            expect(verbInstance.nahiM2()).toEqual("لاَ تَيِنْفَتِحَا");
         })
-        it("nahiMP() (fel nahi masculine plural) returns لاَ تَفْتَحُوْا", () => {
-            expect(verbInstance.nahiMP()).toEqual("لاَ تَفْتَحُوْا");
+        it("nahiMP() (fel nahi masculine plural) returns لاَ تَيِنْفَتِحُواْ", () => {
+            expect(verbInstance.nahiMP()).toEqual("لاَ تَيِنْفَتِحُواْ");
         })
-        it("nahiF1() (fel nahi feminine singular) returns لاَ تَفْتَحِيْ", () => {
-            expect(verbInstance.nahiF1()).toEqual("لاَ تَفْتَحِيْ");
+        it("nahiF1() (fel nahi feminine singular) returns لاَ تَيِنْفَتِحِيْ", () => {
+            expect(verbInstance.nahiF1()).toEqual("لاَ تَيِنْفَتِحِيْ");
         })
-        it("nahiF2() (fel nahi feminine dual) returns لاَ تَفْتَحَا", () => {
-            expect(verbInstance.nahiF2()).toEqual("لاَ تَفْتَحَا");
+        it("nahiF2() (fel nahi feminine dual) returns لاَ تَيِنْفَتِحَا", () => {
+            expect(verbInstance.nahiF2()).toEqual("لاَ تَيِنْفَتِحَا");
         })
-        it("nahiFP() (fel nahi feminine plural) returns لاَ تَفْتَحْنَ", () => {
-            expect(verbInstance.nahiFP()).toEqual("لاَ تَفْتَحْنَ");
+        it("nahiFP() (fel nahi feminine plural) returns لاَ تَيِنْفَتِحْنَ", () => {
+            expect(verbInstance.nahiFP()).toEqual("لاَ تَيِنْفَتِحْنَ");
         })
-        it("msdr() (masder) returns فَتْح", () => {
-            expect(verbInstance.msdr()).toEqual("فَتْح");
+        it("msdr() (masder) returns تفففتُّحٌ", () => {
+            expect(verbInstance.msdr()).toEqual("تفففتُّحٌ");
         })
-        it("zarf() (fel nahi feminine plural) returns مَفْتُوح", () => {
-            expect(verbInstance.zarf()).toEqual("مَفْتُوحُ");
+        it("zarf() (fel nahi feminine plural) returns blank", () => {
+            expect(verbInstance.zarf()).toEqual("");
         })
 
     });

@@ -17,8 +17,8 @@ describe("Form-V", () => {
         it("mdM2() (madi masculine dual) returns تَفَتَّحَا", () => {
             expect(verbInstance.mdM2()).toEqual("تَفَتَّحَا");
         })
-        it("mdMP() (madi masculine plural) returns تَفَتَّحُوْا", () => {
-            expect(verbInstance.mdMP()).toEqual("تَفَتَّحُوْا");
+        it("mdMP() (madi masculine plural) returns تَفَتَّحُواْ", () => {
+            expect(verbInstance.mdMP()).toEqual("تَفَتَّحُواْ");
         })
         it("mdF1() (madi faminine singular) returns تَفَتَّحَتْ", () => {
             expect(verbInstance.mdF1()).toEqual("تَفَتَّحَتْ");
@@ -61,8 +61,8 @@ describe("Form-V", () => {
         it("mdMjM2() (madi majhul masculine dual) returns تُفُتِّحَا", () => {
             expect(verbInstance.mdMjM2()).toEqual("تُفُتِّحَا");
         })
-        it("mdMjMP() (madi majhul masculine plural) returns تُفُتِّحُوْا", () => {
-            expect(verbInstance.mdMjMP()).toEqual("تُفُتِّحُوْا");
+        it("mdMjMP() (madi majhul masculine plural) returns تُفُتِّحُواْ", () => {
+            expect(verbInstance.mdMjMP()).toEqual("تُفُتِّحُواْ");
         })
         it("mdMjF1() (madi majhul faminine singular) returns تُفُتِّحَتْ", () => {
             expect(verbInstance.mdMjF1()).toEqual("تُفُتِّحَتْ");
@@ -199,8 +199,8 @@ describe("Form-V", () => {
         it("amrM2() (fel amr masculine dual) returns تَفَتَّحَا", () => {
             expect(verbInstance.amrM2()).toEqual("تَفَتَّحَا");
         })
-        it("amrMP() (fel amr masculine plural) returns تَفَتَّحُوْا", () => {
-            expect(verbInstance.amrMP()).toEqual("تَفَتَّحُوْا");
+        it("amrMP() (fel amr masculine plural) returns تَفَتَّحُواْ", () => {
+            expect(verbInstance.amrMP()).toEqual("تَفَتَّحُواْ");
         })
         it("amrF1() (fel amr feminine singular) returns تَفَتَّحِيْ", () => {
             expect(verbInstance.amrF1()).toEqual("تَفَتَّحِيْ");
@@ -218,8 +218,8 @@ describe("Form-V", () => {
         it("nahiM2() (fel nahi masculine dual) returns لاَ تَتَفَتَّحَا", () => {
             expect(verbInstance.nahiM2()).toEqual("لاَ تَتَفَتَّحَا");
         })
-        it("nahiMP() (fel nahi masculine plural) returns لاَ تَتَفَتَّحُوْا", () => {
-            expect(verbInstance.nahiMP()).toEqual("لاَ تَتَفَتَّحُوْا");
+        it("nahiMP() (fel nahi masculine plural) returns لاَ تَتَفَتَّحُواْ", () => {
+            expect(verbInstance.nahiMP()).toEqual("لاَ تَتَفَتَّحُواْ");
         })
         it("nahiF1() (fel nahi feminine singular) returns لاَ تَتَفَتَّحِيْ", () => {
             expect(verbInstance.nahiF1()).toEqual("لاَ تَتَفَتَّحِيْ");

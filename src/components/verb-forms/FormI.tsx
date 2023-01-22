@@ -1,5 +1,5 @@
 import VerbForm from "./VerbForm";
-import {symbols} from "./resources";
+import {nahiPrefix, symbols} from "./resources";
 
 const babConfig = {
     'aa': {
@@ -37,29 +37,51 @@ export default class FormI extends VerbForm {
         super(opts);
         const {mdAinVowel, mdrAinVowel, amrVowel = symbols.kasrah} =
         babConfig[opts.bab] || {}
-        this.mdSukunBase = this.fa + symbols.fatah +
-            this.ain + mdAinVowel + this.lam;
+        this.mdSukunBase = this.fa + symbols.fatah + this.ain + mdAinVowel + this.lam;
         this.mdrVowel = symbols.fatah;
-        this.mdrSukunBase = this.fa + symbols.sukun +
-            this.ain + mdrAinVowel + this.lam;
+        this.mdrSukunBase = this.fa + symbols.sukun + this.ain + mdrAinVowel + this.lam;
         this.amrSukunBase = symbols.alif + amrVowel + this.mdrSukunBase;
-        this.mdMjSukunBase = this.fa + symbols.dammah +
-            this.ain + symbols.kasrah + this.lam;
-        this.mdrMjSukunBase = this.fa + symbols.sukun +
-            this.ain + symbols.fatah + this.lam;
+        this.mdMjSukunBase = this.fa + symbols.dammah + this.ain + symbols.kasrah + this.lam;
+        this.mdrMjSukunBase = this.fa + symbols.sukun + this.ain + symbols.fatah + this.lam;
         this.setDefaults();
+        if (this.isMudaAf()) {
+            // reset sukun bases with shadda
+            this.mdSukunBase = this.fa + symbols.fatah + this.ain + symbols.shadda;
+            this.mdrSukunBase = this.fa + mdrAinVowel + this.ain + symbols.shadda;
+            this.amrSukunBase = this.mdrSukunBase;
+            this.mdMjSukunBase = this.fa + symbols.dammah + this.ain + symbols.shadda;
+            this.mdrMjSukunBase = this.fa + symbols.fatah + this.ain + symbols.shadda;
+            // special case, fatah at the end to avoid two sukun join
+            this.amrM1 = () => this.fa + mdrAinVowel + this.ain + symbols.shadda + symbols.fatah
+            this.nahiM1 = () => nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.fatah
+        } else if (this.isMithal()) {
+            const mdMutahrrkFaVowel = opts.bab == 'au' ? symbols.dammah : symbols.kasrah
+            this.mdSukunBase = this.fa + symbols.fatah + symbols.alif + this.lam;
+            this.mdMutahrrkBase = this.fa + mdMutahrrkFaVowel + this.lam;
+            this.mdMjSukunBase = this.fa + symbols.kasrah + symbols.ea + this.lam;
+            this.mdMjMutahrrkBase = this.fa + symbols.kasrah + this.lam;
+            this.mdrSukunBase = this.fa + mdrAinVowel + this.ain + symbols.sukun + this.lam;
+            this.mdrMutahrrkBase = this.fa + mdrAinVowel + this.lam;
+            this.mdrMjSukunBase = this.fa + symbols.fatah + symbols.alif + this.lam;
+            this.mdrMjMutahrrkBase = this.fa + symbols.fatah + this.lam;
+            this.amrSukunBase = this.mdrSukunBase;
+            this.amrMutahrrkBase = this.mdrSukunBase;
+        }
     }
 
     // Ism fa'eel
     public ismF() {
-        return this.fa + symbols.alif + symbols.fatah + this.ain + symbols.kasrah
-            + this.lam + symbols.dun;
+        const modifiedAin = this.isMithalOaoe() ? symbols.hamzaQursi : this.ain;
+        const middlePart = this.isMudaAf() ? (this.ain + symbols.shadda) : (modifiedAin + symbols.kasrah + this.lam)
+        return this.replaceRules(this.fa + symbols.fatah  + symbols.alif +  middlePart + symbols.dun);
     }
 
     // Ism maf'ul
     public ismMfl() {
-        return symbols.mim + symbols.fatah + this.fa + symbols.sukun +
-            this.ain +  symbols.dammah + symbols.oao + this.lam + symbols.dammah;
+        let modifiedAin = symbols.sukun + this.ain + symbols.dammah;
+        if(this.isMithalOaoe() ) modifiedAin = symbols.dammah ;
+        if(this.isMithalEae() ) modifiedAin = symbols.kasrah ;
+        return this.replaceRules(symbols.mim + symbols.fatah + this.fa + modifiedAin + symbols.oao + this.lam + symbols.dun);
     }
 
     // masder

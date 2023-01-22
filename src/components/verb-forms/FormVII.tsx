@@ -50,4 +50,6 @@ export default class FormVII extends VerbForm {
     mdrMjF2P = () => '';
     mdrMjB1 = () => '';
     mdrMjB3 = () => '';
+
+    ismMfl = () => '';
 }
