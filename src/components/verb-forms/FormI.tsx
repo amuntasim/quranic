@@ -54,7 +54,7 @@ export default class FormI extends VerbForm {
             // special case, fatah at the end to avoid two sukun join
             this.amrM1 = () => this.fa + mdrAinVowel + this.ain + symbols.shadda + symbols.fatah
             this.nahiM1 = () => nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.fatah
-        } else if (this.isMithal()) {
+        } else if (this.isAjoaf()) {
             const mdMutahrrkFaVowel = opts.bab == 'au' ? symbols.dammah : symbols.kasrah
             this.mdSukunBase = this.fa + symbols.fatah + symbols.alif + this.lam;
             this.mdMutahrrkBase = this.fa + mdMutahrrkFaVowel + this.lam;
@@ -71,7 +71,7 @@ export default class FormI extends VerbForm {
 
     // Ism fa'eel
     public ismF() {
-        const modifiedAin = this.isMithalOaoe() ? symbols.hamzaQursi : this.ain;
+        const modifiedAin = this.isAjoafOaoe() ? symbols.hamzaQursi : this.ain;
         const middlePart = this.isMudaAf() ? (this.ain + symbols.shadda) : (modifiedAin + symbols.kasrah + this.lam)
         return this.replaceRules(this.fa + symbols.fatah  + symbols.alif +  middlePart + symbols.dun);
     }
@@ -79,8 +79,8 @@ export default class FormI extends VerbForm {
     // Ism maf'ul
     public ismMfl() {
         let modifiedAin = symbols.sukun + this.ain + symbols.dammah;
-        if(this.isMithalOaoe() ) modifiedAin = symbols.dammah ;
-        if(this.isMithalEae() ) modifiedAin = symbols.kasrah ;
+        if(this.isAjoafOaoe() ) modifiedAin = symbols.dammah ;
+        if(this.isAjoafEae() ) modifiedAin = symbols.kasrah ;
         return this.replaceRules(symbols.mim + symbols.fatah + this.fa + modifiedAin + symbols.oao + this.lam + symbols.dun);
     }
 

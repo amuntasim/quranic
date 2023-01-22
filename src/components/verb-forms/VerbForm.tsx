@@ -401,15 +401,15 @@ export default class VerbForm {
         return this.ain === this.lam;
     }
 
-    public isMithal() {
-        return this.isMithalOaoe() || this.isMithalEae()
+    public isAjoaf() {
+        return this.isAjoafOaoe() || this.isAjoafEae()
     }
 
-    public isMithalOaoe() {
+    public isAjoafOaoe() {
         return this.ain === symbols.oao;
     }
 
-    public isMithalEae() {
+    public isAjoafEae() {
         return this.ain === symbols.ea;
     }
 
