@@ -1,7 +1,7 @@
 import {symbols, nahiPrefix, replaces} from "./resources";
 
 export default class VerbForm {
-    protected opts: object;
+    protected opts: { bab: string };
     protected rootLetters: any;
     protected root: string;
     protected fa: string;
@@ -182,7 +182,7 @@ export default class VerbForm {
 
     // fel amr masculine singular
     public amrM1() {
-        return this.replaceRules(this.replaceRules(this.amrSukunBase + symbols.sukun));
+        return this.replaceRules(this.amrSukunBase + symbols.sukun);
     }
 
     // fel amr masculine dual
@@ -405,6 +405,18 @@ export default class VerbForm {
         return this.isAjoafOaoe() || this.isAjoafEae()
     }
 
+    public isMithal() {
+        return this.isMithalOaoe() || this.isMithalEae()
+    }
+
+    public isMithalOaoe() {
+        return this.fa === symbols.oao;
+    }
+
+    public isMithalEae() {
+        return this.fa === symbols.ea;
+    }
+
     public isAjoafOaoe() {
         return this.ain === symbols.oao;
     }
@@ -414,6 +426,11 @@ export default class VerbForm {
     }
 
     public replaceRules(values) {
-        return Object.values(replaces).reduce((acc, repl) => acc.replace(repl[0], repl[1]), values)
+        const rules = Object.values(replaces)
+        const result =  rules.reduce((acc, repl) => acc.replace(repl[0], repl[1]), values);
+        if(result !== values){// continue replacing until no change
+           return this.replaceRules(result)
+        }
+        return result;
     }
 }

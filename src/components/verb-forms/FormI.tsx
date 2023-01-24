@@ -45,28 +45,54 @@ export default class FormI extends VerbForm {
         this.mdrMjSukunBase = this.fa + symbols.sukun + this.ain + symbols.fatah + this.lam;
         this.setDefaults();
         if (this.isMudaAf()) {
-            // reset sukun bases with shadda
-            this.mdSukunBase = this.fa + symbols.fatah + this.ain + symbols.shadda;
-            this.mdrSukunBase = this.fa + mdrAinVowel + this.ain + symbols.shadda;
-            this.amrSukunBase = this.mdrSukunBase;
-            this.mdMjSukunBase = this.fa + symbols.dammah + this.ain + symbols.shadda;
-            this.mdrMjSukunBase = this.fa + symbols.fatah + this.ain + symbols.shadda;
-            // special case, fatah at the end to avoid two sukun join
-            this.amrM1 = () => this.fa + mdrAinVowel + this.ain + symbols.shadda + symbols.fatah
-            this.nahiM1 = () => nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.fatah
+            this.overrideMudaAfRules({mdrAinVowel})
         } else if (this.isAjoaf()) {
-            const mdMutahrrkFaVowel = opts.bab == 'au' ? symbols.dammah : symbols.kasrah
-            this.mdSukunBase = this.fa + symbols.fatah + symbols.alif + this.lam;
-            this.mdMutahrrkBase = this.fa + mdMutahrrkFaVowel + this.lam;
-            this.mdMjSukunBase = this.fa + symbols.kasrah + symbols.ea + this.lam;
-            this.mdMjMutahrrkBase = this.fa + symbols.kasrah + this.lam;
-            this.mdrSukunBase = this.fa + mdrAinVowel + this.ain + symbols.sukun + this.lam;
-            this.mdrMutahrrkBase = this.fa + mdrAinVowel + this.lam;
-            this.mdrMjSukunBase = this.fa + symbols.fatah + symbols.alif + this.lam;
-            this.mdrMjMutahrrkBase = this.fa + symbols.fatah + this.lam;
+            this.overrideAjwafRules({mdrAinVowel})
+        }else if(this.isMithal()){
+            this.overrideMithalRules({mdrAinVowel})
+        }
+    }
+
+    public overrideMithalRules({mdrAinVowel}){
+        if(this.isMithalOaoe() && this.opts.bab !== 'ea'){
+            this.mdrSukunBase =  this.ain + mdrAinVowel + this.lam;
+            this.mdrMutahrrkBase = this.mdrSukunBase;
             this.amrSukunBase = this.mdrSukunBase;
             this.amrMutahrrkBase = this.mdrSukunBase;
         }
+        // this.mdMutahrrkBase = this.fa + mdMutahrrkFaVowel + this.lam;
+        // this.mdMjSukunBase = this.fa + symbols.kasrah + symbols.ea + this.lam;
+        // this.mdMjMutahrrkBase = this.fa + symbols.kasrah + this.lam;
+        // this.mdrMutahrrkBase = this.fa + mdrAinVowel + this.lam;
+        // this.mdrMjSukunBase = this.fa + symbols.fatah + symbols.alif + this.lam;
+        // this.mdrMjMutahrrkBase = this.fa + symbols.fatah + this.lam;
+        // this.amrSukunBase = this.mdrSukunBase;
+        // this.amrMutahrrkBase = this.mdrSukunBase;
+    }
+
+    public overrideMudaAfRules({mdrAinVowel}){
+        // reset sukun bases with shadda
+        this.mdSukunBase = this.fa + symbols.fatah + this.ain + symbols.shadda;
+        this.mdrSukunBase = this.fa + mdrAinVowel + this.ain + symbols.shadda;
+        this.amrSukunBase = this.mdrSukunBase;
+        this.mdMjSukunBase = this.fa + symbols.dammah + this.ain + symbols.shadda;
+        this.mdrMjSukunBase = this.fa + symbols.fatah + this.ain + symbols.shadda;
+        // special case, fatah at the end to avoid two sukun join
+        this.amrM1 = () => this.fa + mdrAinVowel + this.ain + symbols.shadda + symbols.fatah
+        this.nahiM1 = () => nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.fatah
+    }
+
+    public overrideAjwafRules({mdrAinVowel}){
+        const mdMutahrrkFaVowel = this.opts.bab == 'au' ? symbols.dammah : symbols.kasrah
+        this.mdSukunBase = this.fa + symbols.fatah + symbols.alif + this.lam;
+        this.mdMutahrrkBase = this.fa + mdMutahrrkFaVowel + this.lam;
+        this.mdMjSukunBase = this.fa + symbols.kasrah + symbols.ea + this.lam;
+        this.mdMjMutahrrkBase = this.fa + symbols.kasrah + this.lam;
+        this.mdrMutahrrkBase = this.fa + mdrAinVowel + this.lam;
+        this.mdrMjSukunBase = this.fa + symbols.fatah + symbols.alif + this.lam;
+        this.mdrMjMutahrrkBase = this.fa + symbols.fatah + this.lam;
+        this.amrSukunBase = this.mdrSukunBase;
+        this.amrMutahrrkBase = this.mdrSukunBase;
     }
 
     // Ism fa'eel

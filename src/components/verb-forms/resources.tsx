@@ -10,8 +10,10 @@ export const symbols = {
 
 export const nahiPrefix = symbols.lamALif + symbols.fatah + ' ' + symbols.ta;
 export const replaces = {
-    'two-sukun-one-weak': [/(وْ|يْ)(.\ْ)/, '$2'],
-    'oao-sukun-after-fatah': [/َ(وْ)/, 'َ' + 'ا'],
+    'two-sukun-one-weak': [/(ا|وْ|يْ)(.\ْ)/, '$2'],
+    'week-fatah-after-sukun': [/(\ْ)(وَ)/, 'َ' + 'ا'],
+    'oao-damma-after-sukun': [/(\ْ)(وُ)/, 'ُ'+'وْ'],
+    'ea-kasra-after-sukun': [/(\ْ)(يِ)/,'ِ'+'يْ'],
     'hamza-qursi-sukun': [/(ءْ)/, 'ئ'+ 'ْ'],
     'hamza-qursi-dammah': [/(ءُ)(.+)/, 'ئُ'+'$2'],
     'hamza-qursi-kasrah': [/(ءِ)(.+)/, 'ئِ'+'$2'],
