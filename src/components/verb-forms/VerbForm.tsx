@@ -44,7 +44,7 @@ export default class VerbForm {
 
     //madi masculine dual
     public mdM2() {
-        return this.replaceRules( this.mdM1() + symbols.alif);
+        return this.replaceRules( this.mdSukunBase + symbols.fatah + symbols.alif);
     }
 
     //madi masculine plural
@@ -55,12 +55,12 @@ export default class VerbForm {
 
     //madi feminine singular
     public mdF1() {
-        return this.replaceRules( this.mdM1() + symbols.ta + symbols.sukun);
+        return this.replaceRules( this.mdSukunBase + symbols.fatah + symbols.ta + symbols.sukun);
     }
 
     //madi feminine dual
     public mdF2() {
-        return this.replaceRules( this.mdM1() + symbols.ta + symbols.fatah + symbols.alif);
+        return this.replaceRules( this.mdSukunBase + symbols.fatah + symbols.ta + symbols.fatah + symbols.alif);
     }
 
     //madi feminine plural
@@ -117,7 +117,7 @@ export default class VerbForm {
     }
 
     public mdMjM2() {
-        return this.replaceRules( this.mdMjM1() + symbols.alif);
+        return this.replaceRules( this.mdMjSukunBase + symbols.fatah + symbols.alif);
     }
 
     public mdMjMP() {
@@ -408,7 +408,17 @@ export default class VerbForm {
     public isMithal() {
         return this.isMithalOaoe() || this.isMithalEae()
     }
+    public isNaqis() {
+        return this.isNaqisOaoe() || this.isNaqisEae()
+    }
 
+    public isNaqisOaoe() {
+        return this.lam === symbols.oao;
+    }
+
+    public isNaqisEae() {
+        return this.lam === symbols.ea;
+    }
     public isMithalOaoe() {
         return this.fa === symbols.oao;
     }
@@ -429,7 +439,7 @@ export default class VerbForm {
         const rules = Object.values(replaces)
         const result =  rules.reduce((acc, repl) => acc.replace(repl[0], repl[1]), values);
         if(result !== values){// continue replacing until no change
-           return this.replaceRules(result)
+            return this.replaceRules(result)
         }
         return result;
     }

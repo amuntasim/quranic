@@ -1958,5 +1958,466 @@ describe("Form-I", () => {
         });
     });
 
+    describe("weak verb:naqis", ()=>{
+
+        describe("ae  root `د ع و`", () => {
+            beforeEach(() => {
+                const root = "د ع و";
+                verbInstance = verbFormInst({
+                    form: 'I', root, "bab": "au", "msdr": "دُعَاء"
+                })
+            })
+
+            it("mdM1() (madi masculine singular) returns دَعَا", () => {
+                expect(verbInstance.mdM1()).toEqual("دَعَا");
+            })
+            it("mdM2() (madi masculine dual) returns دَعَوَا", () => {
+                expect(verbInstance.mdM2()).toEqual("دَعَوَا");
+            })
+            it("mdMP() (madi masculine plural) returns دَعَواْ", () => {
+                expect(verbInstance.mdMP()).toEqual("دَعَواْ");
+            })
+            it("mdF1() (madi faminine singular) returns دَعَتْ", () => {
+                expect(verbInstance.mdF1()).toEqual("دَعَتْ");
+            })
+            it("mdF2() (madi faminine dual) returns دَعَتَا", () => {
+                expect(verbInstance.mdF2()).toEqual("دَعَتَا");
+            })
+            it("mdFP() (madi faminine plural) returns دَعَوْنَ", () => {
+                expect(verbInstance.mdFP()).toEqual("دَعَوْنَ");
+            })
+            it("mdM21() (madi masculine 2nd person singular) returns دَعَوْتَ", () => {
+                expect(verbInstance.mdM21()).toEqual("دَعَوْتَ");
+            })
+            it("mdM22() (madi masculine 2nd person dual) returns دَعَوْتُمَا", () => {
+                expect(verbInstance.mdM22()).toEqual("دَعَوْتُمَا");
+            })
+            it("mdM2P() (madi masculine 2nd person plural) returns دَعَوْتُمْ", () => {
+                expect(verbInstance.mdM2P()).toEqual("دَعَوْتُمْ");
+            })
+            it("mdF21() (madi feminine 2nd person singular) returns دَعَوْتِ", () => {
+                expect(verbInstance.mdF21()).toEqual("دَعَوْتِ");
+            })
+            it("mdF22() (madi feminine 2nd person dual) returns دَعَوْتُمَا", () => {
+                expect(verbInstance.mdF22()).toEqual("دَعَوْتُمَا");
+            })
+            it("mdF2P() (madi feminine 2nd person plural) returns دَعَوْتُنَّ", () => {
+                expect(verbInstance.mdF2P()).toEqual("دَعَوْتُنَّ");
+            })
+            it("mdB1() (madi 1st  person singular (both)) returns دَعَوْتُ", () => {
+                expect(verbInstance.mdB1()).toEqual("دَعَوْتُ");
+            })
+            it("mdB3() (madi 1st  person all (both)) returns دَعَوْنَا", () => {
+                expect(verbInstance.mdB3()).toEqual("دَعَوْنَا");
+            })
+
+            // madi majhul
+            it("mdMjM1() (madi majhul masculine singular) returns دُعِيَ", () => {
+                expect(verbInstance.mdMjM1()).toEqual("دُعِيَ");
+            })
+            it("mdMjM2() (madi majhul masculine dual) returns دُعِيَا", () => {
+                expect(verbInstance.mdMjM2()).toEqual("دُعِيَا");
+            })
+            it("mdMjMP() (madi majhul masculine plural) returns دُعُواْ", () => {
+                expect(verbInstance.mdMjMP()).toEqual("دُعُواْ");
+            })
+            it("mdMjF1() (madi majhul faminine singular) returns دُعِيَتْ", () => {
+                expect(verbInstance.mdMjF1()).toEqual("دُعِيَتْ");
+            })
+            it("mdMjF2() (madi majhul faminine dual) returns دُعِيَتَا", () => {
+                expect(verbInstance.mdMjF2()).toEqual("دُعِيَتَا");
+            })
+            it("mdMjFP() (madi majhul faminine plural) returns دُعِيْنَ", () => {
+                expect(verbInstance.mdMjFP()).toEqual("دُعِيْنَ");
+            })
+            it("mdMjM21() (madi majhul masculine 2nd person singular) returns دُعِيْتَ", () => {
+                expect(verbInstance.mdMjM21()).toEqual("دُعِيْتَ");
+            })
+            it("mdMjM22() (madi majhul masculine 2nd person dual) returns دُعِيْتُمَا", () => {
+                expect(verbInstance.mdMjM22()).toEqual("دُعِيْتُمَا");
+            })
+            it("mdMjM2P() (madi majhul masculine 2nd person plural) returns دُعِيْتُمْ", () => {
+                expect(verbInstance.mdMjM2P()).toEqual("دُعِيْتُمْ");
+            })
+            it("mdMjF21() (madi majhul feminine 2nd person singular) returns دُعِيْتِ", () => {
+                expect(verbInstance.mdMjF21()).toEqual("دُعِيْتِ");
+            })
+            it("mdMjF22() (madi majhul feminine 2nd person dual) returns دُعِيْتُمَا", () => {
+                expect(verbInstance.mdMjF22()).toEqual("دُعِيْتُمَا");
+            })
+            it("mdMjF2P() (madi majhul feminine 2nd person plural) returns دُعِيْتُنَّ", () => {
+                expect(verbInstance.mdMjF2P()).toEqual("دُعِيْتُنَّ");
+            })
+            it("mdMjB1() (madi majhul 1st  person singular (both)) returns دُعِيْتُ", () => {
+                expect(verbInstance.mdMjB1()).toEqual("دُعِيْتُ");
+            })
+            it("mdMjB3() (madi majhul 1st  person all (both)) returns دُعِيْنَا", () => {
+                expect(verbInstance.mdMjB3()).toEqual("دُعِيْنَا");
+            })
+
+            // mudari starts here
+            it("mdrM1() (mudari masculine singular) returns يَدْعُوْ", () => {
+                expect(verbInstance.mdrM1()).toEqual("يَدْعُوْ");
+            })
+            it("mdrM2() (mudari masculine dual) returns يَدْعُوَانِ", () => {
+                expect(verbInstance.mdrM2()).toEqual("يَدْعُوَانِ");
+            })
+            it("mdrMP() (mudari masculine plural) returns يَدْعُوْنَ", () => {
+                expect(verbInstance.mdrMP()).toEqual("يَدْعُوْنَ");
+            })
+            it("mdrF1() (mudari faminine singular) returns تَدْعُوْ", () => {
+                expect(verbInstance.mdrF1()).toEqual("تَدْعُوْ");
+            })
+            it("mdrF2() (mudari faminine dual) returns تَدْعُوَانِ", () => {
+                expect(verbInstance.mdrF2()).toEqual("تَدْعُوَانِ");
+            })
+            it("mdrFP() (mudari faminine plural) returns يَدْعُوْنَ", () => {
+                expect(verbInstance.mdrFP()).toEqual("يَدْعُوْنَ");
+            })
+            it("mdrM21() (mudari masculine 2nd person singular) returns تَدْعُوْ", () => {
+                expect(verbInstance.mdrM21()).toEqual("تَدْعُوْ");
+            })
+            it("mdrM22() (mudari masculine 2nd person dual) returns تَدْعُوَانِ", () => {
+                expect(verbInstance.mdrM22()).toEqual("تَدْعُوَانِ");
+            })
+            it("mdrM2P() (mudari masculine 2nd person plural) returns تَدْعُوْنَ", () => {
+                expect(verbInstance.mdrM2P()).toEqual("تَدْعُوْنَ");
+            })
+            it("mdrF21() (mudari feminine 2nd person singular) returns تَدْعِيْنَ", () => {
+                expect(verbInstance.mdrF21()).toEqual("تَدْعِيْنَ");
+            })
+            it("mdrF22() (mudari feminine 2nd person dual) returns تَدْعُوَانِ", () => {
+                expect(verbInstance.mdrF22()).toEqual("تَدْعُوَانِ");
+            })
+            it("mdrF2P() (mudari feminine 2nd person plural) returns تَدْعُوْنَ", () => {
+                expect(verbInstance.mdrF2P()).toEqual("تَدْعُوْنَ");
+            })
+            it("mdrB1() (mudari 1st  person singular (both)) returns أَدْعُوْ", () => {
+                expect(verbInstance.mdrB1()).toEqual("أَدْعُوْ");
+            })
+            it("mdrB3() (mudari 1st  person all (both)) returns نَدْعُوْ", () => {
+                expect(verbInstance.mdrB3()).toEqual("نَدْعُوْ");
+            })
+
+            // mudari majhul
+            it("mdrMjM1() (mudari majhul masculine singular) returns يُدْعَى", () => {
+                expect(verbInstance.mdrMjM1()).toEqual("يُدْعَى");
+            })
+            it("mdrMjM2() (mudari majhul masculine dual) returns يُدْعَيَانِ", () => {
+                expect(verbInstance.mdrMjM2()).toEqual("يُدْعَيَانِ");
+            })
+            it("mdrMjMP() (mudari majhul masculine plural) returns يُدْعَوْنَ", () => {
+                expect(verbInstance.mdrMjMP()).toEqual("يُدْعَوْنَ");
+            })
+            it("mdrMjF1() (mudari majhul faminine singular) returns تُدْعَى", () => {
+                expect(verbInstance.mdrMjF1()).toEqual("تُدْعَى");
+            })
+            it("mdrMjF2() (mudari majhul faminine dual) returns تُدْعَيَانِ", () => {
+                expect(verbInstance.mdrMjF2()).toEqual("تُدْعَيَانِ");
+            })
+            it("mdrMjFP() (mudari majhul faminine plural) returns يُدْعَيْنَ", () => {
+                expect(verbInstance.mdrMjFP()).toEqual("يُدْعَيْنَ");
+            })
+            it("mdrMjM21() (mudari majhul masculine 2nd person singular) returns تُدْعَى", () => {
+                expect(verbInstance.mdrMjM21()).toEqual("تُدْعَى");
+            })
+            it("mdrMjM22() (mudari majhul masculine 2nd person dual) returns تُدْعَيَانِ", () => {
+                expect(verbInstance.mdrMjM22()).toEqual("تُدْعَيَانِ");
+            })
+            it("mdrMjM2P() (mudari majhul masculine 2nd person plural) returns تُدْعَوْنَ", () => {
+                expect(verbInstance.mdrMjM2P()).toEqual("تُدْعَوْنَ");
+            })
+            it("mdrMjF21() (mudari majhul feminine 2nd person singular) returns تُدْعَيْنَ", () => {
+                expect(verbInstance.mdrMjF21()).toEqual("تُدْعَيْنَ");
+            })
+            it("mdrMjF22() (mudari majhul feminine 2nd person dual) returns تُدْعَيَانِ", () => {
+                expect(verbInstance.mdrMjF22()).toEqual("تُدْعَيَانِ");
+            })
+            it("mdrMjF2P() (mudari majhul feminine 2nd person plural) returns تُدْعَيْنَ", () => {
+                expect(verbInstance.mdrMjF2P()).toEqual("تُدْعَيْنَ");
+            })
+            it("mdrMjB1() (mudari majhul 1st  person singular (both)) returns أُدْعَى", () => {
+                expect(verbInstance.mdrMjB1()).toEqual("أُدْعَى");
+            })
+            it("mdrMjB3() (mudari majhul 1st  person all (both)) returns نُدْعَى", () => {
+                expect(verbInstance.mdrMjB3()).toEqual("نُدْعَى");
+            })
+
+            it("ismF() (Ism fa'eel) returns دَاعٍ", () => {
+                expect(verbInstance.ismF()).toEqual("دَاعٍ");
+            })
+            it("ismMfl() (Ism maf'ul) returns مَدْعُوّ", () => {
+                expect(verbInstance.ismMfl()).toEqual("مَدْعُوّ");
+            })
+            // amr
+            it("amrM1() (fel amr masculine singular) returns اُدْعُ", () => {
+                expect(verbInstance.amrM1()).toEqual("اُدْعُ");
+            })
+            it("amrM2() (fel amr masculine dual) returns اُدْعُوَا", () => {
+                expect(verbInstance.amrM2()).toEqual("اُدْعُوَا");
+            })
+            it("amrMP() (fel amr masculine plural) returns اُدْعُواْ", () => {
+                expect(verbInstance.amrMP()).toEqual("اُدْعُواْ");
+            })
+            it("amrF1() (fel amr feminine singular) returns اُدْعِيْ", () => {
+                expect(verbInstance.amrF1()).toEqual("اُدْعِيْ");
+            })
+            it("amrF2() (fel amr feminine dual) returns اُدْعُوَا", () => {
+                expect(verbInstance.amrF2()).toEqual("اُدْعُوَا");
+            })
+            it("amrFP() (fel amr feminine plural) returns اُدْعُوْنَ", () => {
+                expect(verbInstance.amrFP()).toEqual("اُدْعُوْنَ");
+            })
+            // nahi
+            it("nahiM1() (fel nahi masculine singular) returns لاَ تَدْعُ", () => {
+                expect(verbInstance.nahiM1()).toEqual("لاَ تَدْعُ");
+            })
+            it("nahiM2() (fel nahi masculine dual) returns لاَ تَدْعُوَا", () => {
+                expect(verbInstance.nahiM2()).toEqual("لاَ تَدْعُوَا");
+            })
+            it("nahiMP() (fel nahi masculine plural) returns لاَ تَدْعُواْ", () => {
+                expect(verbInstance.nahiMP()).toEqual("لاَ تَدْعُواْ");
+            })
+            it("nahiF1() (fel nahi feminine singular) returns لاَ تَدْعِيْ", () => {
+                expect(verbInstance.nahiF1()).toEqual("لاَ تَدْعِيْ");
+            })
+            it("nahiF2() (fel nahi feminine dual) returns لاَ تَدْعُوَا", () => {
+                expect(verbInstance.nahiF2()).toEqual("لاَ تَدْعُوَا");
+            })
+            it("nahiFP() (fel nahi feminine plural) returns لاَ تَدْعُوْنَ", () => {
+                expect(verbInstance.nahiFP()).toEqual("لاَ تَدْعُوْنَ");
+            })
+        });
+
+        describe("aa  root `ر ء ي`", () => {
+            beforeEach(() => {
+                const root = "ر ء ي";
+                verbInstance = verbFormInst({
+                    form: 'I', root, "bab": "aa", "msdr": "دُعَاء"
+                })
+            })
+
+            it("mdM1() (madi masculine singular) returns رَءَى", () => {
+                expect(verbInstance.mdM1()).toEqual("رَءَى");
+            })
+            it("mdM2() (madi masculine dual) returns رَءَيَا", () => {
+                expect(verbInstance.mdM2()).toEqual("رَءَيَا");
+            })
+            it("mdMP() (madi masculine plural) returns رَءَواْ", () => {
+                expect(verbInstance.mdMP()).toEqual("رَءَواْ");
+            })
+            it("mdF1() (madi faminine singular) returns رَءَتْ", () => {
+                expect(verbInstance.mdF1()).toEqual("رَءَتْ");
+            })
+            it("mdF2() (madi faminine dual) returns رَءَتَا", () => {
+                expect(verbInstance.mdF2()).toEqual("رَءَتَا");
+            })
+            it("mdFP() (madi faminine plural) returns رَءَيْنَ", () => {
+                expect(verbInstance.mdFP()).toEqual("رَءَيْنَ");
+            })
+            it("mdM21() (madi masculine 2nd person singular) returns رَءَيْتَ", () => {
+                expect(verbInstance.mdM21()).toEqual("رَءَيْتَ");
+            })
+            it("mdM22() (madi masculine 2nd person dual) returns رَءَيْتُمَا", () => {
+                expect(verbInstance.mdM22()).toEqual("رَءَيْتُمَا");
+            })
+            it("mdM2P() (madi masculine 2nd person plural) returns رَءَيْتُمْ", () => {
+                expect(verbInstance.mdM2P()).toEqual("رَءَيْتُمْ");
+            })
+            it("mdF21() (madi feminine 2nd person singular) returns رَءَيْتِ", () => {
+                expect(verbInstance.mdF21()).toEqual("رَءَيْتِ");
+            })
+            it("mdF22() (madi feminine 2nd person dual) returns رَءَيْتُمَا", () => {
+                expect(verbInstance.mdF22()).toEqual("رَءَيْتُمَا");
+            })
+            it("mdF2P() (madi feminine 2nd person plural) returns رَءَيْتُنَّ", () => {
+                expect(verbInstance.mdF2P()).toEqual("رَءَيْتُنَّ");
+            })
+            it("mdB1() (madi 1st  person singular (both)) returns رَءَيْتُ", () => {
+                expect(verbInstance.mdB1()).toEqual("رَءَيْتُ");
+            })
+            it("mdB3() (madi 1st  person all (both)) returns رَءَيْنَا", () => {
+                expect(verbInstance.mdB3()).toEqual("رَءَيْنَا");
+            })
+
+            // madi majhul
+            it("mdMjM1() (madi majhul masculine singular) returns رُئِيَ", () => {
+                expect(verbInstance.mdMjM1()).toEqual("رُئِيَ");
+            })
+            it("mdMjM2() (madi majhul masculine dual) returns رُئِيَا", () => {
+                expect(verbInstance.mdMjM2()).toEqual("رُئِيَا");
+            })
+            it("mdMjMP() (madi majhul masculine plural) returns رُؤُواْ", () => {
+                expect(verbInstance.mdMjMP()).toEqual("رُؤُواْ");
+            })
+            it("mdMjF1() (madi majhul faminine singular) returns رُئِيَتْ", () => {
+                expect(verbInstance.mdMjF1()).toEqual("رُئِيَتْ");
+            })
+            it("mdMjF2() (madi majhul faminine dual) returns رُئِيَتَا", () => {
+                expect(verbInstance.mdMjF2()).toEqual("رُئِيَتَا");
+            })
+            it("mdMjFP() (madi majhul faminine plural) returns رُئِيْنَ", () => {
+                expect(verbInstance.mdMjFP()).toEqual("رُئِيْنَ");
+            })
+            it("mdMjM21() (madi majhul masculine 2nd person singular) returns رُئِيْتَ", () => {
+                expect(verbInstance.mdMjM21()).toEqual("رُئِيْتَ");
+            })
+            it("mdMjM22() (madi majhul masculine 2nd person dual) returns رُئِيْتُمَا", () => {
+                expect(verbInstance.mdMjM22()).toEqual("رُئِيْتُمَا");
+            })
+            it("mdMjM2P() (madi majhul masculine 2nd person plural) returns رُئِيْتُمْ", () => {
+                expect(verbInstance.mdMjM2P()).toEqual("رُئِيْتُمْ");
+            })
+            it("mdMjF21() (madi majhul feminine 2nd person singular) returns رُئِيْتِ", () => {
+                expect(verbInstance.mdMjF21()).toEqual("رُئِيْتِ");
+            })
+            it("mdMjF22() (madi majhul feminine 2nd person dual) returns رُئِيْتُمَا", () => {
+                expect(verbInstance.mdMjF22()).toEqual("رُئِيْتُمَا");
+            })
+            it("mdMjF2P() (madi majhul feminine 2nd person plural) returns رُئِيْتُنَّ", () => {
+                expect(verbInstance.mdMjF2P()).toEqual("رُئِيْتُنَّ");
+            })
+            it("mdMjB1() (madi majhul 1st  person singular (both)) returns رُئِيْتُ", () => {
+                expect(verbInstance.mdMjB1()).toEqual("رُئِيْتُ");
+            })
+            it("mdMjB3() (madi majhul 1st  person all (both)) returns رُئِيْنَا", () => {
+                expect(verbInstance.mdMjB3()).toEqual("رُئِيْنَا");
+            })
+
+            // mudari starts here
+            it("mdrM1() (mudari masculine singular) returns يَرَى", () => {
+                expect(verbInstance.mdrM1()).toEqual("يَرَى");
+            })
+            it("mdrM2() (mudari masculine dual) returns يَرَيَانِ", () => {
+                expect(verbInstance.mdrM2()).toEqual("يَرَيَانِ");
+            })
+            it("mdrMP() (mudari masculine plural) returns يَرَوْنَ", () => {
+                expect(verbInstance.mdrMP()).toEqual("يَرَوْنَ");
+            })
+            it("mdrF1() (mudari faminine singular) returns تَرَى", () => {
+                expect(verbInstance.mdrF1()).toEqual("تَرَى");
+            })
+            it("mdrF2() (mudari faminine dual) returns تَرَيَانِ", () => {
+                expect(verbInstance.mdrF2()).toEqual("تَرَيَانِ");
+            })
+            it("mdrFP() (mudari faminine plural) returns يَرَيْنَ", () => {
+                expect(verbInstance.mdrFP()).toEqual("يَرَيْنَ");
+            })
+            it("mdrM21() (mudari masculine 2nd person singular) returns تَرَى", () => {
+                expect(verbInstance.mdrM21()).toEqual("تَرَى");
+            })
+            it("mdrM22() (mudari masculine 2nd person dual) returns تَرَيَانِ", () => {
+                expect(verbInstance.mdrM22()).toEqual("تَرَيَانِ");
+            })
+            it("mdrM2P() (mudari masculine 2nd person plural) returns تَرَوْنَ", () => {
+                expect(verbInstance.mdrM2P()).toEqual("تَرَوْنَ");
+            })
+            it("mdrF21() (mudari feminine 2nd person singular) returns تَرَيْنَ", () => {
+                expect(verbInstance.mdrF21()).toEqual("تَرَيْنَ");
+            })
+            it("mdrF22() (mudari feminine 2nd person dual) returns تَرَيَانِ", () => {
+                expect(verbInstance.mdrF22()).toEqual("تَرَيَانِ");
+            })
+            it("mdrF2P() (mudari feminine 2nd person plural) returns تَرَيْنَ", () => {
+                expect(verbInstance.mdrF2P()).toEqual("تَرَيْنَ");
+            })
+            it("mdrB1() (mudari 1st  person singular (both)) returns أَرَى", () => {
+                expect(verbInstance.mdrB1()).toEqual("أَرَى");
+            })
+            it("mdrB3() (mudari 1st  person all (both)) returns نَرَى", () => {
+                expect(verbInstance.mdrB3()).toEqual("نَرَى");
+            })
+
+            // mudari majhul
+            it("mdrMjM1() (mudari majhul masculine singular) returns يُرَى", () => {
+                expect(verbInstance.mdrMjM1()).toEqual("يُرَى");
+            })
+            it("mdrMjM2() (mudari majhul masculine dual) returns يُرَيَانِ", () => {
+                expect(verbInstance.mdrMjM2()).toEqual("يُرَيَانِ");
+            })
+            it("mdrMjMP() (mudari majhul masculine plural) returns يُرَوْنَ", () => {
+                expect(verbInstance.mdrMjMP()).toEqual("يُرَوْنَ");
+            })
+            it("mdrMjF1() (mudari majhul faminine singular) returns تُرَى", () => {
+                expect(verbInstance.mdrMjF1()).toEqual("تُرَى");
+            })
+            it("mdrMjF2() (mudari majhul faminine dual) returns تُرَيَانِ", () => {
+                expect(verbInstance.mdrMjF2()).toEqual("تُرَيَانِ");
+            })
+            it("mdrMjFP() (mudari majhul faminine plural) returns يُرَيْنَ", () => {
+                expect(verbInstance.mdrMjFP()).toEqual("يُرَيْنَ");
+            })
+            it("mdrMjM21() (mudari majhul masculine 2nd person singular) returns تُرَى", () => {
+                expect(verbInstance.mdrMjM21()).toEqual("تُرَى");
+            })
+            it("mdrMjM22() (mudari majhul masculine 2nd person dual) returns تُرَيَانِ", () => {
+                expect(verbInstance.mdrMjM22()).toEqual("تُرَيَانِ");
+            })
+            it("mdrMjM2P() (mudari majhul masculine 2nd person plural) returns تُرَوْنَ", () => {
+                expect(verbInstance.mdrMjM2P()).toEqual("تُرَوْنَ");
+            })
+            it("mdrMjF21() (mudari majhul feminine 2nd person singular) returns تُرَيْنَ", () => {
+                expect(verbInstance.mdrMjF21()).toEqual("تُرَيْنَ");
+            })
+            it("mdrMjF22() (mudari majhul feminine 2nd person dual) returns تُرَيَانِ", () => {
+                expect(verbInstance.mdrMjF22()).toEqual("تُرَيَانِ");
+            })
+            it("mdrMjF2P() (mudari majhul feminine 2nd person plural) returns تُرَيْنَ", () => {
+                expect(verbInstance.mdrMjF2P()).toEqual("تُرَيْنَ");
+            })
+            it("mdrMjB1() (mudari majhul 1st  person singular (both)) returns أُرَى", () => {
+                expect(verbInstance.mdrMjB1()).toEqual("أُرَى");
+            })
+            it("mdrMjB3() (mudari majhul 1st  person all (both)) returns نُرَى", () => {
+                expect(verbInstance.mdrMjB3()).toEqual("نُرَى");
+            })
+
+            it("ismF() (Ism fa'eel) returns رَاءٍ", () => {
+                expect(verbInstance.ismF()).toEqual("رَاءٍ");
+            })
+            it("ismMfl() (Ism maf'ul) returns مَرْئِيّ", () => {
+                expect(verbInstance.ismMfl()).toEqual("مَرْئِيّ");
+            })
+            // amr
+            it("amrM1() (fel amr masculine singular) returns رَ", () => {
+                expect(verbInstance.amrM1()).toEqual("رَ");
+            })
+            it("amrM2() (fel amr masculine dual) returns رَيَا", () => {
+                expect(verbInstance.amrM2()).toEqual("رَيَا");
+            })
+            it("amrMP() (fel amr masculine plural) returns رَواْ", () => {
+                expect(verbInstance.amrMP()).toEqual("رَواْ");
+            })
+            it("amrF1() (fel amr feminine singular) returns رَيْ", () => {
+                expect(verbInstance.amrF1()).toEqual("رَيْ");
+            })
+            it("amrF2() (fel amr feminine dual) returns رَيَا", () => {
+                expect(verbInstance.amrF2()).toEqual("رَيَا");
+            })
+            it("amrFP() (fel amr feminine plural) returns رَيْنَ", () => {
+                expect(verbInstance.amrFP()).toEqual("رَيْنَ");
+            })
+            // nahi
+            it("nahiM1() (fel nahi masculine singular) returns لاَ تَرَ", () => {
+                expect(verbInstance.nahiM1()).toEqual("لاَ تَرَ");
+            })
+            it("nahiM2() (fel nahi masculine dual) returns لاَ تَرَيَا", () => {
+                expect(verbInstance.nahiM2()).toEqual("لاَ تَرَيَا");
+            })
+            it("nahiMP() (fel nahi masculine plural) returns لاَ تَرَواْ", () => {
+                expect(verbInstance.nahiMP()).toEqual("لاَ تَرَواْ");
+            })
+            it("nahiF1() (fel nahi feminine singular) returns لاَ تَرَيْ", () => {
+                expect(verbInstance.nahiF1()).toEqual("لاَ تَرَيْ");
+            })
+            it("nahiF2() (fel nahi feminine dual) returns لاَ تَرَيَا", () => {
+                expect(verbInstance.nahiF2()).toEqual("لاَ تَرَيَا");
+            })
+            it("nahiFP() (fel nahi feminine plural) returns لاَ تَرَيْنَ", () => {
+                expect(verbInstance.nahiFP()).toEqual("لاَ تَرَيْنَ");
+            })
+        });
+    })
+
 
 })

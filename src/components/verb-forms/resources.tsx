@@ -10,15 +10,27 @@ export const symbols = {
 
 export const nahiPrefix = symbols.lamALif + symbols.fatah + ' ' + symbols.ta;
 export const replaces = {
-    'two-sukun-one-weak': [/(ا|وْ|يْ)(.\ْ)/, '$2'],
-    'week-fatah-after-sukun': [/(\ْ)(وَ)/, 'َ' + 'ا'],
-    'oao-damma-after-sukun': [/(\ْ)(وُ)/, 'ُ'+'وْ'],
-    'ea-kasra-after-sukun': [/(\ْ)(يِ)/,'ِ'+'يْ'],
+    'dammah-oao-ea-uun-to-kasra-ea-sahha-uun': [/(ُ)(و)(يٌ)/, 'ِ'+'يّ'],
+    'qasra-ea-uun-to-een': [/(ِ)(يٌ)/, 'ٍ'],
+    'two-sukun-one-weak': [/(ا|وْ|يْ)(و|.ْ)/, '$2'],
+    'fatah-alif-fatah': [/(َاَ)/, 'َا'],
+    'week-fatah-after-sukun': [/(ْ)(وَ)/, 'َ' + 'ا'],
+    'sukun-hamja-fatah-to-fatah': [/(ْ)(ءَ)/, 'َ'],
+    'oao-damma-after-sukun': [/(ْ)(وُ)/, 'ُ'+'وْ'],
+    'ea-kasra-after-sukun': [/(ْ)(يِ)/,'ِ'+'يْ'],
     'hamza-qursi-sukun': [/(ءْ)/, 'ئ'+ 'ْ'],
     'hamza-qursi-dammah': [/(ءُ)(.+)/, 'ئُ'+'$2'],
     'hamza-qursi-kasrah': [/(ءِ)(.+)/, 'ئِ'+'$2'],
     'hamza-qursi-fatah': [/(يءَ)(.+)/, 'يئَ'+'$2'],
     'hamza-qursi-fatah-ea-sukun': [/(يْءَ)(.+)/, 'يْئَ'+'$2'],
+    'dammah-hamza-qursi-ea-oao-to-dammah-oao-qursi-oao': [/(ُ)(ئُو)(.+)/, 'ُ'+'ؤُو'+'$3'],
     'ee-un-to-een': [/يِءٌ/, 'ءٍ'],
-    'kasra-oao-to-ea': [/ِو/, 'ِي']
+    'kasra-oao-to-ea': [/ِو/, 'ِي'],
+    'kasra-ea-dammah-to-dammah': [/ِيُ/, 'ُ'],
+    'damma-oao-dammah-to-dammah-oao-sukun': [/(ُ)(وُ)/, 'ُ' + 'وْ'],
+    'damma-oao-kasrah-to-kasrah-oao-sukun': [/(ُ)(وِ)/, 'ِ' + 'وْ'],
+    'oao-ea-after-fatah-at-the-end-to-alifMaqsura': [/(َ)(وُ|يُ)$/, 'َ'+'ى'],
+    'fatah-weak-damma-or-qasra-to-fatah': [/(َ)(وُ|يُ)/, 'َ'+ 'يْ'],
+    'fatah-ea-qasra-ea-to-fatah-ea': [/(َ)(يِ)(يْ)/, 'َ'+ 'يْ'],
+    'oa-oa-uun-een-to-oa-sadda-un': [/(ووٌ)/, 'وّ'],
 }
