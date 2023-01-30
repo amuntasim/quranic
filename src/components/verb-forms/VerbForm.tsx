@@ -437,7 +437,12 @@ export default class VerbForm {
 
     public replaceRules(values) {
         const rules = Object.values(replaces)
-        const result =  rules.reduce((acc, repl) => acc.replace(repl[0], repl[1]), values);
+        const result =  rules.reduce((acc, repl) => {
+            // if(acc.match(repl[0])){
+            //     console.log(repl[0], repl[1])
+            // }
+            return acc.replace(repl[0], repl[1])
+        }, values);
         if(result !== values){// continue replacing until no change
             return this.replaceRules(result)
         }

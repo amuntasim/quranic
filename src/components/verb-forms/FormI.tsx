@@ -63,8 +63,10 @@ export default class FormI extends VerbForm {
         const weakLettersMap = {
             'و': 'ا', 'ي': 'ى'
         }
-        this.mdSukunBase = this.fa + symbols.fatah + this.ain;
-        this.mdM1 = () => this.fa + symbols.fatah + this.ain + mdAinVowel + weakLettersMap[this.lam]
+        if(this.opts.bab !== 'ea'){
+            this.mdSukunBase = this.fa + symbols.fatah + this.ain;
+            this.mdM1 = () => this.fa + symbols.fatah + this.ain + mdAinVowel + weakLettersMap[this.lam]
+        }
         this.mdM2 = () => this.fa + symbols.fatah + this.ain + mdAinVowel + this.lam + symbols.fatah + symbols.alif;
         this.mdMP = () => this.replaceRules(this.fa + symbols.fatah + this.ain + mdAinVowel + symbols.oao +
             symbols.alif + symbols.sukun)
@@ -83,11 +85,18 @@ export default class FormI extends VerbForm {
     }
 
     public overrideMithalRules({mdrAinVowel}) {
-        if (this.isMithalOaoe() && this.opts.bab !== 'ea') {
-            this.mdrSukunBase = this.ain + mdrAinVowel + this.lam;
-            this.mdrMutahrrkBase = this.mdrSukunBase;
-            this.amrSukunBase = this.mdrSukunBase;
-            this.amrMutahrrkBase = this.mdrSukunBase;
+        if (this.isMithalOaoe()) {
+            if(this.opts.bab !== 'ea'){
+                this.mdrSukunBase = this.ain + mdrAinVowel + this.lam;
+                this.mdrMutahrrkBase = this.mdrSukunBase;
+                this.amrSukunBase = this.mdrSukunBase;
+                this.amrMutahrrkBase = this.mdrSukunBase;
+            }else {
+                this.amrSukunBase = symbols.alif + symbols.kasrah + symbols.ea + symbols.sukun +
+                    this.ain + mdrAinVowel + this.lam;
+                this.amrMutahrrkBase = this.amrSukunBase;
+            }
+
         }
     }
 
@@ -125,10 +134,10 @@ export default class FormI extends VerbForm {
 
     // Ism maf'ul
     public ismMfl() {
-        let modifiedAin = symbols.sukun + this.ain + symbols.dammah;
-        if (this.isAjoafOaoe()) modifiedAin = symbols.dammah;
-        if (this.isAjoafEae()) modifiedAin = symbols.kasrah;
-        return this.replaceRules(symbols.mim + symbols.fatah + this.fa + modifiedAin + symbols.oao + this.lam + symbols.dun);
+        let modifiedAin = symbols.sukun + this.ain + symbols.dammah + symbols.oao;
+        if (this.isAjoafOaoe()) modifiedAin = symbols.dammah + symbols.oao;
+        if (this.isAjoafEae()) modifiedAin = symbols.kasrah + symbols.ea;
+        return this.replaceRules(symbols.mim + symbols.fatah + this.fa + modifiedAin +  this.lam + symbols.dun);
     }
 
     // masder
