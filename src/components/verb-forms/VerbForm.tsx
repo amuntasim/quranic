@@ -212,6 +212,7 @@ export default class VerbForm {
 
     // fel nahi masculine singular
     public nahiM1() {
+        console.log('hello..')
         return this.replaceRules(nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.sukun);
     }
 

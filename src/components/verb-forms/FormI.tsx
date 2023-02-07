@@ -54,7 +54,8 @@ export default class FormI extends VerbForm {
             this.overrideAjwafRules({mdrAinVowel})
         } else if (this.isMithal()) {
             this.overrideMithalRules({mdrAinVowel})
-        } else if (this.isNaqis()) {
+        }
+        if (this.isNaqis()) {
             this.overrideNaqisRules({mdAinVowel})
         }
     }

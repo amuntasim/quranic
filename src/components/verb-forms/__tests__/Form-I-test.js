@@ -2845,5 +2845,235 @@ describe("Form-I", () => {
 
     })
 
+    describe("weak verb:lafif", ()=>{
 
+        describe("ae  root `و ق ي`", () => {
+            beforeEach(() => {
+                const root = "و ق ي";
+                verbInstance = verbFormInst({
+                    form: 'I', root, "bab": "ae", "msdr": ""
+                })
+            })
+
+            it("mdM1() (madi masculine singular) returns وَقَى", () => {
+                expect(verbInstance.mdM1()).toEqual("وَقَى");
+            })
+            it("mdM2() (madi masculine dual) returns وَقَيَا", () => {
+                expect(verbInstance.mdM2()).toEqual("وَقَيَا");
+            })
+            it("mdMP() (madi masculine plural) returns وَقَواْ", () => {
+                expect(verbInstance.mdMP()).toEqual("وَقَواْ");
+            })
+            it("mdF1() (madi faminine singular) returns وَقَتْ", () => {
+                expect(verbInstance.mdF1()).toEqual("وَقَتْ");
+            })
+            it("mdF2() (madi faminine dual) returns وَقَتَا", () => {
+                expect(verbInstance.mdF2()).toEqual("وَقَتَا");
+            })
+            it("mdFP() (madi faminine plural) returns وَقَيْنَ", () => {
+                expect(verbInstance.mdFP()).toEqual("وَقَيْنَ");
+            })
+            it("mdM21() (madi masculine 2nd person singular) returns وَقَيْتَ", () => {
+                expect(verbInstance.mdM21()).toEqual("وَقَيْتَ");
+            })
+            it("mdM22() (madi masculine 2nd person dual) returns وَقَيْتُمَا", () => {
+                expect(verbInstance.mdM22()).toEqual("وَقَيْتُمَا");
+            })
+            it("mdM2P() (madi masculine 2nd person plural) returns وَقَيْتُمْ", () => {
+                expect(verbInstance.mdM2P()).toEqual("وَقَيْتُمْ");
+            })
+            it("mdF21() (madi feminine 2nd person singular) returns وَقَيْتِ", () => {
+                expect(verbInstance.mdF21()).toEqual("وَقَيْتِ");
+            })
+            it("mdF22() (madi feminine 2nd person dual) returns وَقَيْتُمَا", () => {
+                expect(verbInstance.mdF22()).toEqual("وَقَيْتُمَا");
+            })
+            it("mdF2P() (madi feminine 2nd person plural) returns وَقَيْتُنَّ", () => {
+                expect(verbInstance.mdF2P()).toEqual("وَقَيْتُنَّ");
+            })
+            it("mdB1() (madi 1st  person singular (both)) returns وَقَيْتُ", () => {
+                expect(verbInstance.mdB1()).toEqual("وَقَيْتُ");
+            })
+            it("mdB3() (madi 1st  person all (both)) returns وَقَيْنَا", () => {
+                expect(verbInstance.mdB3()).toEqual("وَقَيْنَا");
+            })
+
+            // madi majhul
+            it("mdMjM1() (madi majhul masculine singular) returns وُقِيَ", () => {
+                expect(verbInstance.mdMjM1()).toEqual("وُقِيَ");
+            })
+            it("mdMjM2() (madi majhul masculine dual) returns وُقِيَا", () => {
+                expect(verbInstance.mdMjM2()).toEqual("وُقِيَا");
+            })
+            it("mdMjMP() (madi majhul masculine plural) returns وُقُواْ", () => {
+                expect(verbInstance.mdMjMP()).toEqual("وُقُواْ");
+            })
+            it("mdMjF1() (madi majhul faminine singular) returns وُقِيَتْ", () => {
+                expect(verbInstance.mdMjF1()).toEqual("وُقِيَتْ");
+            })
+            it("mdMjF2() (madi majhul faminine dual) returns وُقِيَتَا", () => {
+                expect(verbInstance.mdMjF2()).toEqual("وُقِيَتَا");
+            })
+            it("mdMjFP() (madi majhul faminine plural) returns وُقِيْنَ", () => {
+                expect(verbInstance.mdMjFP()).toEqual("وُقِيْنَ");
+            })
+            it("mdMjM21() (madi majhul masculine 2nd person singular) returns وُقِيْتَ", () => {
+                expect(verbInstance.mdMjM21()).toEqual("وُقِيْتَ");
+            })
+            it("mdMjM22() (madi majhul masculine 2nd person dual) returns وُقِيْتُمَا", () => {
+                expect(verbInstance.mdMjM22()).toEqual("وُقِيْتُمَا");
+            })
+            it("mdMjM2P() (madi majhul masculine 2nd person plural) returns وُقِيْتُمْ", () => {
+                expect(verbInstance.mdMjM2P()).toEqual("وُقِيْتُمْ");
+            })
+            it("mdMjF21() (madi majhul feminine 2nd person singular) returns وُقِيْتِ", () => {
+                expect(verbInstance.mdMjF21()).toEqual("وُقِيْتِ");
+            })
+            it("mdMjF22() (madi majhul feminine 2nd person dual) returns وُقِيْتُمَا", () => {
+                expect(verbInstance.mdMjF22()).toEqual("وُقِيْتُمَا");
+            })
+            it("mdMjF2P() (madi majhul feminine 2nd person plural) returns وُقِيْتُنَّ", () => {
+                expect(verbInstance.mdMjF2P()).toEqual("وُقِيْتُنَّ");
+            })
+            it("mdMjB1() (madi majhul 1st  person singular (both)) returns وُقِيْتُ", () => {
+                expect(verbInstance.mdMjB1()).toEqual("وُقِيْتُ");
+            })
+            it("mdMjB3() (madi majhul 1st  person all (both)) returns وُقِيْنَا", () => {
+                expect(verbInstance.mdMjB3()).toEqual("وُقِيْنَا");
+            })
+
+            // mudari starts here
+            it("mdrM1() (mudari masculine singular) returns يَقِي", () => {
+                expect(verbInstance.mdrM1()).toEqual("يَقِي");
+            })
+            it("mdrM2() (mudari masculine dual) returns يَقِيَانِ", () => {
+                expect(verbInstance.mdrM2()).toEqual("يَقِيَانِ");
+            })
+            it("mdrMP() (mudari masculine plural) returns يَقُوْنَ", () => {
+                expect(verbInstance.mdrMP()).toEqual("يَقُوْنَ");
+            })
+            it("mdrF1() (mudari faminine singular) returns تَقِي", () => {
+                expect(verbInstance.mdrF1()).toEqual("تَقِي");
+            })
+            it("mdrF2() (mudari faminine dual) returns تَقِيَانِ", () => {
+                expect(verbInstance.mdrF2()).toEqual("تَقِيَانِ");
+            })
+            it("mdrFP() (mudari faminine plural) returns يَقِيْنَ", () => {
+                expect(verbInstance.mdrFP()).toEqual("يَقِيْنَ");
+            })
+            it("mdrM21() (mudari masculine 2nd person singular) returns تَقِي", () => {
+                expect(verbInstance.mdrM21()).toEqual("تَقِي");
+            })
+            it("mdrM22() (mudari masculine 2nd person dual) returns تَقِيَانِ", () => {
+                expect(verbInstance.mdrM22()).toEqual("تَقِيَانِ");
+            })
+            it("mdrM2P() (mudari masculine 2nd person plural) returns تَقُوْنَ", () => {
+                expect(verbInstance.mdrM2P()).toEqual("تَقُوْنَ");
+            })
+            it("mdrF21() (mudari feminine 2nd person singular) returns تَقِيْنَ", () => {
+                expect(verbInstance.mdrF21()).toEqual("تَقِيْنَ");
+            })
+            it("mdrF22() (mudari feminine 2nd person dual) returns تَقِيَانِ", () => {
+                expect(verbInstance.mdrF22()).toEqual("تَقِيَانِ");
+            })
+            it("mdrF2P() (mudari feminine 2nd person plural) returns تَقِيْنَ", () => {
+                expect(verbInstance.mdrF2P()).toEqual("تَقِيْنَ");
+            })
+            it("mdrB1() (mudari 1st  person singular (both)) returns أَقِي", () => {
+                expect(verbInstance.mdrB1()).toEqual("أَقِي");
+            })
+            it("mdrB3() (mudari 1st  person all (both)) returns نَقِي", () => {
+                expect(verbInstance.mdrB3()).toEqual("نَقِي");
+            })
+
+            // mudari majhul
+            it("mdrMjM1() (mudari majhul masculine singular) returns يُوْقَى", () => {
+                expect(verbInstance.mdrMjM1()).toEqual("يُوْقَى");
+            })
+            it("mdrMjM2() (mudari majhul masculine dual) returns يُوْقَيَانِ", () => {
+                expect(verbInstance.mdrMjM2()).toEqual("يُوْقَيَانِ");
+            })
+            it("mdrMjMP() (mudari majhul masculine plural) returns يُوْقَوْنَ", () => {
+                expect(verbInstance.mdrMjMP()).toEqual("يُوْقَوْنَ");
+            })
+            it("mdrMjF1() (mudari majhul faminine singular) returns تُوْقَى", () => {
+                expect(verbInstance.mdrMjF1()).toEqual("تُوْقَى");
+            })
+            it("mdrMjF2() (mudari majhul faminine dual) returns تُوْقَيَانِ", () => {
+                expect(verbInstance.mdrMjF2()).toEqual("تُوْقَيَانِ");
+            })
+            it("mdrMjFP() (mudari majhul faminine plural) returns يُوْقَيْنَ", () => {
+                expect(verbInstance.mdrMjFP()).toEqual("يُوْقَيْنَ");
+            })
+            it("mdrMjM21() (mudari majhul masculine 2nd person singular) returns تُوْقَى", () => {
+                expect(verbInstance.mdrMjM21()).toEqual("تُوْقَى");
+            })
+            it("mdrMjM22() (mudari majhul masculine 2nd person dual) returns تُوْقَيَانِ", () => {
+                expect(verbInstance.mdrMjM22()).toEqual("تُوْقَيَانِ");
+            })
+            it("mdrMjM2P() (mudari majhul masculine 2nd person plural) returns تُوْقَوْنَ", () => {
+                expect(verbInstance.mdrMjM2P()).toEqual("تُوْقَوْنَ");
+            })
+            it("mdrMjF21() (mudari majhul feminine 2nd person singular) returns تُوْقَيْنَ", () => {
+                expect(verbInstance.mdrMjF21()).toEqual("تُوْقَيْنَ");
+            })
+            it("mdrMjF22() (mudari majhul feminine 2nd person dual) returns تُوْقَيَانِ", () => {
+                expect(verbInstance.mdrMjF22()).toEqual("تُوْقَيَانِ");
+            })
+            it("mdrMjF2P() (mudari majhul feminine 2nd person plural) returns تُوْقَيْنَ", () => {
+                expect(verbInstance.mdrMjF2P()).toEqual("تُوْقَيْنَ");
+            })
+            it("mdrMjB1() (mudari majhul 1st  person singular (both)) returns أُوْقَى", () => {
+                expect(verbInstance.mdrMjB1()).toEqual("أُوْقَى");
+            })
+            it("mdrMjB3() (mudari majhul 1st  person all (both)) returns نُوْقَى", () => {
+                expect(verbInstance.mdrMjB3()).toEqual("نُوْقَى");
+            })
+
+            it("ismF() (Ism fa'eel) returns وَاقٍ", () => {
+                expect(verbInstance.ismF()).toEqual("وَاقٍ");
+            })
+            it("ismMfl() (Ism maf'ul) returns مَوْقِيّ", () => {
+                expect(verbInstance.ismMfl()).toEqual("مَوْقِيّ");
+            })
+            // amr
+            it("amrM1() (fel amr masculine singular) returns قِ", () => {
+                expect(verbInstance.amrM1()).toEqual("قِ");
+            })
+            it("amrM2() (fel amr masculine dual) returns قِيَا", () => {
+                expect(verbInstance.amrM2()).toEqual("قِيَا");
+            })
+            it("amrMP() (fel amr masculine plural) returns قُواْ", () => {
+                expect(verbInstance.amrMP()).toEqual("قُواْ");
+            })
+            it("amrF1() (fel amr feminine singular) returns قِيْ", () => {
+                expect(verbInstance.amrF1()).toEqual("قِيْ");
+            })
+            it("amrF2() (fel amr feminine dual) returns قِيَا", () => {
+                expect(verbInstance.amrF2()).toEqual("قِيَا");
+            })
+            it("amrFP() (fel amr feminine plural) returns قِيْنَ", () => {
+                expect(verbInstance.amrFP()).toEqual("قِيْنَ");
+            })
+            // nahi
+            it("nahiM1() (fel nahi masculine singular) returns لاَ تَقِ", () => {
+                expect(verbInstance.nahiM1()).toEqual("لاَ تَقِ");
+            })
+            it("nahiM2() (fel nahi masculine dual) returns لاَ تَقِيَا", () => {
+                expect(verbInstance.nahiM2()).toEqual("لاَ تَقِيَا");
+            })
+            it("nahiMP() (fel nahi masculine plural) returns لاَ تَقُواْ", () => {
+                expect(verbInstance.nahiMP()).toEqual("لاَ تَقُواْ");
+            })
+            it("nahiF1() (fel nahi feminine singular) returns لاَ تَقِيْ", () => {
+                expect(verbInstance.nahiF1()).toEqual("لاَ تَقِيْ");
+            })
+            it("nahiF2() (fel nahi feminine dual) returns لاَ تَقِيَا", () => {
+                expect(verbInstance.nahiF2()).toEqual("لاَ تَقِيَا");
+            })
+            it("nahiFP() (fel nahi feminine plural) returns لاَ تَقِيْنَ", () => {
+                expect(verbInstance.nahiFP()).toEqual("لاَ تَقِيْنَ");
+            })
+        });
+    })
 })
