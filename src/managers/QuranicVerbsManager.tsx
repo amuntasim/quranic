@@ -185,8 +185,13 @@ async function mudariMajhul(opts: any) {
     </View>)
 }
 
+function  baseVerb(opts: any) {
+    const vForm = verbFormInst(opts.verbDetail)
+    return vForm.mdM1()
+}
 
 export default {
+    baseVerb,
     getVerbs,
     sarfSagheer,
     sarfKabeerMadi,

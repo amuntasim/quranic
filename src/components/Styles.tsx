@@ -1,5 +1,6 @@
 import {StyleSheet} from "react-native";
 import Colors from "../constants/Colors";
+
 const arabicFontSize = 30;
 
 export default StyleSheet.create({
@@ -71,6 +72,16 @@ export default StyleSheet.create({
         top: 100,
     },
 
+    popover: {
+        zIndex: 1001,
+        position: "absolute",
+        top: 110,
+        left: 10
+    },
+    subFormChip: {
+        margin: 3,
+        padding: 3
+    },
     centeredView: {
         flex: 1,
         justifyContent: "center",

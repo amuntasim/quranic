@@ -27,6 +27,13 @@ export default class VerbForm {
         this.fa = this.rootLetters[0];
         this.ain = this.rootLetters[1];
         this.lam = this.rootLetters[2];
+        this.replaceRoots();
+    }
+
+    public replaceRoots() {
+        if (this.ain === symbols.qata || this.ain === symbols.alif) {
+            this.ain = symbols.hamza
+        }
     }
 
     public setDefaults() {
@@ -44,7 +51,7 @@ export default class VerbForm {
 
     //madi masculine dual
     public mdM2() {
-        return this.replaceRules( this.mdSukunBase + symbols.fatah + symbols.alif);
+        return this.replaceRules(this.mdSukunBase + symbols.fatah + symbols.alif);
     }
 
     //madi masculine plural
@@ -55,12 +62,12 @@ export default class VerbForm {
 
     //madi feminine singular
     public mdF1() {
-        return this.replaceRules( this.mdSukunBase + symbols.fatah + symbols.ta + symbols.sukun);
+        return this.replaceRules(this.mdSukunBase + symbols.fatah + symbols.ta + symbols.sukun);
     }
 
     //madi feminine dual
     public mdF2() {
-        return this.replaceRules( this.mdSukunBase + symbols.fatah + symbols.ta + symbols.fatah + symbols.alif);
+        return this.replaceRules(this.mdSukunBase + symbols.fatah + symbols.ta + symbols.fatah + symbols.alif);
     }
 
     //madi feminine plural
@@ -108,16 +115,16 @@ export default class VerbForm {
 
     //madi 1st  person all (both)
     public mdB3() {
-        return this.replaceRules( this.mdFP() + symbols.alif);
+        return this.replaceRules(this.mdFP() + symbols.alif);
     }
 
     // madi majhul masculine singular
     public mdMjM1() {
-        return this.replaceRules( this.mdMjSukunBase + symbols.fatah);
+        return this.replaceRules(this.mdMjSukunBase + symbols.fatah);
     }
 
     public mdMjM2() {
-        return this.replaceRules( this.mdMjSukunBase + symbols.fatah + symbols.alif);
+        return this.replaceRules(this.mdMjSukunBase + symbols.fatah + symbols.alif);
     }
 
     public mdMjMP() {
@@ -125,7 +132,7 @@ export default class VerbForm {
     }
 
     public mdMjF1() {
-        return this.replaceRules( this.mdMjM1() + symbols.ta + symbols.sukun);
+        return this.replaceRules(this.mdMjM1() + symbols.ta + symbols.sukun);
     }
 
     public mdMjF2() {
@@ -212,22 +219,21 @@ export default class VerbForm {
 
     // fel nahi masculine singular
     public nahiM1() {
-        console.log('hello..')
         return this.replaceRules(nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.sukun);
     }
 
     public nahiM2() {
-        return this.replaceRules( nahiPrefix + this.mdrVowel +
+        return this.replaceRules(nahiPrefix + this.mdrVowel +
             this.mdrSukunBase + symbols.fatah + symbols.alif);
     }
 
     public nahiMP() {
-        return this.replaceRules( nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.dammah
+        return this.replaceRules(nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.dammah
             + symbols.oao + symbols.alif + symbols.sukun);
     }
 
     public nahiF1() {
-        return this.replaceRules( nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.kasrah +
+        return this.replaceRules(nahiPrefix + this.mdrVowel + this.mdrSukunBase + symbols.kasrah +
             symbols.ea + symbols.sukun);
     }
 
@@ -236,7 +242,7 @@ export default class VerbForm {
     }
 
     public nahiFP() {
-        return this.replaceRules( nahiPrefix + this.mdrVowel + this.mdrMutahrrkBase + symbols.sukun +
+        return this.replaceRules(nahiPrefix + this.mdrVowel + this.mdrMutahrrkBase + symbols.sukun +
             symbols.nun + symbols.fatah);
     }
 
@@ -409,6 +415,7 @@ export default class VerbForm {
     public isMithal() {
         return this.isMithalOaoe() || this.isMithalEae()
     }
+
     public isNaqis() {
         return this.isNaqisOaoe() || this.isNaqisEae()
     }
@@ -420,6 +427,7 @@ export default class VerbForm {
     public isNaqisEae() {
         return this.lam === symbols.ea;
     }
+
     public isMithalOaoe() {
         return this.fa === symbols.oao;
     }
@@ -438,13 +446,13 @@ export default class VerbForm {
 
     public replaceRules(values) {
         const rules = Object.values(replaces)
-        const result =  rules.reduce((acc, repl) => {
+        const result = rules.reduce((acc, repl) => {
             // if(acc.match(repl[0])){
             //     console.log(repl[0], repl[1])
             // }
             return acc.replace(repl[0], repl[1])
         }, values);
-        if(result !== values){// continue replacing until no change
+        if (result !== values) {// continue replacing until no change
             return this.replaceRules(result)
         }
         return result;

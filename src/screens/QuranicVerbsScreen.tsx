@@ -48,9 +48,11 @@ export default function QuranicVerbsScreen({route, navigation}) {
 
     const [isModalVisible, setModalVisible] = React.useState(false);
     const [isFormModalVisible, setFormModalVisible] = React.useState(false);
+    const [isSubFormModalVisible, setSubFormModalVisible] = React.useState(false);
     const [isRootModalVisible, setRootModalVisible] = React.useState(false);
     const [isOrderModalVisible, setOrderModalVisible] = React.useState(false);
     const [selectedForm, setSelectedForm] = React.useState('');
+    const [selectedSubForm, setSelectedSubForm] = React.useState('');
     const [selectedMeaning, setSelectedMeaning] = React.useState('');
     const [selectedRoot, setSelectedRoot] = React.useState('');
     const [selectedFaQalimah, setSelectedFaQalimah] = React.useState('');
@@ -82,15 +84,37 @@ export default function QuranicVerbsScreen({route, navigation}) {
         setLoading(true);
         setSelectedRoot('')
         setSelectedForm('')
+        setSelectedSubForm('')
         setSelectedMeaning('')
     }, []);
 
     React.useEffect(() => {
-        if(!conjugation)
+        if (!conjugation)
             setRenderingVerbs(verbs)
         else
             setRenderingVerbs([])
     }, [conjugation, verbs]);
+
+    const constructVerb = () => {
+        return {
+            "verb": "",
+            "root": selectedRoot,
+            "form": selectedForm,
+            "trans": {
+                "en": ""
+            },
+            "bab": selectedSubForm,
+        }
+    }
+    const triggerConjugation = () => {
+        if (conjugation && selectedSubForm.length && selectedForm.length && selectedRoot){
+            openVerbPopup(constructVerb())
+        }
+    }
+    React.useEffect(() => {
+        triggerConjugation()
+
+    }, [selectedSubForm, selectedForm, selectedRoot]);
 
     // filter verbs
     React.useEffect(() => {
@@ -196,13 +220,17 @@ export default function QuranicVerbsScreen({route, navigation}) {
         })
     }
 
+    const verbDetailStr = () => {
+      return   verbDetail.verb ? verbDetail.verb : QuranicVerbsManager.baseVerb({verbDetail})
+    }
+
     const modalHead = function () {
         if (verbDetail) {
             return (<View>
                 <View style={Styles.rowJustified}>
-                    <Text style={[Styles.textBold, Styles.arabicFontSize]}> {verbDetail.verb + ""}</Text>
+                    <Text style={[Styles.textBold, Styles.arabicFontSize]}> {verbDetailStr() + ""}</Text>
                     <Text style={{marginTop: 5}}>({verbDetail.form}) </Text>
-                    <Text style={{marginTop: 5}}>({verbDetail.trans.en}) </Text>
+                    <Text style={{marginTop: 5}}> {verbDetail.trans.en} </Text>
                 </View>
                 <View style={Styles.rowJustified}>
                     <TouchableOpacity onPress={() => sarfSagheer()}>
@@ -251,8 +279,17 @@ export default function QuranicVerbsScreen({route, navigation}) {
     }
 
     const verbFormSelected = (selected: string) => {
-        setLoading(true)
         setSelectedForm(selected);
+        if (selected === 'I' && conjugation) {
+            setSubFormModalVisible(true);
+        } else {
+            setSelectedSubForm('');
+            setFormModalVisible(false);
+        }
+    }
+    const verbSubFormSelected = (selected: string) => {
+        setSelectedSubForm(selected);
+        setSubFormModalVisible(false);
         setFormModalVisible(false);
     }
 
@@ -277,9 +314,9 @@ export default function QuranicVerbsScreen({route, navigation}) {
     }
 
     const combineRootLetters = () => {
-        setLoading(true);
         setSelectedRoot(selectedFaQalimah + selectedAinQalimah + selectedLamQalimah);
         setRootModalVisible(false);
+        triggerConjugation();
     }
     return (
         <View style={Styles.container}>
@@ -304,7 +341,9 @@ export default function QuranicVerbsScreen({route, navigation}) {
                 )}
 
                 <View style={{flex: 1}}>
-                    <Text style={Styles.text} onPress={() => setFormModalVisible(true)}>Form - {selectedForm}</Text>
+                    <Text style={Styles.text} onPress={() => setFormModalVisible(true)}>
+                        Form - {selectedForm} {selectedSubForm ? '( ' + selectedSubForm +' )' : ''}
+                    </Text>
                     <Overlay overlayStyle={Styles.verbFormModal} isVisible={isFormModalVisible}
                              onBackdropPress={() => setFormModalVisible(false)}>
                         <View style={[Styles.centeredView, {marginTop: 0, flexDirection: "row"}]}>
@@ -316,7 +355,26 @@ export default function QuranicVerbsScreen({route, navigation}) {
                                       }}/>
                         </View>
 
+                        <Overlay overlayStyle={Styles.popover} isVisible={isSubFormModalVisible}
+                                 onBackdropPress={() => setSubFormModalVisible(false)}>
+                            <View style={[ {marginTop: 0, flexDirection: "row"}]}>
+                                <Chip onPress={() => verbSubFormSelected('aa')}
+                                      buttonStyle={Styles.subFormChip} key={'aa'} title="aa"/>
+                                <Chip onPress={() => verbSubFormSelected('au')}
+                                      buttonStyle={Styles.subFormChip} key={'au'} title="au"/>
+                                <Chip onPress={() => verbSubFormSelected('ae')}
+                                      buttonStyle={Styles.subFormChip} key={'ae'} title="ae"/>
+                                <Chip onPress={() => verbSubFormSelected('ea')}
+                                      buttonStyle={Styles.subFormChip} key={'ea'} title="ea"/>
+                                <Chip onPress={() => verbSubFormSelected('ee')}
+                                      buttonStyle={Styles.subFormChip} key={'ee'} title="ee"/>
+                                <Chip onPress={() => verbSubFormSelected('uu')}
+                                      buttonStyle={Styles.subFormChip} key={'uu'} title="uu"/>
+                            </View>
+                        </Overlay>
+
                         <View style={[Styles.modalContent, {flexDirection: "row", flexWrap: "wrap"}]}>
+
                             {verbForms.map((f) => <Chip onPress={() => verbFormSelected(f)}
                                                         buttonStyle={{margin: 10, width: 50}} key={f} title={f}/>)}
                         </View>
